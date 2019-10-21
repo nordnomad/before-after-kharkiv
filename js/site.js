@@ -42,9 +42,12 @@ $(function() {
 	before.sync(after);
 	after.sync(before);
 	
-	var ll = L.latLng(49.992843, 36.231661); // costitution square
-	var ll2 = L.latLng(49.989593,36.205094); // railway station
-	var ll3 = L.latLng(49.980829,36.2619546); // metalist
+	var ll = L.latLng(49.992843, 36.231661);
+	 ll.id = 987// costitution square
+	var ll2 = L.latLng(49.989593,36.205094);
+	ll2.id = 986// railway station
+	var ll3 = L.latLng(49.980829,36.2619546);
+	ll3.id = 985// metalist
 
 	function initializeMarker(latLng) {
 	    var pulsingIcon = L.icon.pulse({iconSize:[20,20],color:'#C00', animate:true, heatbeat:1});
@@ -55,6 +58,19 @@ $(function() {
 		marker.on('mouseout', function(e) {
 			this._icon.className = this._icon.className.replace("leaflet-pulsing-icon", "leaflet-not-pulsing-icon");
 		});
+		marker.on('click', function(e) {
+
+            $.ajax({
+                url : "point-" + latLng.id + ".json",
+                dataType: "json",
+                success : function (data) {
+                    $('#before-content').text(data.before)
+                    $('#after-content').text(data.after)
+                    $('#after-title').text(data.title)
+                    $('#before-title').text(data.title)
+                }
+            });
+        });
 		return marker;
 	}
 	
@@ -69,20 +85,20 @@ $(function() {
 	var markerAfter = initializeMarker(ll);
 	markerAfter.addTo(after);
 	markerAfter.on('click', function(e){
-		$('a[id^="showright"]').click();
-		
-		before.unsync(after);
-		after.unsync(before);
-		var targetPoint = before.project(e.latlng, 13).subtract([docW / 4, 0]),
-			targetLatLng = before.unproject(targetPoint, 13);
-		
-		before.panTo(targetLatLng, {animate:true});
-		after.panTo(targetLatLng, {animate:true});
-		
-		before.sync(after, {noInitialSync : true});
-		after.sync(before, {noInitialSync : true});
-		
-		$('.cd-panel').addClass('is-visible');
+        $('a[id^="showright"]').click();
+
+        before.unsync(after);
+        after.unsync(before);
+        var targetPoint = before.project(e.latlng, 13).subtract([docW / 4, 0]),
+            targetLatLng = before.unproject(targetPoint, 13);
+
+        before.panTo(targetLatLng, {animate:true});
+        after.panTo(targetLatLng, {animate:true});
+
+        before.sync(after, {noInitialSync : true});
+        after.sync(before, {noInitialSync : true});
+
+        $('.cd-panel').addClass('is-visible');
 	});
 	
 	var markerBefore = initializeMarker(ll);
@@ -104,15 +120,15 @@ $(function() {
 		$('.cd-panel').addClass('is-visible');
 	});
 
-	var llist = L.control.locationlist({locationsList : [
-						  {title: 'Other1', latlng : [49.992843, 36.231661], zoom: 13},
-                          {title: 'Other', latlng : [49.989593,36.205094], zoom: 13},
-                          {title: 'Other2', latlng : [49.980829,36.2619546], zoom: 13}],
-        nextText : '->',
-        nextTitle : 'Next',
-        prevText : '<-',
-        prevTitle : 'Previous',
-        showList : false });
+//	var llist = L.control.locationlist({locationsList : [
+//						  {title: 'Other1', latlng : [49.992843, 36.231661], zoom: 13},
+//                          {title: 'Other', latlng : [49.989593,36.205094], zoom: 13},
+//                          {title: 'Other2', latlng : [49.980829,36.2619546], zoom: 13}],
+//        nextText : '->',
+//        nextTitle : 'Next',
+//        prevText : '<-',
+//        prevTitle : 'Previous',
+//        showList : false });
      // before.addControl(llist);
      // after.addControl(llist);
 
@@ -129,14 +145,6 @@ $(function() {
 			}
 		});
 	});
-	 $.ajax({
-            url : "test.txt",
-            dataType: "text",
-            success : function (data) {
-				console.log(data);
-				alert( "Load was performed." );
-            }
-    });
 	
 	$('.cd-panel').on("mousedown", function(e) {
 		e.preventDefault()
