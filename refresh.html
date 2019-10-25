@@ -104,26 +104,11 @@
     before.sync(after);
 	after.sync(before);
 
-    var constitutionSquare = L.latLng(49.992843, 36.231661);
-	constitutionSquare.id = 987// costitution square
-
-    var markerAfter = initializeMarker(constitutionSquare);
-	markerAfter.addTo(after);
-	var markerBefore = initializeMarker(constitutionSquare);
-	markerBefore.addTo(before);
-
-    markerAfter.on('click', function(e) {
-        markerClickListener(e, true);
-    });
-
-    markerBefore.on('click', function(e) {
-        markerClickListener(e, false);
-    });
-
     $('.goto.goto-explore').on('click', function(e){
         hideContent()
     })
 
+    loadGeoJson()
 </script>
 </body>
 </html>

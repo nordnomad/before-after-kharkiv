@@ -8,17 +8,7 @@ function initializeMarker(latLng) {
         this._icon.className = this._icon.className.replace("leaflet-pulsing-icon", "leaflet-not-pulsing-icon");
     });
     marker.on('click', function(e) {
-
-        $.ajax({
-            url : "point-" + latLng.id + ".json",
-            dataType: "json",
-            success : function (data) {
-                $('#before-content').text(data.before)
-                $('#after-content').text(data.after)
-                $('#after-title').text(data.title)
-                $('#before-title').text(data.title)
-            }
-        });
+        //TODO load data to content panel
     });
     return marker;
 }
@@ -43,7 +33,29 @@ function markerClickListener(e, isLeft) {
 function showContent(){
     $('.content').fadeIn('slow')
 }
+function loadGeoJson(){
+    $.ajax("geo.json").done(function (data) {
+        L.geoJson(data, {
+            pointToLayer: function (feature, latlng) {
+                var marker = initializeMarker(latlng);
+                marker.on('click', function(e) {
+                    markerClickListener(e, true);
+                });
+                return marker;
+            }
+        }).addTo(after);
+        L.geoJson(data, {
+            pointToLayer: function (feature, latlng) {
+                var marker = initializeMarker(latlng);
+                marker.on('click', function(e) {
+                    markerClickListener(e, false);
+                });
+                return marker;
+            }
+        }).addTo(before);
+    })
 
+}
 
 
 function left() {
