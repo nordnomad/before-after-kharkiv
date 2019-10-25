@@ -25,7 +25,7 @@
     z-index: 3;
     overflow: hidden!important;
     border-left: 1px solid #c00;
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 #map-clip-inner {
     display: block;
