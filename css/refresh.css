@@ -1,0 +1,238 @@
+#container {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#map-base {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+#map-clip {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    overflow: hidden!important;
+    border-left: 1px solid #c00;
+    pointer-events: none;
+}
+#map-clip-inner {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+}
+#map-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+#control-slider {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    background-color: #c00;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 44px;
+    font-size: 1em;
+    z-index: 10;
+    font-weight: 700;
+    color: #fff;
+    cursor: ew-resize;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: 0 0 20px rgba(0,0,0,1);
+    text-shadow: 0 0 3px rgba(0,0,0,.33);
+    -webkit-transition: top 500ms ease-out;
+    -moz-transition: top 500ms ease-out;
+    -o-transition: top 500ms ease-out;
+    transition: top 500ms ease-out;
+}
+
+#control-slider::before, #control-slider::after {
+    display: block;
+    position: absolute;
+    padding: 1px 10px 0;
+    top: 8px;
+    z-index: -1;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+    height: 23px;
+    line-height: 22px;
+    background-color: #c00;
+    letter-spacing: .1em;
+    border-radius: 7px;
+}
+#control-slider::before {
+    content: "1942";
+    text-align: right;
+    padding-right: 40px;
+    right: 0;
+}
+#control-slider i {
+    margin: 0 -.2em;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-left:before {
+    content: "\e92c";
+}
+#control-slider::after {
+    content: "2015";
+    text-align: left;
+    padding-left: 40px;
+    left: 0;
+}
+#content-2015 {
+    z-index: 6;
+}
+#content-1942 {
+    z-index: 2;
+}
+.content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    min-width: 300px;
+    background-color: rgba(0,0,0,.67);
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+    pointer-events: auto;
+}
+.content-wrapper {
+    position: relative;
+    margin: 8vh auto 0;
+    height: 84vh;
+    width: 90%;
+    max-width: 600px;
+    max-height: 780px;
+}
+.content h2 {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;
+    font-weight: 300;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+.content p, .content .nav {
+    color: #fff;
+    margin: 20px 0 0;
+    padding: 0;
+    line-height: 1.4em;
+    font-weight: 300;
+    font-size: 1.5em;
+    text-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+.content .nav {
+    display: block;
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    right: 20px;
+}
+.col2left {
+    text-align: left;
+}
+.col2 {
+    width: 50%;
+    float: left;
+}
+.col2right {
+    text-align: right;
+}
+.content .nav .goto-red {
+    background-color: #c00;
+    color: #fff;
+}
+.content .nav .goto {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 5px 15px 2px;
+    text-decoration: none;
+    -webkit-transition: background-color,box-shadow 200ms ease-out;
+    -moz-transition: background-color,box-shadow 200ms ease-out;
+    -o-transition: background-color,box-shadow 200ms ease-out;
+    transition: background-color,box-shadow 200ms ease-out;
+}
+.content .nav .goto i {
+    font-size: .9em;
+    vertical-align: -9%;
+}
+.icon-cross:before {
+    content: "\e924";
+}
+.content .goto-explore i {
+    font-size: .9em;
+}
+.content .goto-explore {
+    position: absolute;
+    display: block;
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1em;
+    right: 0;
+    top: 0;
+    background-color: #aaa;
+    color: #000;
+    border-radius: 100%;
+    text-decoration: none;
+    margin: 0;
+    padding: .55em .5em .45em;
+    -webkit-transition: background-color 200ms ease-out;
+    -moz-transition: background-color 200ms ease-out;
+    -o-transition: background-color 200ms ease-out;
+    transition: background-color 200ms ease-out;
+}
+#map-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/leaflet.css"/>
+    <script type="text/javascript" src="js/leaflet.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/refresh.css"/>
+    <script type="text/javascript" src="js/refresh.js"></script>
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/before-after.css"/>
+    <script type="text/javascript" src="js/before-after.js"></script>
+
+    <script type="text/javascript" src="js/L.Map.Sync.js"></script>
+<!--    TODO change to own font-->
+    <link href="https://data.tagesspiegel.de/fonts/icomoon/standard.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/L.Icon.Pulse.css" type='text/css'/>
+    <script src="js/L.Icon.Pulse.js"></script>
+</head>
+<body>
+
+<div id="container">
+    <div id="map-base"></div>
+    <div class="cd-panel from-left before">
+        <!--    <div id="content-1942" class="content cd-panel from-left before">-->
+        <header class="cd-panel-header">
+            <h1 id="before-title">
+                <!-- Title of selected point -->
+            </h1>
+            <a href="#0" class="cd-panel-close">Close</a>
+        </header>
+
+        <div class="content" id="content-1928">
+            <div class="content-wrapper">
+                <h2>Alexanderplatz</h2>
+                <div class="content-text"><p>So sah der Platz aus, als Alfred Döblin seinen Roman „Berlin
+                    Alexanderplatz“ schrieb: verglichen mit heute von bescheideneren Ausmaßen, weitaus enger bebaut. Von
+                    Nordwesten schob sich der dunkle Riegel des Kaufhauses Tietz hinein, von Südosten der des
+                    Polizeipräsidiums. Dazwischen lag eine der legendären Aschinger-Gaststätten. Zwischen dem
+                    Bahnhofsgebäude und dem Kaufhaus entstand wenig später das Berolinahaus von Peter Behrens.</p></div>
+                <div class="nav">
+                    <div class="col2 col2left"><a href="javascript:;" id="goto-back" class="goto goto-red"><i
+                            class="icon-left"></i> Zurück</a></div>
+                    <div class="col2 col2right"><a href="javascript:;" id="goto-2015" class="goto goto-red">2015 <i
+                            class="icon-right"></i></a></div>
+                </div>
+                <a href="javascript:;" class="goto goto-explore" title="Selbst erkunden"><i class="icon-cross"></i></a>
+            </div>
+        </div>
+    </div>
+    <div id="map-clip">
+        <div id="map-clip-inner">
+            <div id="map-overlay"></div>
+            <div class="content" id="content-2015">
+                <div class="content-wrapper">
+                    <h2>Alexanderplatz</h2>
+                    <div class="content-text"><p>Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das
+                        Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den
+                        Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich
+                        zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische
+                        Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher
+                        kleinteiligen Platz ein.</p></div>
+                    <div class="nav">
+                        <div class="col2 col2left"><a href="javascript:;" id="goto-1928" class="goto goto-red"><i
+                                class="icon-left"></i> 1928</a></div>
+                        <div class="col2 col2right"><a href="javascript:;" id="goto-next" class="goto goto-red">Weiter
+                            <i class="icon-right"></i></a></div>
+                    </div>
+                    <a href="javascript:;" class="goto goto-explore" title="Selbst erkunden"><i class="icon-cross"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="control-slider">
+        <i class="icon-left"></i>
+        <i class="icon-right"></i>
+    </div>
+</div>
+<script>
+    $('body').css('margin', 0);
+	var docW = $(window).width();
+	var docH = $(window).height();
+
+	$('#map-base').height(docH);
+	$('#map-base').width(docW);
+	$('#map-overlay').height(docH);
+	$('#map-overlay').width(docW);
+
+    var center = [49.988373245043924, 36.22535705566406];
+    var zoom = 13;
+    var attributes = {attributionControl: false, inertia: true, maxZoom:16, minZoom:13, tileSize: 256, zoomControl:false}
+    var before = L.map('map-base', attributes).setView(center, zoom);
+	var after = L.map('map-overlay', attributes).setView(center, zoom);
+
+	L.tileLayer('http://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg').addTo(before);
+	L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q').addTo(after);
+
+    $('#container').beforeAfter();
+
+    before.sync(after);
+	after.sync(before);
+
+    var constitutionSquare = L.latLng(49.992843, 36.231661);
+	constitutionSquare.id = 987// costitution square
+
+    var markerAfter = initializeMarker(constitutionSquare);
+<!--	markerAfter.addTo(after);-->
+	var markerBefore = initializeMarker(constitutionSquare);
+	markerBefore.addTo(before);
+
+    markerAfter.on('click', function(e) {
+        markerClickListener(e, true);
+    });
+
+    markerBefore.on('click', function(e) {
+        markerClickListener(e, false);
+    });
+
+    $('.goto.goto-explore').on('click', function(e){
+        hideContent()
+    })
+
+</script>
+</body>
+</html>
