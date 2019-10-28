@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.68.0/dist/L.Control.Locate.min.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.68.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/leaflet.social.css"/>
+    <script type='text/javascript' src="js/leaflet.social.js"></script>
 </head>
 <body>
 
@@ -149,32 +152,29 @@
 	L.tileLayer('http://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg').addTo(before);
 	L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q').addTo(after);
 
-    var ourCustomControl = L.Control.extend({
-
-      options: {
-        position: 'bottomright'
-        //control position - allowed: 'topleft', 'topright', 'bottomleft', 'bottomright'
-      },
-
-      onAdd: function (map) {
-        var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control fullscreen-icon ');
-        container.onclick = function(event){
-            var element = document.body;
-            if (event instanceof HTMLElement) {
-                element = event;
+    var FullScreenControl = L.Control.extend({
+        options: { position: 'bottomright' },
+        onAdd: function (map) {
+            var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control fullscreen-icon ');
+            container.onclick = function(event){
+                var element = document.body;
+                if (event instanceof HTMLElement) {
+                    element = event;
+                }
+                var isFullscreen = document.webkitIsFullScreen || document.mozFullScreen || false;
+                element.requestFullScreen = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || function () { return false; };
+                document.cancelFullScreen = document.cancelFullScreen || document.webkitCancelFullScreen || document.mozCancelFullScreen || function () { return false; };
+                isFullscreen ? document.cancelFullScreen() : element.requestFullScreen();
             }
-            var isFullscreen = document.webkitIsFullScreen || document.mozFullScreen || false;
-            element.requestFullScreen = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || function () { return false; };
-            document.cancelFullScreen = document.cancelFullScreen || document.webkitCancelFullScreen || document.mozCancelFullScreen || function () { return false; };
-            isFullscreen ? document.cancelFullScreen() : element.requestFullScreen();
+            return container;
         }
-        return container;
-      }
-
     });
+    after.addControl(new FullScreenControl());
+    before.addControl(new FullScreenControl());
 
-   after.addControl(new ourCustomControl());
-   before.addControl(new ourCustomControl());
+    var options = {default_text: "Guess where I am", position: 'bottomright'};
+    L.control.social(options).addTo(after);
+    L.control.social(options).addTo(before);
 
     $('#container').beforeAfter();
 
