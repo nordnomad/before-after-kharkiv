@@ -6,3 +6,5 @@ Documentation about leaflet - https://leafletjs.com/plugins.html
 Plugins
  - for before-after functionality https://github.com/jotform/before-after.js
  - to sync maps state https://github.com/jieter/Leaflet.Sync
+ - current location control https://github.com/domoritz/leaflet-locatecontrol 
+ - tried but used own implementation - fullscreen control https://github.com/brunob/leaflet.fullscreen 

@@ -25,6 +25,11 @@
 
     <link rel="stylesheet" href="css/L.Icon.Pulse.css" type='text/css'/>
     <script src="js/L.Icon.Pulse.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.68.0/dist/L.Control.Locate.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.68.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
 </head>
 <body>
 
@@ -110,15 +115,69 @@
 
     var center = [49.988373245043924, 36.22535705566406];
     var zoom = 13;
-    var attributes = {attributionControl: false, inertia: true, maxZoom:16, minZoom:13, tileSize: 256, zoomControl:false}
+    var attributes = {
+        attributionControl: false,
+        inertia: true,
+        maxZoom:16,
+        minZoom:13,
+        tileSize: 256,
+        zoomControl:false,
+        fullscreenControl: true,
+        fullscreenControlOptions: { // optional
+            title:"Show me the fullscreen !",
+            titleCancel:"Exit fullscreen mode",
+            position: 'bottomright',
+        }
+    }
     var before = L.map('map-base', attributes).setView(center, zoom);
 	var after = L.map('map-overlay', attributes).setView(center, zoom);
 
     new L.Control.Zoom({ position: 'bottomright' }).addTo(after);
     new L.Control.Zoom({ position: 'bottomright' }).addTo(before);
 
+    var locateOptions = {
+		position: 'bottomright',
+		icon : 'fa fa-location-arrow',
+		strings: {
+			title: "Show me where I am, yo!"
+		}
+	}
+
+    L.control.locate(locateOptions).addTo(after);
+    L.control.locate(locateOptions).addTo(before);
+
 	L.tileLayer('http://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg').addTo(before);
 	L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q').addTo(after);
+
+    var ourCustomControl = L.Control.extend({
+
+      options: {
+        position: 'bottomright'
+        //control position - allowed: 'topleft', 'topright', 'bottomleft', 'bottomright'
+      },
+
+      onAdd: function (map) {
+        var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control fullscreen-icon ');
+        container.style.backgroundColor = 'white';
+        container.style.width = '30px';
+        container.style.height = '30px';
+        container.onclick = function(event){
+            var element = document.body;
+            if (event instanceof HTMLElement) {
+                element = event;
+            }
+            var isFullscreen = document.webkitIsFullScreen || document.mozFullScreen || false;
+            element.requestFullScreen = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || function () { return false; };
+            document.cancelFullScreen = document.cancelFullScreen || document.webkitCancelFullScreen || document.mozCancelFullScreen || function () { return false; };
+            isFullscreen ? document.cancelFullScreen() : element.requestFullScreen();
+        }
+        return container;
+      }
+
+    });
+
+   after.addControl(new ourCustomControl());
+   before.addControl(new ourCustomControl());
 
     $('#container').beforeAfter();
 

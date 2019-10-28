@@ -236,3 +236,4 @@
     bottom: 0;
     z-index: 5;
 }
+.fullscreen-icon { background-image: url(images/icon-fullscreen-2x.png); background-size: 26px 26px; }
