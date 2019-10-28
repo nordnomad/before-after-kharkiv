@@ -20,14 +20,18 @@ function markerClickListener(e, isLeft) {
     } else {
         right();
     }
-    var targetPoint = before.project(e.latlng, 13).subtract([docW / 4, 0]),
-        targetLatLng = before.unproject(targetPoint, 13);
 
-    before.panTo(targetLatLng, {animate:true});
-    after.panTo(targetLatLng, {animate:true});
+    var flyToZoom = 16;
+    var targetPoint = before.project(e.latlng, flyToZoom).subtract([docW / 4, 0]),
+        targetLatLng = before.unproject(targetPoint, flyToZoom);
 
-    before.sync(after, {noInitialSync : true});
-    after.sync(before, {noInitialSync : true});
+    before.flyTo(targetLatLng, flyToZoom);
+    after.flyTo(targetLatLng, flyToZoom);
+
+
+    var syncOptions = {noInitialSync : true}
+    before.sync(after, syncOptions);
+    after.sync(before, syncOptions);
 }
 
 function showContent(){

@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="css/leaflet.css"/>
-    <script type="text/javascript" src="js/leaflet.js"></script>
-
+<!--    <link rel="stylesheet" type="text/css" href="css/leaflet.css"/>-->
+<!--    <script type="text/javascript" src="js/leaflet.js"></script>-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+            crossorigin=""></script>
     <link rel="stylesheet" type="text/css" href="css/refresh.css"/>
     <script type="text/javascript" src="js/refresh.js"></script>
 
@@ -26,7 +31,6 @@
 <div id="container">
     <div id="map-base"></div>
     <div class="cd-panel from-left before">
-        <!--    <div id="content-1942" class="content cd-panel from-left before">-->
         <header class="cd-panel-header">
             <h1 id="before-title">
                 <!-- Title of selected point -->
@@ -37,18 +41,29 @@
         <div class="content" id="content-1928">
             <div class="content-wrapper">
                 <h2>Alexanderplatz</h2>
-                <div class="content-text"><p>So sah der Platz aus, als Alfred Döblin seinen Roman „Berlin
+                <div class="content-text">
+                    <p>So sah der Platz aus, als Alfred Döblin seinen Roman „Berlin
                     Alexanderplatz“ schrieb: verglichen mit heute von bescheideneren Ausmaßen, weitaus enger bebaut. Von
                     Nordwesten schob sich der dunkle Riegel des Kaufhauses Tietz hinein, von Südosten der des
                     Polizeipräsidiums. Dazwischen lag eine der legendären Aschinger-Gaststätten. Zwischen dem
-                    Bahnhofsgebäude und dem Kaufhaus entstand wenig später das Berolinahaus von Peter Behrens.</p></div>
-                <div class="nav">
-                    <div class="col2 col2left"><a href="javascript:;" id="goto-back" class="goto goto-red"><i
-                            class="icon-left"></i> Zurück</a></div>
-                    <div class="col2 col2right"><a href="javascript:;" id="goto-2015" class="goto goto-red">2015 <i
-                            class="icon-right"></i></a></div>
+                    Bahnhofsgebäude und dem Kaufhaus entstand wenig später das Berolinahaus von Peter Behrens.</p>
                 </div>
-                <a href="javascript:;" class="goto goto-explore" title="Selbst erkunden"><i class="icon-cross"></i></a>
+                <div class="nav">
+                    <div class="col2 col2left">
+                        <a href="javascript:;" id="goto-back" class="goto goto-red">
+                            <i class="icon-left"></i> Zurück
+                        </a>
+                    </div>
+                    <div class="col2 col2right">
+                        <a href="javascript:;" id="goto-2015" class="goto goto-red">
+                            2015
+                            <i class="icon-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <a href="javascript:;" class="goto goto-explore" title="Selbst erkunden">
+                    <i class="icon-cross"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -58,19 +73,31 @@
             <div class="content" id="content-2015">
                 <div class="content-wrapper">
                     <h2>Alexanderplatz</h2>
-                    <div class="content-text"><p>Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das
+                    <div class="content-text">
+                        <p>Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das
                         Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den
                         Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich
                         zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische
                         Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher
-                        kleinteiligen Platz ein.</p></div>
-                    <div class="nav">
-                        <div class="col2 col2left"><a href="javascript:;" id="goto-1928" class="goto goto-red"><i
-                                class="icon-left"></i> 1928</a></div>
-                        <div class="col2 col2right"><a href="javascript:;" id="goto-next" class="goto goto-red">Weiter
-                            <i class="icon-right"></i></a></div>
+                        kleinteiligen Platz ein.</p>
                     </div>
-                    <a href="javascript:;" class="goto goto-explore" title="Selbst erkunden"><i class="icon-cross"></i></a>
+                    <div class="nav">
+                        <div class="col2 col2left">
+                            <a href="javascript:;" id="goto-1928" class="goto goto-red">
+                                <i class="icon-left"></i>
+                                1928
+                            </a>
+                        </div>
+                        <div class="col2 col2right">
+                            <a href="javascript:;" id="goto-next" class="goto goto-red">
+                                Weiter
+                                <i class="icon-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="goto goto-explore" title="Selbst erkunden">
+                        <i class="icon-cross"></i>
+                    </a>
                 </div>
             </div>
         </div>
