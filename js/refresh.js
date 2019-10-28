@@ -41,7 +41,17 @@ function refreshContentPanel(properties) {
     $('#content-description-1942').text(properties.desc1942);
     $('#content-description-2015').text(properties.desc2015)
 }
-
+function initContentPanel(){
+    $('#goto-1942').on('click', function(e) {
+         right();
+    });
+    $('#goto-2015').on('click', function(e) {
+         left();
+    });
+    $('.goto.goto-explore').on('click', function(e) {
+        hideContent()
+    })
+}
 function showContent(){
     $('.content').fadeIn('slow')
 }
