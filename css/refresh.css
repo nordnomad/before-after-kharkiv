@@ -236,4 +236,10 @@
     bottom: 0;
     z-index: 5;
 }
-.fullscreen-icon { background-image: url(images/icon-fullscreen-2x.png); background-size: 26px 26px; }
+.fullscreen-icon {
+    background-image: url(images/icon-fullscreen-2x.png);
+    background-size: 30px 30px;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+}
