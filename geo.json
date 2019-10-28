@@ -2,9 +2,9 @@
   {
     "type": "Feature",
     "properties": {
-      "name": "Coors Field",
-      "amenity": "Baseball Stadium",
-      "popupContent": "This is where the Rockies play!"
+      "title": "Constitution Square",
+      "desc1942": "So sah der Platz aus, als Alfred Döblin seinen Roman „Berlin Alexanderplatz“ schrieb: verglichen mit heute von bescheideneren Ausmaßen, weitaus enger bebaut. Von Nordwesten schob sich der dunkle Riegel des Kaufhauses Tietz hinein, von Südosten der des Polizeipräsidiums. Dazwischen lag eine der legendären Aschinger-Gaststätten. Zwischen dem Bahnhofsgebäude und dem Kaufhaus entstand wenig später das Berolinahaus von Peter Behrens.",
+      "desc2015": "Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher kleinteiligen Platz ein."
     },
     "geometry": {
       "type": "Point",
@@ -17,9 +17,9 @@
   {
     "type": "Feature",
     "properties": {
-      "name": "Coors Field",
-      "amenity": "Baseball Stadium",
-      "popupContent": "This is where the Rockies play!"
+      "title": "Railway Station",
+      "desc1942": "So sah der Platz aus, als Alfred Döblin seinen Roman „Berlin Alexanderplatz“ schrieb: verglichen mit heute von bescheideneren Ausmaßen, weitaus enger bebaut. Von Nordwesten schob sich der dunkle Riegel des Kaufhauses Tietz hinein, von Südosten der des Polizeipräsidiums. Dazwischen lag eine der legendären Aschinger-Gaststätten. Zwischen dem Bahnhofsgebäude und dem Kaufhaus entstand wenig später das Berolinahaus von Peter Behrens.",
+      "desc2015": "Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher kleinteiligen Platz ein."
     },
     "geometry": {
       "type": "Point",
@@ -32,9 +32,9 @@
   {
     "type": "Feature",
     "properties": {
-      "name": "Coors Field",
-      "amenity": "Baseball Stadium",
-      "popupContent": "This is where the Rockies play!"
+      "title": "Metalist Stadium",
+      "desc1942": "So sah der Platz aus, als Alfred Döblin seinen Roman „Berlin Alexanderplatz“ schrieb: verglichen mit heute von bescheideneren Ausmaßen, weitaus enger bebaut. Von Nordwesten schob sich der dunkle Riegel des Kaufhauses Tietz hinein, von Südosten der des Polizeipräsidiums. Dazwischen lag eine der legendären Aschinger-Gaststätten. Zwischen dem Bahnhofsgebäude und dem Kaufhaus entstand wenig später das Berolinahaus von Peter Behrens.",
+      "desc2015": "Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher kleinteiligen Platz ein."
     },
     "geometry": {
       "type": "Point",

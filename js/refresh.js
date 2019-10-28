@@ -15,6 +15,7 @@ function initializeMarker(latLng) {
 function markerClickListener(e, isLeft) {
     before.unsync(after);
     after.unsync(before);
+    refreshContentPanel(e.target.feature.properties);
     if(isLeft){
         left();
     } else {
@@ -32,6 +33,13 @@ function markerClickListener(e, isLeft) {
     var syncOptions = {noInitialSync : true}
     before.sync(after, syncOptions);
     after.sync(before, syncOptions);
+}
+
+function refreshContentPanel(properties) {
+    $('#content-title-1942').text(properties.title);
+    $('#content-title-2015').text(properties.title);
+    $('#content-description-1942').text(properties.desc1942);
+    $('#content-description-2015').text(properties.desc2015)
 }
 
 function showContent(){
