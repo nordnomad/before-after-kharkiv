@@ -114,6 +114,9 @@
     var before = L.map('map-base', attributes).setView(center, zoom);
 	var after = L.map('map-overlay', attributes).setView(center, zoom);
 
+    new L.Control.Zoom({ position: 'bottomright' }).addTo(after);
+    new L.Control.Zoom({ position: 'bottomright' }).addTo(before);
+
 	L.tileLayer('http://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg').addTo(before);
 	L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q').addTo(after);
 

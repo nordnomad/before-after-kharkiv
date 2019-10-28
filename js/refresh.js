@@ -21,14 +21,12 @@ function markerClickListener(e, isLeft) {
     } else {
         right();
     }
-
     var flyToZoom = 16;
     var targetPoint = before.project(e.latlng, flyToZoom).subtract([docW / 4, 0]),
         targetLatLng = before.unproject(targetPoint, flyToZoom);
 
     before.flyTo(targetLatLng, flyToZoom);
     after.flyTo(targetLatLng, flyToZoom);
-
 
     var syncOptions = {noInitialSync : true}
     before.sync(after, syncOptions);
@@ -41,7 +39,7 @@ function refreshContentPanel(properties) {
     $('#content-description-1942').text(properties.desc1942);
     $('#content-description-2015').text(properties.desc2015)
 }
-function initContentPanel(){
+function initContentPanel() {
     $('#goto-1942').on('click', function(e) {
          right();
     });
@@ -52,10 +50,8 @@ function initContentPanel(){
         hideContent()
     })
 }
-function showContent(){
-    $('.content').fadeIn('slow')
-}
-function loadGeoJson(){
+
+function loadGeoJson() {
     $.ajax("geo.json").done(function (data) {
         L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
@@ -76,10 +72,7 @@ function loadGeoJson(){
             }
         }).addTo(before);
     })
-
 }
-
-
 function left() {
     $('#control-slider').animate({'left': '0px'}, 'slow', 'linear', function(){showContent()})
     $('#map-clip').animate({'left': '0px'}, 'slow', 'linear', function(){showContent()} )
@@ -99,8 +92,11 @@ function center() {
     $('#map-clip').animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()} )
     $('#map-clip-inner').animate({'left': (-docW+1) +'px' }, 'slow', 'linear', function(){showContent()})
 }
+function showContent(){
+    $('.content').fadeIn('slow')
+}
 function hideContent(){
-    $('.content').fadeOut('slow', function(){
+    $('.content').fadeOut('slow', function() {
         console.log('click');
         var docW = $(window).width()/2;
             $('#control-slider').animate({'left': docW + 'px'}, 'slow')
