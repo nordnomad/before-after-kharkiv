@@ -7,15 +7,12 @@ function initializeMarker(latLng) {
     marker.on('mouseout', function(e) {
         this._icon.className = this._icon.className.replace("leaflet-pulsing-icon", "leaflet-not-pulsing-icon");
     });
-    marker.on('click', function(e) {
-        //TODO load data to content panel
-    });
     return marker;
 }
-function markerClickListener(e, isLeft) {
+function markerClickListener(feature, isLeft) {
     before.unsync(after);
     after.unsync(before);
-    refreshContentPanel(e.target.feature.properties);
+    refreshContentPanel(feature.properties);
     if(isLeft){
         left();
     } else {
@@ -23,7 +20,8 @@ function markerClickListener(e, isLeft) {
     }
     var flyToZoom = 16;
     var mapWidth = $('#map-base').width();
-    var targetPoint = before.project(e.latlng, flyToZoom).subtract([mapWidth / 4, 0]),
+    var latLng = {'lat' : feature.geometry.coordinates[1], 'lng' : feature.geometry.coordinates[0],}
+    var targetPoint = before.project(latLng, flyToZoom).subtract([mapWidth / 4, 0]),
         targetLatLng = before.unproject(targetPoint, flyToZoom);
 
     before.flyTo(targetLatLng, flyToZoom);
@@ -49,16 +47,41 @@ function initContentPanel() {
     });
     $('.goto.goto-explore').on('click', function(e) {
         hideContent()
+    });
+    $('#goto-next').on('click', function(e) {
+        var title = $('#content-title-1942').text();
+        var index = -1;
+        for(var i=0; i < geoJson.length; i++){
+            if (geoJson[i].properties.title == title) {
+                index = i + 1;
+                break;
+            }
+        }
+        if (index >= geoJson.length) index = 0;
+        markerClickListener(geoJson[index], false);
+    });
+    $('#goto-back').on('click', function(e) {
+        var title = $('#content-title-1942').text();
+        var index = -1;
+        for(var i=0; i < geoJson.length; i++){
+            if (geoJson[i].properties.title == title) {
+                index = i - 1;
+                break;
+            }
+        }
+        if (index < 0) index = geoJson.length - 1;
+        markerClickListener(geoJson[index], false);
     })
 }
-
+geoJson = []
 function loadGeoJson() {
     $.ajax("geo.json").done(function (data) {
+        geoJson = data;
         L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
                 var marker = initializeMarker(latlng);
                 marker.on('click', function(e) {
-                    markerClickListener(e, true);
+                    markerClickListener(e.target.feature, true);
                 });
                 return marker;
             }
@@ -67,7 +90,7 @@ function loadGeoJson() {
             pointToLayer: function (feature, latlng) {
                 var marker = initializeMarker(latlng);
                 marker.on('click', function(e) {
-                    markerClickListener(e, false);
+                    markerClickListener(e.target.feature, false);
                 });
                 return marker;
             }
@@ -86,7 +109,6 @@ function right() {
     $('#map-clip').animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()} )
     $('#map-clip-inner').animate({'left': (-docW+1) +'px' }, 'slow', 'linear', function(){showContent()})
 }
-
 function center() {
     var docW = $(window).width()/2;
     $('#control-slider').animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
@@ -98,10 +120,9 @@ function showContent(){
 }
 function hideContent(){
     $('.content').fadeOut('slow', function() {
-        console.log('click');
         var docW = $(window).width()/2;
-            $('#control-slider').animate({'left': docW + 'px'}, 'slow')
-            $('#map-clip').animate({'left': docW + 'px'}, 'slow')
-            $('#map-clip-inner').animate({'left': (-docW+1) +'px' }, 'slow')
+        $('#control-slider').animate({'left': docW + 'px'}, 'slow')
+        $('#map-clip').animate({'left': docW + 'px'}, 'slow')
+        $('#map-clip-inner').animate({'left': (-docW+1) +'px' }, 'slow')
     })
 }
