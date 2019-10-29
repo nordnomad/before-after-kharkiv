@@ -75,7 +75,6 @@
             // on these events, we should reset the view on every synced map
             // dragstart is due to inertia
             this.on('resize zoomend', this._selfSetView);
-            this.on('resize touchstart', this._selfSetView)
             this.on('moveend', this._syncOnMoveend);
             this.on('dragend', this._syncOnDragend);
             return this;
@@ -111,7 +110,6 @@
             if (!this._syncMaps || this._syncMaps.length == 0) {
                 // no more synced maps, so these events are not needed.
                 this.off('resize zoomend', this._selfSetView);
-                this.off('resize touchstart', this._selfSetView)
                 this.off('moveend', this._syncOnMoveend);
                 this.off('dragend', this._syncOnDragend);
             }
