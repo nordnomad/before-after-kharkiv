@@ -126,8 +126,14 @@
     var locateOptions = {
 		position: 'bottomright',
 		icon : 'fa fa-location-arrow',
+		drawCircle : false,
+		drawMarker : false,
 		strings: {
 			title: "Show me where I am, yo!"
+		},
+		onLocationOutsideMapBounds : function(e) {
+		    console.log('You are out of bounds!');
+		    console.log(e)
 		}
 	}
 
