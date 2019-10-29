@@ -164,6 +164,20 @@
     after.addControl(new FullScreenControl());
     before.addControl(new FullScreenControl());
 
+    var TourControl = L.Control.extend({
+        options: { position: 'bottomright' },
+        onAdd: function (map) {
+            var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control tour-icon');
+            container.onclick = function(event){
+                markerClickListener(geoJson[0], false);
+            }
+            return container;
+        }
+    });
+
+    after.addControl(new TourControl());
+    before.addControl(new TourControl());
+
     var options = {default_text: "Guess where I am", position: 'bottomright'};
     L.control.social(options).addTo(after);
     L.control.social(options).addTo(before);

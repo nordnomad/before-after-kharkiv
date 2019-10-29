@@ -9,3 +9,4 @@ Plugins
  - current location control https://github.com/domoritz/leaflet-locatecontrol 
  - tried but used own implementation - fullscreen control https://github.com/brunob/leaflet.fullscreen 
  - social buttons https://github.com/makinacorpus/Leaflet.Social
+ - tour icon - https://www.flaticon.com/free-icon/destination_854983

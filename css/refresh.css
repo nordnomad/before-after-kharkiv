@@ -253,3 +253,10 @@ html, body, #map-base, map-clip {
     width: 30px;
     height: 30px;
 }
+.tour-icon {
+    background-image: url(images/destination.png);
+    background-size: 30px 30px;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+}
