@@ -22,7 +22,8 @@ function markerClickListener(e, isLeft) {
         right();
     }
     var flyToZoom = 16;
-    var targetPoint = before.project(e.latlng, flyToZoom).subtract([docW / 4, 0]),
+    var mapWidth = $('#map-base').width();
+    var targetPoint = before.project(e.latlng, flyToZoom).subtract([mapWidth / 4, 0]),
         targetLatLng = before.unproject(targetPoint, flyToZoom);
 
     before.flyTo(targetLatLng, flyToZoom);
