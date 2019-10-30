@@ -189,7 +189,22 @@
 
     initContentPanel();
 
-    loadGeoJson()
+    loadGeoJson();
+
+    function applySmallStyle() {
+        if(isSmallWidth()) {
+            $('#container').addClass('small');
+        } else {
+            $('#container').removeClass('small');
+        }
+    }
+
+    applySmallStyle();
+
+    window.onresize = function(event) {
+        console.log('resize');
+        applySmallStyle();
+    };
 </script>
 </body>
 </html>

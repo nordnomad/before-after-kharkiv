@@ -148,6 +148,12 @@ html, body, #map-base, map-clip {
     z-index: 1;
     pointer-events: auto;
 }
+.small .content {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: auto
+}
 .content-wrapper {
     position: relative;
     margin: 8vh auto 0;
@@ -155,6 +161,15 @@ html, body, #map-base, map-clip {
     width: 90%;
     max-width: 600px;
     max-height: 780px;
+}
+.small .content-wrapper {
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    padding: 20px 20px 40px
 }
 .content h2 {
     color: #fff;
@@ -165,6 +180,11 @@ html, body, #map-base, map-clip {
     font-size: 2.5em;
     text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
+.small .content h2 {
+    font-size: 1.6em;
+    margin: 0 0 10px;
+    padding: 0
+}
 .content p, .content .nav {
     color: #fff;
     margin: 20px 0 0;
@@ -174,12 +194,17 @@ html, body, #map-base, map-clip {
     font-size: 1.5em;
     text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
+.small .content p,.small .content .nav {
+    font-size: 1em
+}
 .content .nav {
     display: block;
     position: absolute;
     bottom: 40px;
     left: 20px;
     right: 20px;
+}
+.small .content .nav {
 }
 .col2left {
     text-align: left;
@@ -236,6 +261,24 @@ html, body, #map-base, map-clip {
     -moz-transition: background-color 200ms ease-out;
     -o-transition: background-color 200ms ease-out;
     transition: background-color 200ms ease-out;
+}
+.small .content .goto-explore {
+    top: 15px;
+    right: 20px;
+    font-size: .9em
+}
+.small .content .content-text {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding-bottom: 25px;
+    overflow-x: hidden;
+    overflow-y: auto
+}
+.small .content .content-text p {
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 3.6vmin
 }
 #map-overlay {
     display: block;

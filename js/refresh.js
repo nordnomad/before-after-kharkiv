@@ -18,20 +18,28 @@ function markerClickListener(feature, isLeft) {
     } else {
         right();
     }
-    var flyToZoom = 16;
-    var mapWidth = $('#map-base').width();
-    var latLng = {'lat' : feature.geometry.coordinates[1], 'lng' : feature.geometry.coordinates[0],}
-    var targetPoint = before.project(latLng, flyToZoom).subtract([mapWidth / 4, 0]),
-        targetLatLng = before.unproject(targetPoint, flyToZoom);
-
-    before.flyTo(targetLatLng, flyToZoom);
-    after.flyTo(targetLatLng, flyToZoom);
-
+    flyToTargetPoint(feature.geometry.coordinates);
     var syncOptions = {noInitialSync : true}
     before.sync(after, syncOptions);
     after.sync(before, syncOptions);
 }
-
+function flyToTargetPoint(coordinates) {
+    var flyToZoom = 16;
+    var latLng = {'lat' : coordinates[1], 'lng' : coordinates[0]}
+    var projection = before.project(latLng, flyToZoom);
+    var targetPoint;
+    if(isSmallWidth()) {
+        var mapHeight = $('#map-base').height();
+        targetPoint = projection.subtract([0, -mapHeight / 4]);
+    } else {
+        var mapWidth = $('#map-base').width();
+        targetPoint = projection.subtract([mapWidth / 4, 0]);
+    }
+    var targetLatLng = before.unproject(targetPoint, flyToZoom);
+    $('.leaflet-control-container').hide();
+    before.flyTo(targetLatLng, flyToZoom);
+    after.flyTo(targetLatLng, flyToZoom);
+}
 function refreshContentPanel(properties) {
     $('#content-title-1942').text(properties.title);
     $('#content-title-2015').text(properties.title);
@@ -125,4 +133,8 @@ function hideContent(){
         $('#map-clip').animate({'left': docW + 'px'}, 'slow')
         $('#map-clip-inner').animate({'left': (-docW+1) +'px' }, 'slow')
     })
+    $('.leaflet-control-container').show();
+}
+function isSmallWidth() {
+    return $('body').width() < 1050
 }
