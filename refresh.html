@@ -37,7 +37,17 @@
 </head>
 <body>
 
-<div id="container">
+<div id="container" class="show-intro">
+    <div id="intro">
+        <h1>Харьков</h1>
+        <p>в 1942 и сегодня</p>
+        <a href="javascript:;" id="button-explore">
+            <i class="icon-map"></i> Исследовать
+        </a>
+        <a href="javascript:;" id="button-start">
+            Пройти тур <i class="icon-tour"></i>
+        </a>
+    </div>
     <div id="map-base"></div>
     <div class="cd-panel from-left before">
         <header class="cd-panel-header">
@@ -202,9 +212,16 @@
     applySmallStyle();
 
     window.onresize = function(event) {
-        console.log('resize');
         applySmallStyle();
     };
+
+    $('#button-explore').on('click', function(e){
+        $('#container').removeClass('show-intro');
+    });
+    $('#button-start').on('click', function(e){
+        $('#container').removeClass('show-intro');
+        markerClickListener(geoJson[0], false);
+    });
 </script>
 </body>
 </html>

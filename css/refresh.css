@@ -303,3 +303,56 @@ html, body, #map-base, map-clip {
     width: 30px;
     height: 30px;
 }
+.show-intro #intro {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    text-align: center;
+    padding: 20vh 0 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+.show-intro #button-explore, .show-intro #button-start {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 3.5vh;
+    padding: .3em .8em .2em;
+    background-color: #c00;
+    color: #fff;
+    text-decoration: none;
+    -webkit-transition: background-color,box-shadow 200ms ease-out;
+    -moz-transition: background-color,box-shadow 200ms ease-out;
+    -o-transition: background-color,box-shadow 200ms ease-out;
+    transition: background-color,box-shadow 200ms ease-out;
+    font-weight: 300;
+    margin-top: .7em;
+    margin-left: .5em;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+    text-shadow: 0 0 30px rgba(0,0,0,.5);
+}
+#intro h1 {
+    font-size: 20vh;
+    text-shadow: 0 0 4vh #000;
+    color: #fff;
+}
+#intro p {
+    font-size: 8.5vh;
+    text-shadow: 0 0 1.6vh #000;
+    color: #eee;
+}
+#intro h1, #intro p {
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+}
