@@ -365,3 +365,6 @@ html, body, #map-base, map-clip {
         font-size: 2.5em;
     }
 }
+.leaflet-control-container {
+    display : none
+}

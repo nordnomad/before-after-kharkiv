@@ -36,7 +36,7 @@ function flyToTargetPoint(coordinates) {
         targetPoint = projection.subtract([mapWidth / 4, 0]);
     }
     var targetLatLng = before.unproject(targetPoint, flyToZoom);
-    $('.leaflet-control-container').hide();
+    hideMapControls();
     before.flyTo(targetLatLng, flyToZoom);
     after.flyTo(targetLatLng, flyToZoom);
 }
@@ -137,4 +137,10 @@ function hideContent(){
 }
 function isSmallWidth() {
     return $('body').width() < 1050
+}
+function hideMapControls() {
+    $('.leaflet-control-container').hide();
+}
+function showMapControls() {
+    $('.leaflet-control-container').show();
 }
