@@ -221,6 +221,7 @@
     });
     $('#button-start').on('click', function(e){
         $('#container').removeClass('show-intro');
+        markerClickListener(geoJson[0], false);
         showMapControls();
     });
 </script>
