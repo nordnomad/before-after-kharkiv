@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('https://i.icomoon.io/public/temp/3afb1698a0/before-after-kharkiv/icomoon.eot?qlbwws');
-  src:  url('https://i.icomoon.io/public/temp/3afb1698a0/before-after-kharkiv/icomoon.eot?qlbwws#iefix') format('embedded-opentype'),
-    url('https://i.icomoon.io/public/temp/3afb1698a0/before-after-kharkiv/icomoon.ttf?qlbwws') format('truetype'),
-    url('https://i.icomoon.io/public/temp/3afb1698a0/before-after-kharkiv/icomoon.woff?qlbwws') format('woff'),
-    url('https://i.icomoon.io/public/temp/3afb1698a0/before-after-kharkiv/icomoon.svg?qlbwws#icomoon') format('svg');
+  src:  url('font/icomoon.eot?qlbwws');
+  src:  url('font/icomoon.eot?qlbwws#iefix') format('embedded-opentype'),
+    url('font/icomoon.ttf?qlbwws') format('truetype'),
+    url('font/icomoon.woff?qlbwws') format('woff'),
+    url('font/icomoon.svg?qlbwws#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
