@@ -10,3 +10,4 @@ Plugins
  - tried but used own implementation - fullscreen control https://github.com/brunob/leaflet.fullscreen 
  - social buttons https://github.com/makinacorpus/Leaflet.Social
  - tour icon - https://www.flaticon.com/free-icon/destination_854983
+ - generated font icons - https://i.icomoon.io/public/reference.html#/temp/3afb1698a0/before-after-kharkiv/
