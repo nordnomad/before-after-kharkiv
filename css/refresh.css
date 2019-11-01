@@ -4,9 +4,10 @@ body {
     width: 100%;
     height: 100%
 }
-html, body, #map-base, map-clip {
+html, body, #map-base {
 	height: 100%;
 	width: 100vw;
+	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif
 }
 #container {
     display: block;
