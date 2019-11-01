@@ -23,7 +23,7 @@
     <script type="text/javascript" src="js/L.Map.Sync.js"></script>
 <!--    TODO change to own font-->
     <link href="https://data.tagesspiegel.de/fonts/icomoon/standard.css" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/3afb1698a0/before-after-kharkiv/style.css">
     <link rel="stylesheet" href="css/L.Icon.Pulse.css" type='text/css'/>
     <script src="js/L.Icon.Pulse.js"></script>
 
@@ -136,7 +136,7 @@
 
     var locateOptions = {
 		position: 'bottomright',
-		icon : 'fa fa-location-arrow',
+		icon : 'icon-location-arrow',
 		drawCircle : false,
 		drawMarker : false,
 		strings: {
@@ -158,6 +158,7 @@
         options: { position: 'bottomright' },
         onAdd: function (map) {
             var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control fullscreen-icon ');
+            L.DomUtil.create('a', 'icon-fullscreen', container);
             container.onclick = function(event){
                 var element = document.body;
                 if (event instanceof HTMLElement) {
@@ -177,8 +178,9 @@
     var TourControl = L.Control.extend({
         options: { position: 'bottomright' },
         onAdd: function (map) {
-            var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control tour-icon');
-            container.onclick = function(event){
+            var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+            L.DomUtil.create('a', 'icon-map-signs', container);
+            container.onclick = function(event) {
                 markerClickListener(geoJson[0], false);
             }
             return container;
