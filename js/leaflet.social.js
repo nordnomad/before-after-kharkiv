@@ -28,7 +28,7 @@ L.Control.Social = L.Control.extend({
       var link = L.DomUtil.create('a', 'leaflet-social-control-'+infos[0], this._container);
       link.href = infos[2];
       link.title = infos[1];
-      var span = L.DomUtil.create('span', 'fa fa-'+infos[0], link);
+      var span = L.DomUtil.create('span', 'icon-'+infos[0], link);
 
       L.DomEvent
       .addListener(link, 'click', L.DomEvent.stopPropagation)

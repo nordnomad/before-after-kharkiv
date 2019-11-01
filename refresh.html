@@ -21,19 +21,16 @@
     <script type="text/javascript" src="js/before-after.js"></script>
 
     <script type="text/javascript" src="js/L.Map.Sync.js"></script>
-<!--    TODO change to own font-->
-    <link href="https://data.tagesspiegel.de/fonts/icomoon/standard.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/3afb1698a0/before-after-kharkiv/style.css">
+
+    <link rel="stylesheet" href="css/icomoon-style.css">
     <link rel="stylesheet" href="css/L.Icon.Pulse.css" type='text/css'/>
     <script src="js/L.Icon.Pulse.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.68.0/dist/L.Control.Locate.min.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.68.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/L.Control.Locate.css" />
+    <script type="text/javascript" src="js/L.Control.Locate.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/leaflet.social.css"/>
-    <script type='text/javascript' src="js/leaflet.social.js"></script>
+    <script type="text/javascript" src="js/leaflet.social.js"></script>
 </head>
 <body>
 
@@ -42,10 +39,10 @@
         <h1>Харьков</h1>
         <p>в 1942 и сегодня</p>
         <a href="javascript:;" id="button-explore">
-            <i class="icon-map"></i> Исследовать
+            <i class="icon-map2"></i> Исследовать
         </a>
         <a href="javascript:;" id="button-start">
-            Пройти тур <i class="icon-tour"></i>
+            Пройти тур <i class="icon-map-signs"></i>
         </a>
     </div>
     <div id="map-base"></div>
@@ -66,13 +63,13 @@
                 <div class="nav">
                     <div class="col2 col2left">
                         <a href="javascript:;" id="goto-back" class="goto goto-red">
-                            <i class="icon-left"></i> Назад
+                            <i class="icon-arrow-left2"></i> Назад
                         </a>
                     </div>
                     <div class="col2 col2right">
                         <a href="javascript:;" id="goto-2015" class="goto goto-red">
                             2015
-                            <i class="icon-right"></i>
+                            <i class="icon-arrow-right2"></i>
                         </a>
                     </div>
                 </div>
@@ -94,14 +91,14 @@
                     <div class="nav">
                         <div class="col2 col2left">
                             <a href="javascript:;" id="goto-1942" class="goto goto-red">
-                                <i class="icon-left"></i>
+                                <i class="icon-arrow-left2"></i>
                                 1942
                             </a>
                         </div>
                         <div class="col2 col2right">
                             <a href="javascript:;" id="goto-next" class="goto goto-red">
                                 Вперед
-                                <i class="icon-right"></i>
+                                <i class="icon-arrow-right2"></i>
                             </a>
                         </div>
                     </div>
@@ -113,8 +110,8 @@
         </div>
     </div>
     <div id="control-slider">
-        <i class="icon-left"></i>
-        <i class="icon-right"></i>
+        <i class="icon-arrow-left2"></i>
+        <i class="icon-arrow-right2"></i>
     </div>
 </div>
 <script>
