@@ -114,89 +114,88 @@
     </div>
 </div>
 <script>
-    var center = [50.005720, 36.229192];
-    var zoom = 16;
-    var attributes = {
-        attributionControl: false,
-        inertia: true,
-        maxZoom:16,
-        minZoom:13,
-        tileSize: 256,
-        zoomControl:false
+    function buildMap(id) {
+        var southWest = L.latLng(49.901689, 36.461400),
+            northEast = L.latLng(50.115857,  36.019992),
+            bounds = L.latLngBounds(southWest, northEast);
+
+        var options = {
+            attributionControl: false,
+            inertia: true,
+            maxZoom:16,
+            minZoom:13,
+            zoom: 16,
+            tileSize: 256,
+            zoomControl:false,
+            center: {
+                lat: 50.005720,
+                lng: 36.229192
+            },
+            maxBounds: bounds
+        };
+        var map = L.map(id, options);
+        new L.Control.Zoom({ position: 'bottomright' }).addTo(map)
+
+        var locateOptions = {
+            position: 'bottomright',
+            icon : 'icon-location-arrow',
+            iconLoading : 'spinner icon-spinner',
+            drawCircle : false,
+            drawMarker : false,
+            strings: {
+                title: "Показать мое местоположение"
+            },
+            onLocationOutsideMapBounds : function(e) {
+                console.log('You are out of bounds!');
+                console.log(e)
+            }
+        }
+        L.control.locate(locateOptions).addTo(map);
+
+        var FullScreenControl = L.Control.extend({
+            options: { position: 'bottomright' },
+            onAdd: function (map) {
+                var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control fullscreen-icon ');
+                L.DomUtil.create('a', 'icon-fullscreen', container);
+                container.onclick = function(event){
+                    var element = document.body;
+                    if (event instanceof HTMLElement) {
+                        element = event;
+                    }
+                    var isFullscreen = document.webkitIsFullScreen || document.mozFullScreen || false;
+                    element.requestFullScreen = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || function () { return false; };
+                    document.cancelFullScreen = document.cancelFullScreen || document.webkitCancelFullScreen || document.mozCancelFullScreen || function () { return false; };
+                    isFullscreen ? document.cancelFullScreen() : element.requestFullScreen();
+                }
+                return container;
+            }
+        });
+        map.addControl(new FullScreenControl());
+
+        var TourControl = L.Control.extend({
+            options: { position: 'bottomright' },
+            onAdd: function (map) {
+                var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+                L.DomUtil.create('a', 'icon-map-signs', container);
+                container.onclick = function(event) {
+                    markerClickListener(geoJson[0], false);
+                }
+                return container;
+            }
+        });
+        map.addControl(new TourControl());
+
+        var options = {default_text: "Guess where I am", position: 'bottomright'};
+        L.control.social(options).addTo(map);
+
+        return map;
     }
-    var before = L.map('map-base', attributes).setView(center, zoom);
-	var after = L.map('map-overlay', attributes).setView(center, zoom);
 
-    new L.Control.Zoom({ position: 'bottomright' }).addTo(after);
-    new L.Control.Zoom({ position: 'bottomright' }).addTo(before);
-
-    var locateOptions = {
-		position: 'bottomright',
-		icon : 'icon-location-arrow',
-		iconLoading : 'spinner icon-spinner',
-		drawCircle : false,
-		drawMarker : false,
-		strings: {
-			title: "Show me where I am, yo!"
-		},
-		onLocationOutsideMapBounds : function(e) {
-		    console.log('You are out of bounds!');
-		    console.log(e)
-		}
-	}
-
-    L.control.locate(locateOptions).addTo(after);
-    L.control.locate(locateOptions).addTo(before);
+	var before = buildMap('map-base');
+	var after = buildMap('map-overlay');
 
 	L.tileLayer('https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg').addTo(before);
 	L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q').addTo(after);
-
-	var southWest = L.latLng(49.901689, 36.461400),
-        northEast = L.latLng(50.115857,  36.019992),
-        bounds = L.latLngBounds(southWest, northEast);
-
-	before.setMaxBounds(bounds);
-	after.setMaxBounds(bounds);
-
-    var FullScreenControl = L.Control.extend({
-        options: { position: 'bottomright' },
-        onAdd: function (map) {
-            var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control fullscreen-icon ');
-            L.DomUtil.create('a', 'icon-fullscreen', container);
-            container.onclick = function(event){
-                var element = document.body;
-                if (event instanceof HTMLElement) {
-                    element = event;
-                }
-                var isFullscreen = document.webkitIsFullScreen || document.mozFullScreen || false;
-                element.requestFullScreen = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || function () { return false; };
-                document.cancelFullScreen = document.cancelFullScreen || document.webkitCancelFullScreen || document.mozCancelFullScreen || function () { return false; };
-                isFullscreen ? document.cancelFullScreen() : element.requestFullScreen();
-            }
-            return container;
-        }
-    });
-    after.addControl(new FullScreenControl());
-    before.addControl(new FullScreenControl());
-
-    var TourControl = L.Control.extend({
-        options: { position: 'bottomright' },
-        onAdd: function (map) {
-            var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-            L.DomUtil.create('a', 'icon-map-signs', container);
-            container.onclick = function(event) {
-                markerClickListener(geoJson[0], false);
-            }
-            return container;
-        }
-    });
-
-    after.addControl(new TourControl());
-    before.addControl(new TourControl());
-
-    var options = {default_text: "Guess where I am", position: 'bottomright'};
-    L.control.social(options).addTo(after);
-    L.control.social(options).addTo(before);
 
     $('#container').beforeAfter();
 
