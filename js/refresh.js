@@ -28,11 +28,12 @@ function flyToTargetPoint(coordinates) {
     var latLng = {'lat' : coordinates[1], 'lng' : coordinates[0]}
     var projection = before.project(latLng, flyToZoom);
     var targetPoint;
+    var mapBase = document.querySelector('#map-base')
     if(isSmallWidth()) {
-        var mapHeight = $('#map-base').height();
+        var mapHeight = mapBase.offsetHeight;
         targetPoint = projection.subtract([0, -mapHeight / 4]);
     } else {
-        var mapWidth = $('#map-base').width();
+        var mapWidth = mapBase.offsetWidth;
         targetPoint = projection.subtract([mapWidth / 4, 0]);
     }
     var targetLatLng = before.unproject(targetPoint, flyToZoom);
@@ -41,10 +42,10 @@ function flyToTargetPoint(coordinates) {
     after.flyTo(targetLatLng, flyToZoom);
 }
 function refreshContentPanel(properties) {
-    $('#content-title-1942').text(properties.title);
-    $('#content-title-2015').text(properties.title);
-    $('#content-description-1942').text(properties.desc1942);
-    $('#content-description-2015').text(properties.desc2015)
+    document.querySelector('#content-title-1942').innerHTML = properties.title;
+    document.querySelector('#content-title-2015').innerHTML = properties.title;
+    document.querySelector('#content-description-1942').innerHTML = properties.desc1942;
+    document.querySelector('#content-description-2015').innerHTML = properties.desc2015;
 }
 function initContentPanel() {
     $('#goto-1942').on('click', function(e) {
@@ -57,7 +58,7 @@ function initContentPanel() {
         hideContent()
     });
     $('#goto-next').on('click', function(e) {
-        var title = $('#content-title-1942').text();
+        var title = document.querySelector('#content-title-1942').innerHTML;
         var index = -1;
         for(var i=0; i < geoJson.length; i++){
             if (geoJson[i].properties.title == title) {
@@ -69,7 +70,7 @@ function initContentPanel() {
         markerClickListener(geoJson[index], false);
     });
     $('#goto-back').on('click', function(e) {
-        var title = $('#content-title-1942').text();
+        var title = document.querySelector('#content-title-1942').innerHTML;
         var index = -1;
         for(var i=0; i < geoJson.length; i++){
             if (geoJson[i].properties.title == title) {

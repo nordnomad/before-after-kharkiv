@@ -114,7 +114,7 @@
     </div>
 </div>
 <script>
-    function buildMap(id) {
+    function buildMap(id, layer) {
         var southWest = L.latLng(49.901689, 36.461400),
             northEast = L.latLng(50.115857,  36.019992),
             bounds = L.latLngBounds(southWest, northEast);
@@ -122,8 +122,8 @@
         var options = {
             attributionControl: false,
             inertia: true,
-            maxZoom:16,
-            minZoom:13,
+            maxZoom: 16,
+            minZoom: 13,
             zoom: 16,
             tileSize: 256,
             zoomControl:false,
@@ -188,14 +188,25 @@
         var options = {default_text: "Guess where I am", position: 'bottomright'};
         L.control.social(options).addTo(map);
 
+        var layer = L.tileLayer(layer, {detectRetina : true});
+        layer.on('tileerror', function(error, tile) {
+            console.log(error);
+            if(error.coords.x == 39364) {
+                console.log(true);
+            }
+            console.log(tile);
+        });
+
+        layer.addTo(map);
+
         return map;
     }
 
-	var before = buildMap('map-base');
-	var after = buildMap('map-overlay');
+	var before = buildMap('map-base', 'https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg');
+	var after = buildMap('map-overlay', 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q');
 
-	L.tileLayer('https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg').addTo(before);
-	L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q').addTo(after);
+    var container = document.querySelector('#container');
+    var containerClasses = container.classList;
 
     $('#container').beforeAfter();
 
@@ -208,9 +219,9 @@
 
     function applySmallStyle() {
         if(isSmallWidth()) {
-            $('#container').addClass('small');
+            containerClasses.add('small');
         } else {
-            $('#container').removeClass('small');
+            containerClasses.remove('small');
         }
     }
 
@@ -220,15 +231,14 @@
         applySmallStyle();
     };
 
-    $('#button-explore').on('click', function(e){
-        $('#container').removeClass('show-intro');
+    document.querySelector('#button-explore').addEventListener('click', function (event) {
+        containerClasses.remove('show-intro');
         showMapControls();
-    });
-    $('#button-start').on('click', function(e){
-        $('#container').removeClass('show-intro');
+    }, false);
+    document.querySelector('#button-start').addEventListener('click', function (event) {
+        containerClasses.remove('show-intro');
         markerClickListener(geoJson[0], false);
-        showMapControls();
-    });
+    }, false);
 </script>
 </body>
 </html>
