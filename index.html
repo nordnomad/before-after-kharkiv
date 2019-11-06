@@ -57,6 +57,9 @@
             <div class="content-wrapper">
                 <h2 id="content-title-1942"></h2>
                 <div class="content-text">
+                    <img src="images/railway_station_old.jpg" width="600px">
+                </div>
+                <div class="content-text">
                     <p id="content-description-1942"></p>
                 </div>
                 <div class="nav">
@@ -84,6 +87,9 @@
             <div class="content" id="content-2015">
                 <div class="content-wrapper">
                     <h2 id="content-title-2015"></h2>
+                    <div class="content-text">
+                        <img src="images/railway_station_new.jpg" width="600px">
+                    </div>
                     <div class="content-text">
                         <p id="content-description-2015"></p>
                     </div>
@@ -122,7 +128,7 @@
         var options = {
             attributionControl: false,
             inertia: true,
-            maxZoom: 16,
+            maxZoom: 17,
             minZoom: 13,
             zoom: 16,
             tileSize: 256,
@@ -188,7 +194,7 @@
         var options = {default_text: "Guess where I am", position: 'bottomright'};
         L.control.social(options).addTo(map);
 
-        var layer = L.tileLayer(layer, {detectRetina : true});
+        var layer = L.tileLayer(layer, {detectRetina : false});
         layer.on('tileerror', function(error, tile) {
             console.log(error);
             if(error.coords.x == 39364) {

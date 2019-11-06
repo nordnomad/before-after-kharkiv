@@ -156,7 +156,7 @@ html, body, #map-base {
 }
 .content-wrapper {
     position: relative;
-    margin: 8vh auto 0;
+    margin: 3vh auto 0;
     height: 84vh;
     width: 90%;
     max-width: 600px;
@@ -191,18 +191,18 @@ html, body, #map-base {
     padding: 0;
     line-height: 1.4em;
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 .small .content p,.small .content .nav {
     font-size: 1em
 }
 .content .nav {
-    display: block;
+   /* display: block;
     position: absolute;
     bottom: 40px;
     left: 20px;
-    right: 20px;
+    right: 20px;*/
 }
 .small .content .nav {
 }
