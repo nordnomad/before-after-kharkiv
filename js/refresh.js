@@ -113,13 +113,13 @@ function left() {
 }
 
 function right() {
-    var docW = $(window).width();
+    var docW = document.body.clientWidth;
     $('#control-slider').animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
     $('#map-clip').animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()} )
     $('#map-clip-inner').animate({'left': (-docW+1) +'px' }, 'slow', 'linear', function(){showContent()})
 }
 function center() {
-    var docW = $(window).width()/2;
+    var docW = document.body.clientWidth / 2;
     $('#control-slider').animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
     $('#map-clip').animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()} )
     $('#map-clip-inner').animate({'left': (-docW+1) +'px' }, 'slow', 'linear', function(){showContent()})
@@ -129,7 +129,7 @@ function showContent(){
 }
 function hideContent(){
     $('.content').fadeOut('slow', function() {
-        var docW = $(window).width()/2;
+        var docW = document.body.clientWidth / 2;
         $('#control-slider').animate({'left': docW + 'px'}, 'slow')
         $('#map-clip').animate({'left': docW + 'px'}, 'slow')
         $('#map-clip-inner').animate({'left': (-docW+1) +'px' }, 'slow')
@@ -137,7 +137,7 @@ function hideContent(){
     $('.leaflet-control-container').show();
 }
 function isSmallWidth() {
-    return $('body').width() < 1050
+    return document.body.clientWidth  < 1050
 }
 function hideMapControls() {
     $('.leaflet-control-container').hide();

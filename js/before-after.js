@@ -41,10 +41,9 @@
         var widthValue = (leftValue + dragWidth/2 - containerOffset);
 
         // Set the new values for the slider and the handle.
-        $('.ba-draggable').css('left', widthValue +'px');
-        $('.ba-resizable').css('left', widthValue +'px');
-        $('.ba-resizable #map-clip-inner').css('left', (-widthValue+1) +'px');
-      // Bind mouseup events to stomp dragging.
+        document.querySelector('.ba-draggable').style.left = widthValue +'px';
+        document.querySelector('.ba-resizable').style.left = widthValue +'px';
+        document.querySelector('.ba-resizable #map-clip-inner').style.left = (-widthValue+1) +'px';
       }).on('mouseup.ba-events touchend.ba-events touchcancel.ba-events', function(){
         dragElement.removeClass('ba-draggable');
         resizeElement.removeClass('ba-resizable');
