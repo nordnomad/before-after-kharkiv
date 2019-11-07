@@ -223,7 +223,7 @@ html, body, #map-base {
 .content .nav .goto {
     display: inline-block;
     border-radius: 20px;
-    padding: 5px 15px 2px;
+    padding: 5px 15px 5px;
     text-decoration: none;
     -webkit-transition: background-color,box-shadow 200ms ease-out;
     -moz-transition: background-color,box-shadow 200ms ease-out;
@@ -353,4 +353,13 @@ html, body, #map-base {
 }
 .leaflet-control-container {
     display : none
+}
+img {
+    max-width: 100%
+}
+#content-description-2015, #content-description-1942 {
+    text-align: justify
+}
+.leaflet-marker-icon {
+    border-radius: 100%
 }

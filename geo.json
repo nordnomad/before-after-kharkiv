@@ -17,9 +17,9 @@
   {
     "type": "Feature",
     "properties": {
-      "title": "Railway Station",
-      "desc1942": "So sah der Platz aus, als Alfred Döblin seinen Roman „Berlin Alexanderplatz“ schrieb: verglichen mit heute von bescheideneren Ausmaßen, weitaus enger bebaut. Von Nordwesten schob sich der dunkle Riegel des Kaufhauses Tietz hinein, von Südosten der des Polizeipräsidiums. Dazwischen lag eine der legendären Aschinger-Gaststätten. Zwischen dem Bahnhofsgebäude und dem Kaufhaus entstand wenig später das Berolinahaus von Peter Behrens.",
-      "desc2015": "Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher kleinteiligen Platz ein."
+      "title": "Южный вокзал",
+      "desc1942": "Первое здание вокзала построили в 1870 году на рубеже 20го века его капитально перестроили, старое здание стало правым крылом вокзального комплекса. Главные отличия устройства вокзала это тупиковые платформы южного прибытия и выход к путям берегового причаливания через конкорс над платформами, как в Киеве. Площадь тоже менялась не раз, на фото конец 20х годов, трамвай разворачивался у самого здания вокзала, а круг был покрыт разрисованым газоном. На карте видно что к началу войны газон и трамвайный круг сократили вдвое, на освободившемся месте оборудовали оставновки и стоянки для машин и автобусов. Здания формирующие облик площади - управление ЮЖД и главпочтамп уже были построены",
+      "desc2015": "Новый вокзал построили к 1952му году, а в 1982 его расширили на юг. Построена 16тиэтажная гостиница Экспрес на 54 номера. Круг трамвая был перенесен с площади за управление ЮЖД, а саму площадь облагородили фонтанами газонами и сделали полностью пешеходной. http://nikolsky.balakliets.kharkov.ua/?p=3372"
     },
     "geometry": {
       "type": "Point",

@@ -1,5 +1,5 @@
 function initializeMarker(latLng) {
-    var pulsingIcon = L.icon.pulse({iconSize:[10,10],color:'#C00', animate:true, heatbeat:1});
+    var pulsingIcon = L.icon.pulse({iconSize:[10,10],color:'#c00', fillColor:'#c00', animate:false, heatbeat:1});
     var marker = L.marker(latLng, {icon: pulsingIcon});
     marker.on('mouseover', function(e) {
         this._icon.className = this._icon.className.replace("leaflet-not-pulsing-icon", "leaflet-pulsing-icon");
