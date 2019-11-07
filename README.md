@@ -14,3 +14,4 @@ Plugins
  - tour icon - https://www.flaticon.com/free-icon/destination_854983
  - generated font icons - https://i.icomoon.io/public/reference.html#/temp/3afb1698a0/before-after-kharkiv/
  - to share current map location - https://github.com/CliffCloud/Leaflet.LocationShare
+ - pulsing icons - https://github.com/mapshakers/leaflet-icon-pulse

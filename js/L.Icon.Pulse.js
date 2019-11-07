@@ -5,6 +5,7 @@
         options: {
             className: '',
             iconSize: [12,12],
+            fillColor: 'red',
             color: 'red',
             animate: true,
             heartbeat: 1,
@@ -14,10 +15,10 @@
             L.setOptions(this,options);
 
             // css
-            
+
             var uniqueClassName = 'lpi-'+ new Date().getTime()+'-'+Math.round(Math.random()*100000);
 
-            var before = ['background-color: '+this.options.color];
+            var before = ['background-color: '+this.options.fillColor];
             var after = [
 
                 'box-shadow: 0 0 6px 2px '+this.options.color,
@@ -25,17 +26,20 @@
                 'animation: pulsate ' + this.options.heartbeat + 's ease-out',
                 'animation-iteration-count: infinite',
                 'animation-delay: '+ (this.options.heartbeat + .1) + 's',
+                'position:absolute',
+                'left:0',
             ];
 
             if (!this.options.animate){
                 after.push('animation: none');
+                after.push('box-shadow:none');
             }
 
             var css = [
                 '.'+uniqueClassName+'{'+before.join(';')+';}',
                 '.'+uniqueClassName+':after{'+after.join(';')+';}',
             ].join('');
- 
+
             var el = document.createElement('style');
             if (el.styleSheet){
                 el.styleSheet.cssText = css;
@@ -47,7 +51,7 @@
 
             // apply css class
 
-            this.options.className = this.options.className+' leaflet-not-pulsing-icon '+uniqueClassName;
+            this.options.className = this.options.className+' leaflet-pulsing-icon '+uniqueClassName;
 
             // initialize icon
             
