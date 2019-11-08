@@ -36,7 +36,6 @@ html, body, #map-base {
     z-index: 3;
     overflow: hidden!important;
     border-left: 1px solid #c00;
-    pointer-events: none;
 }
 #map-clip-inner {
     display: block;
@@ -170,7 +169,7 @@ html, body, #map-base {
     height: 100%;
     max-width: none;
     max-height: none;
-    padding: 20px 20px 40px
+    padding: 15px 20px 40px
 }
 .content h2 {
     color: #fff;
@@ -188,7 +187,6 @@ html, body, #map-base {
 }
 .content p, .content .nav {
     color: #fff;
-    margin: 20px 0 0;
     padding: 0;
     line-height: 1.4em;
     font-weight: 300;
@@ -272,7 +270,6 @@ html, body, #map-base {
     display: block;
     position: relative;
     margin: 0;
-    padding-bottom: 25px;
     overflow-x: hidden;
     overflow-y: auto
 }
