@@ -215,6 +215,19 @@ html, body, #map-base {
 .col2right {
     text-align: right;
 }
+.col3left {
+    text-align: left;
+}
+.col3 {
+    width: 33%;
+    float: left;
+}
+.col3right {
+    text-align: right;
+}
+.col3center {
+    text-align: none;
+}
 .content .nav .goto-red {
     background-color: #c00;
     color: #fff;
@@ -353,7 +366,11 @@ html, body, #map-base {
     display : none
 }
 img {
-    max-width: 100%
+    max-width: 100%;
+    max-height: 97%;
+}
+.content-image {
+    text-align: center;
 }
 #content-description-2015, #content-description-1942 {
     text-align: justify

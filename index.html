@@ -30,6 +30,7 @@
     <script type="text/javascript" src="js/L.Control.Locate.js"></script>
 
     <script type="text/javascript" src="js/leaflet.social.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 </head>
 <body>
 
@@ -56,19 +57,26 @@
         <div class="content" id="content-1928">
             <div class="content-wrapper">
                 <h2 id="content-title-1942"></h2>
-                <div class="content-image">
+                <div class="flip">
+                <div class="content-image front">
                     <img src="images/railway_station_old.jpg">
                 </div>
-                <div class="content-text">
+                <div class="content-text back">
                     <p id="content-description-1942"></p>
                 </div>
+                </div>
                 <div class="nav">
-                    <div class="col2 col2left">
+                    <div class="col3 col3left">
                         <a href="javascript:;" id="goto-back" class="goto goto-red">
                             <i class="icon-arrow-left2"></i> Назад
                         </a>
                     </div>
-                    <div class="col2 col2right">
+                    <div class="col3 col3center">
+                        <a href="javascript:;" onclick="$('.flip').flip('toggle');" class="goto goto-red">
+                            Читать
+                        </a>
+                    </div>
+                    <div class="col3 col3right">
                         <a href="javascript:;" id="goto-2015" class="goto goto-red">
                             2015
                             <i class="icon-arrow-right2"></i>
@@ -87,11 +95,13 @@
             <div class="content" id="content-2015">
                 <div class="content-wrapper">
                     <h2 id="content-title-2015"></h2>
-                    <div class="content-image">
-                        <img src="images/railway_station_new.jpg">
-                    </div>
-                    <div class="content-text">
-                        <p id="content-description-2015"></p>
+                    <div class="flip">
+                        <div class="content-image front">
+                            <img src="images/railway_station_new.jpg">
+                        </div>
+                        <div class="content-text back">
+                            <p id="content-description-2015"></p>
+                        </div>
                     </div>
                     <div class="nav">
                         <div class="col2 col2left">
@@ -245,6 +255,19 @@
         containerClasses.remove('show-intro');
         markerClickListener(geoJson[0], false);
     }, false);
+
+    $(".flip").flip({
+      trigger: 'manual'
+    });
+    $(".flip").on('flip:done',function(e){
+        console.log(e);
+        var model = $(".flip").data("flip-model");
+        if(model.isFlipped) {
+            $('.content-image').hide();
+        } else {
+            $('.content-image').show();
+        }
+    });
 </script>
 </body>
 </html>
