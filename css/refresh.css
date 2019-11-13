@@ -378,3 +378,6 @@ img {
 .leaflet-marker-icon {
     border-radius: 100%
 }
+.leaflet-control a {
+  font-size: 14px;
+}
