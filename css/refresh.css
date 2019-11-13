@@ -378,6 +378,6 @@ img {
 .leaflet-marker-icon {
     border-radius: 100%
 }
-.leaflet-control a {
+.leaflet-control a, .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out {
   font-size: 14px;
 }

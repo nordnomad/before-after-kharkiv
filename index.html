@@ -153,7 +153,7 @@
             maxBounds: bounds
         };
         var map = L.map(id, options);
-        new L.Control.Zoom({ position: 'bottomright' }).addTo(map)
+        new L.Control.Zoom({ position: 'bottomright' , zoomInText: '', zoomOutText: ''}).addTo(map)
 
         var locateOptions = {
             position: 'bottomright',
@@ -279,6 +279,9 @@
             $('.content-image').show();
         }
     });
+
+    $('.leaflet-control-zoom-in').addClass('icon-plus');
+    $('.leaflet-control-zoom-out').addClass('icon-minus');
 </script>
 </body>
 </html>
