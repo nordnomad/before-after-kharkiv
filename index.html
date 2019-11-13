@@ -204,6 +204,19 @@
         });
         map.addControl(new TourControl());
 
+        var InfoControl = L.Control.extend({
+            options: { position: 'bottomright' },
+            onAdd: function (map) {
+                var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+                L.DomUtil.create('a', 'icon-question', container);
+                container.onclick = function(event) {
+                    console.log('InfoControl')
+                }
+                return container;
+            }
+        });
+        map.addControl(new InfoControl());
+
         var options = {default_text: "Как изменился Харьков с 1942го до сегодня", position: 'bottomright'};
         L.control.social(options).addTo(map);
 
