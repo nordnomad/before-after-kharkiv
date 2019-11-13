@@ -17,3 +17,4 @@ Plugins
  - generated font icons - https://i.icomoon.io/public/reference.html#/temp/3afb1698a0/before-after-kharkiv/
  - to share current map location - https://github.com/CliffCloud/Leaflet.LocationShare
  - pulsing icons - https://github.com/mapshakers/leaflet-icon-pulse
+ - replaces 404 Tiles by scaled lower zoom Tiles - https://github.com/ghybs/Leaflet.TileLayer.Fallback

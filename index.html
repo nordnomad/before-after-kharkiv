@@ -13,6 +13,9 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
             integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
             crossorigin=""></script>
+
+    <script src="https://unpkg.com/leaflet.tilelayer.fallback@1.0.4/dist/leaflet.tilelayer.fallback.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/refresh.css"/>
     <script type="text/javascript" src="js/refresh.js"></script>
 
@@ -204,7 +207,7 @@
         var options = {default_text: "Guess where I am", position: 'bottomright'};
         L.control.social(options).addTo(map);
 
-        var layer = L.tileLayer(layer, {detectRetina : false});
+        var layer = L.tileLayer(layer, {detectRetina : true});
         layer.on('tileerror', function(error, tile) {
             console.log(error);
             if(error.coords.x == 39364) {
@@ -218,7 +221,10 @@
         return map;
     }
 
-	var before = buildMap('map-base', 'https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg');
+    var beforeLayerUrl = 'https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg';
+	var before = buildMap('map-base', beforeLayerUrl);
+    L.tileLayer.fallback(beforeLayerUrl, {minNativeZoom: 13}).addTo(before);
+
 	var after = buildMap('map-overlay', 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q');
 
     var container = document.querySelector('#container');
