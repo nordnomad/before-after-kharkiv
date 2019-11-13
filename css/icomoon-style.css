@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?npc22o');
-  src:  url('fonts/icomoon.eot?npc22o#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?npc22o') format('truetype'),
-    url('fonts/icomoon.woff?npc22o') format('woff'),
-    url('fonts/icomoon.svg?npc22o#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?xoklnx');
+  src:  url('fonts/icomoon.eot?xoklnx#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?xoklnx') format('truetype'),
+    url('fonts/icomoon.woff?xoklnx') format('woff'),
+    url('fonts/icomoon.svg?xoklnx#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -43,9 +43,6 @@
 .icon-expand:before {
   content: "\e901";
 }
-.icon-map2:before {
-  content: "\e94c";
-}
 .icon-cross:before {
   content: "\ea0f";
 }
@@ -54,6 +51,12 @@
 }
 .icon-arrow-left2:before {
   content: "\ea40";
+}
+.icon-question:before {
+  content: "\ea09";
+}
+.icon-info:before {
+  content: "\ea0c";
 }
 .icon-facebook:before {
   content: "\e904";
@@ -76,15 +79,6 @@
 .icon-spinner:before {
   content: "\e902";
 }
-@keyframes anim-rotate {
-	0% {
-		transform: rotate(0);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-.spinner {
-    display: inline-block;
-	animation: anim-rotate 1s infinite  steps(8);
+.icon-telegram:before {
+  content: "\e903";
 }

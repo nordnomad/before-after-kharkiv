@@ -42,7 +42,7 @@
         <h1>Харьков</h1>
         <p>в 1942 и сегодня</p>
         <a href="javascript:;" id="button-explore">
-            <i class="icon-map2"></i> Исследовать
+            <i class="icon-map-o"></i> Исследовать
         </a>
         <a href="javascript:;" id="button-start">
             Пройти тур <i class="icon-map-signs"></i>
@@ -204,19 +204,10 @@
         });
         map.addControl(new TourControl());
 
-        var options = {default_text: "Guess where I am", position: 'bottomright'};
+        var options = {default_text: "Как изменился Харьков с 1942го до сегодня", position: 'bottomright'};
         L.control.social(options).addTo(map);
 
-        var layer = L.tileLayer(layer, {detectRetina : true});
-        layer.on('tileerror', function(error, tile) {
-            console.log(error);
-            if(error.coords.x == 39364) {
-                console.log(true);
-            }
-            console.log(tile);
-        });
-
-        layer.addTo(map);
+        L.tileLayer(layer, {detectRetina : true}).addTo(map);
 
         return map;
     }
