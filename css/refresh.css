@@ -169,7 +169,7 @@ html, body, #map-base {
     height: 100%;
     max-width: none;
     max-height: none;
-    padding: 5px 10px 35px
+    padding: 5px 10px 40px
 }
 .content h2 {
     color: #fff;
@@ -275,9 +275,9 @@ html, body, #map-base {
     transition: background-color 200ms ease-out;
 }
 .small .content .goto-explore {
-    top: 5px;
+    top: 8px;
     right: 10px;
-    font-size: .9em
+    font-size: .8em
 }
 .small .content .content-text {
     display: block;
