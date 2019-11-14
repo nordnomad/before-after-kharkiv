@@ -46,6 +46,10 @@ function refreshContentPanel(properties) {
     document.querySelector('#content-title-2015').innerHTML = properties.title;
     document.querySelector('#content-description-1942').innerHTML = properties.desc1942;
     document.querySelector('#content-description-2015').innerHTML = properties.desc2015;
+    document.querySelector('#content-img-1942').src = properties.img1942;
+    document.querySelector('#content-img-2015').src = properties.img2015;
+
+
 }
 function initContentPanel() {
     $('#goto-1942').on('click', function(e) {

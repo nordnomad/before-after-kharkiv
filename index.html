@@ -60,25 +60,26 @@
         <div class="content" id="content-1928">
             <div class="content-wrapper">
                 <h2 id="content-title-1942"></h2>
-                <div class="flip">
+<!--                <div class="flip">-->
                 <div class="content-image front">
-                    <img src="images/railway_station/railway_station_old.jpg">
+<!--                    <img src="images/railway_station/railway_station_old.jpg">-->
+                    <img id="content-img-1942" src="images/vokzal/vokzal_old.png">
                 </div>
                 <div class="content-text back">
                     <p id="content-description-1942"></p>
                 </div>
-                </div>
+<!--                </div>-->
                 <div class="nav">
                     <div class="col3 col3left">
                         <a href="javascript:;" id="goto-back" class="goto goto-red">
                             <i class="icon-arrow-left2"></i> Назад
                         </a>
                     </div>
-                    <div class="col3 col3center">
-                        <a href="javascript:;" onclick="$('.flip').flip('toggle');" class="goto goto-red">
-                            Читать
-                        </a>
-                    </div>
+<!--                    <div class="col3 col3center">-->
+<!--                        <a href="javascript:;" onclick="$('.flip').flip('toggle');" class="goto goto-red">-->
+<!--                            Читать-->
+<!--                        </a>-->
+<!--                    </div>-->
                     <div class="col3 col3right">
                         <a href="javascript:;" id="goto-2015" class="goto goto-red">
                             2015
@@ -100,7 +101,7 @@
                     <h2 id="content-title-2015"></h2>
 <!--                    <div class="flip">-->
                         <div class="content-image">
-                            <img src="images/railway_station/railway_station_new.jpg">
+                            <img id="content-img-2015" src="images/vokzal/vokzal_new2.png">
                         </div>
                         <div class="content-text">
                             <p id="content-description-2015"></p>
@@ -267,18 +268,18 @@
         markerClickListener(geoJson[0], false);
     }, false);
 
-    $(".flip").flip({
-      trigger: 'manual'
-    });
-    $(".flip").on('flip:done',function(e){
-        console.log(e);
-        var model = $(".flip").data("flip-model");
-        if(model.isFlipped) {
-            $('.content-image').hide();
-        } else {
-            $('.content-image').show();
-        }
-    });
+<!--    $(".flip").flip({-->
+<!--      trigger: 'manual'-->
+<!--    });-->
+<!--    $(".flip").on('flip:done',function(e){-->
+<!--        console.log(e);-->
+<!--        var model = $(".flip").data("flip-model");-->
+<!--        if(model.isFlipped) {-->
+<!--            $('.content-image').hide();-->
+<!--        } else {-->
+<!--            $('.content-image').show();-->
+<!--        }-->
+<!--    });-->
 
     $('.leaflet-control-zoom-in').addClass('icon-plus');
     $('.leaflet-control-zoom-out').addClass('icon-minus');
