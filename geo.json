@@ -4,7 +4,9 @@
     "properties": {
       "title": "Constitution Square",
       "desc1942": "So sah der Platz aus, als Alfred Döblin seinen Roman „Berlin Alexanderplatz“ schrieb: verglichen mit heute von bescheideneren Ausmaßen, weitaus enger bebaut. Von Nordwesten schob sich der dunkle Riegel des Kaufhauses Tietz hinein, von Südosten der des Polizeipräsidiums. Dazwischen lag eine der legendären Aschinger-Gaststätten. Zwischen dem Bahnhofsgebäude und dem Kaufhaus entstand wenig später das Berolinahaus von Peter Behrens.",
-      "desc2015": "Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher kleinteiligen Platz ein."
+      "desc2015": "Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher kleinteiligen Platz ein.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
     },
     "geometry": {
       "type": "Point",
@@ -18,8 +20,8 @@
     "type": "Feature",
     "properties": {
       "title": "Южный вокзал",
-      "desc1942": "Первое здание вокзала построили в 1870 году, ав 1901г его расширили и модернизировали. К старому зданию вокзала с южной стороны пристроили новый корпус, а затем перестроили и старое помещение.",
-      "desc2015": "Новый вокзал построили к 1952му году, а в 1982 его расширили на юг. Построена 16тиэтажная гостиница Экспрес на 54 номера. ",
+      "desc1942": "Первое здание вокзала построили в 1870 году, а в 1901г его расширили и модернизировали. К старому зданию вокзала с южной стороны пристроили новый корпус, а затем перестроили и старое помещение.",
+      "desc2015": "Новый вокзал построили к 1952му году, а в 1982 его расширили на юг. Построена 16тиэтажная гостиница Экспрес на 54 номера.",
       "img1942": "images/vokzal/vokzal_old.png",
       "img2015": "images/vokzal/vokzal_new2.png"
     },
@@ -102,15 +104,51 @@
   {
     "type": "Feature",
     "properties": {
-      "title": "Metalist Stadium",
+      "title": "Стадион Металист",
       "desc1942": "So sah der Platz aus, als Alfred Döblin seinen Roman „Berlin Alexanderplatz“ schrieb: verglichen mit heute von bescheideneren Ausmaßen, weitaus enger bebaut. Von Nordwesten schob sich der dunkle Riegel des Kaufhauses Tietz hinein, von Südosten der des Polizeipräsidiums. Dazwischen lag eine der legendären Aschinger-Gaststätten. Zwischen dem Bahnhofsgebäude und dem Kaufhaus entstand wenig später das Berolinahaus von Peter Behrens.",
-      "desc2015": "Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher kleinteiligen Platz ein."
+      "desc2015": "Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher kleinteiligen Platz ein.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
     },
     "geometry": {
       "type": "Point",
       "coordinates": [
         36.2619546,
         49.980829
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "title": "Сад Шевченко",
+      "desc1942": "До революции - Университетский сад, как , был заложен одновременно с созданием Харьковского университета в1804 г. на землях, подаренных новом учебному заведению городом. Раньше эта территория представляла собой естественную дубраву, от которой нам в наследство осталось около 20 великанов-дубов. Университетский сад состоял из двух частей: ботанической (для учебных и научных целей) и общедоступной, которая была спланирована в английском ландшафтном стиле. Сад был окружен высокой каменной оградой с декоративными коваными решетками.",
+      "desc2015": "В послевоенное время, проводилось несколько реконструкций, были построенны ККЗ Украина, фонтан Каскад, фонтан на центральной аллее, здание ХАТОБа. Последняя реконструкция территории сада завершилась в 2019 году.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.233472,
+        50.001232
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "title": "Парк Горького",
+      "desc1942": "Парк был заложен в 1893—1895 гг. , а торжественное открытие было в 1907 году, когда подросли деревья. Загородный Николаевский (изначально он располагался на окраине города), в честь грядущей свадьбы престолонаследника.  Алеи парка предназначались для конных прогулок.",
+      "desc2015": "В 2010 году было принято решение реконструировать парк Горького которая завершилась  23 августа 2012 года. В парке Горького работают более 30 аттракционов от итальянских, немецких, американских производителей. Они рассчитаны на посетителей всех возрастов. Аттракционы работают круглый год.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.246448,
+        50.016350
       ]
     }
   }
