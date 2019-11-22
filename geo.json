@@ -138,6 +138,23 @@
   {
     "type": "Feature",
     "properties": {
+      "title": "ХНАТОБ",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.233195,
+        49.999005
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
       "title": "Парк Горького",
       "desc1942": "Парк был заложен в 1893—1895 гг. , а торжественное открытие было в 1907 году, когда подросли деревья. Загородный Николаевский (изначально он располагался на окраине города), в честь грядущей свадьбы престолонаследника.  Алеи парка предназначались для конных прогулок.",
       "desc2015": "В 2010 году было принято решение реконструировать парк Горького которая завершилась  23 августа 2012 года. В парке Горького работают более 30 аттракционов от итальянских, немецких, американских производителей. Они рассчитаны на посетителей всех возрастов. Аттракционы работают круглый год.",
