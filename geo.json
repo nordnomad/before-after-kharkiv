@@ -2,9 +2,26 @@
   {
     "type": "Feature",
     "properties": {
-      "title": "Constitution Square",
-      "desc1942": "So sah der Platz aus, als Alfred Döblin seinen Roman „Berlin Alexanderplatz“ schrieb: verglichen mit heute von bescheideneren Ausmaßen, weitaus enger bebaut. Von Nordwesten schob sich der dunkle Riegel des Kaufhauses Tietz hinein, von Südosten der des Polizeipräsidiums. Dazwischen lag eine der legendären Aschinger-Gaststätten. Zwischen dem Bahnhofsgebäude und dem Kaufhaus entstand wenig später das Berolinahaus von Peter Behrens.",
-      "desc2015": "Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher kleinteiligen Platz ein.",
+      "title": "Площадь конституции",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.231661,
+        49.992843
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "title": "Гостиница «Гранд-Отель»",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
       "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
       "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
     },
@@ -105,8 +122,8 @@
     "type": "Feature",
     "properties": {
       "title": "Стадион Металист",
-      "desc1942": "So sah der Platz aus, als Alfred Döblin seinen Roman „Berlin Alexanderplatz“ schrieb: verglichen mit heute von bescheideneren Ausmaßen, weitaus enger bebaut. Von Nordwesten schob sich der dunkle Riegel des Kaufhauses Tietz hinein, von Südosten der des Polizeipräsidiums. Dazwischen lag eine der legendären Aschinger-Gaststätten. Zwischen dem Bahnhofsgebäude und dem Kaufhaus entstand wenig später das Berolinahaus von Peter Behrens.",
-      "desc2015": "Der Fernsehturm, der Galeria Kaufhof, das Park-Inn-Hotel, das Berolinahaus und das südöstlich sich anschließende Alexanderhaus werfen lange Schatten über den Platz, mit dem kreisrunden Brunnen der Volkerfreundschaft als Mittelpunkt, um den sich zahlreiche Verkaufsstände gruppieren. Die alte Platzstruktur ist durch die sozialistische Stadtplanung weitgehend aufgelöst worden, breite Straßenschneisen rahmen den zuvor eher kleinteiligen Platz ein.",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
       "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
       "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
     },
@@ -166,6 +183,57 @@
       "coordinates": [
         36.246448,
         50.016350
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "title": "ХОДА",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.236512,
+        50.004298
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "title": "Каразинский университет",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.228175,
+        50.004326
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "title": "Зоологический мост",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.224862,
+        50.004813
       ]
     }
   }
