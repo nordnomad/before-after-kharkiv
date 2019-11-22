@@ -224,16 +224,16 @@
     "type": "Feature",
     "properties": {
       "title": "Зоологический мост",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "desc1942": "До строительства мостика перебраться через Клочковский спуск можно было по двум головоломным лестницам",
+      "desc2015": "Мост был построен до 1953го года, а с конца 2000-х стал популярным у влюблённых, которые вешают на него множество замочков",
+      "img1942": "images/zoologichesky_most/zoologichesky_most_old.jpg",
+      "img2015": "images/zoologichesky_most/zoologichesky_most_new.jpg"
     },
     "geometry": {
       "type": "Point",
       "coordinates": [
-        36.224862,
-        50.004813
+        36.224806,
+        50.004757
       ]
     }
   }
