@@ -3,27 +3,10 @@
     "type": "Feature",
     "properties": {
       "title": "Площадь конституции",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        36.231661,
-        49.992843
-      ]
-    }
-  },
-  {
-    "type": "Feature",
-    "properties": {
-      "title": "Гостиница «Гранд-Отель»",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "desc1942": "В 1814 году харьковское дворянство приняло решение выстроить для своих собраний отдельное здание. В столичное время здесь размещалось республиканское правительство – Всеукраинский Центральный Исполнительный комитет. С переездом столицы в Киев здание бывшего дворянского собрания было передано под Дом пионеров",
+      "desc2015": "Во время бомбежек 1943 года в здание попала авиабомба. После войны местные власти приняли решение снести разрушенное здание и разбить здесь сквер. До начала XXI века на этом месте стоял памятник в честь провозглашения советской власти, в народе называвшийся «Пятеро из ломбарда». В 2011 году его демонтировали, а через год здесь появился памятник «Летящая Украина».",
+      "img1942": "images/konstitutsii/konstitutsii_old.jpg",
+      "img2015": "images/konstitutsii/konstitutsii_new.jpg"
     },
     "geometry": {
       "type": "Point",
