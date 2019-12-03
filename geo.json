@@ -139,10 +139,10 @@
     "type": "Feature",
     "properties": {
       "title": "Стадион Металист",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "desc1942": "В 1925 году о заброшенном пустыре практически в центре города вспомнили руководители Харьковского райкома Союза Металлистов и решили построить на его месте стадион.",
+      "desc2015": "5 декабря 2009 года Металлист был торжественно открыт после грандиозной реконструкции, а совсем недавно на стадионе появился новый, сверхсовременный газон. Стадион принимает матчи высшего уровня, еврокубки и матчи национальных сборных, и по праву считается одним из лучших стадионов страны",
+      "img1942": "images/metalist/metalist_old.jpg",
+      "img2015": "images/metalist/metalist_new.jpg"
     },
     "geometry": {
       "type": "Point",
