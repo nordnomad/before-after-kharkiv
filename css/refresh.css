@@ -142,6 +142,7 @@ html, body, #map-base {
     bottom: 0;
     width: 50%;
     min-width: 300px;
+    max-height: 100%;
     background-color: rgba(0,0,0,.67);
     overflow-x: hidden;
     overflow-y: auto;
@@ -353,7 +354,7 @@ html, body, #map-base {
     padding: 0;
     line-height: 1em;
 }
-@media (max-width: 600px) {
+@media (max-width: 580px) {
     #intro h1 {
         font-size: 5em;
         margin-top: 20px;

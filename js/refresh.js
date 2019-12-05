@@ -141,7 +141,7 @@ function hideContent(){
     $('.leaflet-control-container').show();
 }
 function isSmallWidth() {
-    return document.body.clientWidth  < 600;
+    return document.body.clientWidth  < 580;
 }
 function hideMapControls() {
     $('.leaflet-control-container').hide();

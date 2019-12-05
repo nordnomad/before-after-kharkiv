@@ -226,8 +226,8 @@
       "title": "ХОДА",
       "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
       "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "img1942": "images/hoda/hoda_old.jpg",
+      "img2015": "images/hoda/hoda_new.jpg"
     },
     "geometry": {
       "type": "Point",
@@ -240,11 +240,28 @@
   {
     "type": "Feature",
     "properties": {
+      "title": "Отель Харьков",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "images/kharkiv_otel/kharkiv_otel_old.jpg",
+      "img2015": "images/kharkiv_otel/kharkiv_otel_new.jpg"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.232647,
+        50.005365
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
       "title": "Каразинский университет",
       "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
       "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "img1942": "images/karazina/karazina_old.jpg",
+      "img2015": "images/karazina/karazina_new.jpg"
     },
     "geometry": {
       "type": "Point",
