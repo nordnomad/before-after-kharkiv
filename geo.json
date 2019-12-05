@@ -36,6 +36,40 @@
   {
     "type": "Feature",
     "properties": {
+      "title": "ТЦ Павловский",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.230848,
+        49.987504
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "title": "Магазин мехов",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.233215,
+        49.988206
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
       "title": "Южный вокзал",
       "desc1942": "Первое здание вокзала построили в 1870 году, а в 1901г его расширили и модернизировали. К старому зданию вокзала с южной стороны пристроили новый корпус, а затем перестроили и старое помещение.",
       "desc2015": "Новый вокзал построили к 1952му году, а в 1982 его расширили на юг. Построена 16тиэтажная гостиница Экспрес на 54 номера.",
@@ -257,6 +291,23 @@
   {
     "type": "Feature",
     "properties": {
+      "title": "Станция метро - химкорус ",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.231589,
+        50.005629
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
       "title": "Каразинский университет",
       "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
       "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
@@ -285,6 +336,23 @@
       "coordinates": [
         36.224806,
         50.004757
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "title": "Горбатый мост",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.243996,
+        49.992660
       ]
     }
   }
