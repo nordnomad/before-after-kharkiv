@@ -39,8 +39,8 @@
       "title": "ТЦ Павловский",
       "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
       "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "img1942": "images/tc_pavlovsky/tc_pavlovsky_old.jpg",
+      "img2015": "images/tc_pavlovsky/tc_pavlovsky_new.jpg"
     },
     "geometry": {
       "type": "Point",
@@ -56,8 +56,8 @@
       "title": "Магазин мехов",
       "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
       "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "img1942": "images/meha/meha_old.jpg",
+      "img2015": "images/meha/meha_new.jpg"
     },
     "geometry": {
       "type": "Point",
@@ -115,6 +115,40 @@
       "coordinates": [
         36.227376,
         49.989632
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "title": "Дом со шпилем",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "images/dom_so_shpilem/dom_so_shpilem_old.jpg",
+      "img2015": "images/dom_so_shpilem/dom_so_shpilem_new.jpg"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.233411,
+        49.988653
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "title": "Горсовет",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "images/gorsovet/gorsovet_old.jpg",
+      "img2015": "images/gorsovet/gorsovet_new.jpg"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.232269,
+        49.989964
       ]
     }
   },
@@ -353,6 +387,23 @@
       "coordinates": [
         36.243996,
         49.992660
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "title": "Гигант",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
+      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.249818,
+        50.006355
       ]
     }
   }
