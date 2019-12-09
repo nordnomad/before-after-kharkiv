@@ -240,11 +240,28 @@
   {
     "type": "Feature",
     "properties": {
+      "title": "Авеплаза",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "images/ave_plaza/ave_plaza_old.jpg",
+      "img2015": "images/ave_plaza/ave_plaza_new.jpg"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.232723,
+        49.994598
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
       "title": "Сад Шевченко",
       "desc1942": "До революции - Университетский сад, как , был заложен одновременно с созданием Харьковского университета в1804 г. на землях, подаренных новом учебному заведению городом. Раньше эта территория представляла собой естественную дубраву, от которой нам в наследство осталось около 20 великанов-дубов. Университетский сад состоял из двух частей: ботанической (для учебных и научных целей) и общедоступной, которая была спланирована в английском ландшафтном стиле. Сад был окружен высокой каменной оградой с декоративными коваными решетками.",
       "desc2015": "В послевоенное время, проводилось несколько реконструкций, были построенны ККЗ Украина, фонтан Каскад, фонтан на центральной аллее, здание ХАТОБа. Последняя реконструкция территории сада завершилась в 2019 году.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "img1942": "images/sad_shevchenko/sad_shevchenko_old.jpg",
+      "img2015": "images/sad_shevchenko/sad_shevchenko_new.jpg"
     },
     "geometry": {
       "type": "Point",
@@ -260,8 +277,8 @@
       "title": "ХНАТОБ",
       "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
       "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "img1942": "images/hnatob/hnatob_old.jpg",
+      "img2015": "images/hnatob/hnatob_new.jpg"
     },
     "geometry": {
       "type": "Point",
@@ -277,8 +294,8 @@
       "title": "Парк Горького",
       "desc1942": "Парк был заложен в 1893—1895 гг. , а торжественное открытие было в 1907 году, когда подросли деревья. Загородный Николаевский (изначально он располагался на окраине города), в честь грядущей свадьбы престолонаследника.  Алеи парка предназначались для конных прогулок.",
       "desc2015": "В 2010 году было принято решение реконструировать парк Горького которая завершилась  23 августа 2012 года. В парке Горького работают более 30 аттракционов от итальянских, немецких, американских производителей. Они рассчитаны на посетителей всех возрастов. Аттракционы работают круглый год.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "img1942": "images/park_gorkogo/park_gorkogo_old.jpg",
+      "img2015": "images/park_gorkogo/park_gorkogo_new.jpg"
     },
     "geometry": {
       "type": "Point",
@@ -328,8 +345,8 @@
       "title": "Станция метро - химкорус ",
       "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
       "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "img1942": "images/him_korpus/him_korpus_old.jpg",
+      "img2015": "images/him_korpus/him_korpus_new.jpg"
     },
     "geometry": {
       "type": "Point",
@@ -359,6 +376,23 @@
   {
     "type": "Feature",
     "properties": {
+      "title": "Сумская, 39",
+      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
+      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "img1942": "images/sumskaya_39/sumskaya_39_old.jpg",
+      "img2015": "images/sumskaya_39/sumskaya_39_new.jpg"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        36.235376,
+        50.005084
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
       "title": "Зоологический мост",
       "desc1942": "До строительства мостика перебраться через Клочковский спуск можно было по двум головоломным лестницам",
       "desc2015": "Мост был построен до 1953го года, а с конца 2000-х стал популярным у влюблённых, которые вешают на него множество замочков",
@@ -379,8 +413,8 @@
       "title": "Горбатый мост",
       "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
       "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "img1942": "images/gorbaty_most/gorbaty_most_old.jpg",
+      "img2015": "images/gorbaty_most/gorbaty_most_new.jpg"
     },
     "geometry": {
       "type": "Point",
@@ -396,8 +430,8 @@
       "title": "Гигант",
       "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
       "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "https://via.placeholder.com/1024x485.png/FFFFFF/000000?text=Placeholder",
-      "img2015": "https://via.placeholder.com/1024x485.png/000000/FFFFFF?text=Placeholder"
+      "img1942": "images/gigant/gigant_old.jpg",
+      "img2015": "images/gigant/gigant_new.jpg"
     },
     "geometry": {
       "type": "Point",
