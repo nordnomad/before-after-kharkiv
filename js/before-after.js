@@ -14,7 +14,7 @@
       var dragWidth = dragElement.outerWidth(),
           posX = dragElement.offset().left + dragWidth - startX,
           containerOffset = container.offset().left,
-          containerWidth = container.outerWidth();
+          containerWidth = container.outerWidth(),
           dragElementOffset = dragElement.width()/2
 
       // Set limits

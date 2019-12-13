@@ -1,4 +1,4 @@
-[
+geoJson = [
   {
     "type": "Feature",
     "properties": {

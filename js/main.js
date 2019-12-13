@@ -1,3 +1,66 @@
+function buildMap(id, layer, isLeft) {
+    var southWest = L.latLng(49.901689, 36.461400),
+        northEast = L.latLng(50.115857,  36.019992),
+        bounds = L.latLngBounds(southWest, northEast);
+
+    var mapOptions = {
+        attributionControl: false,
+        inertia: true,
+        maxZoom: 17,
+        minZoom: 13,
+        zoom: 16,
+        tileSize: 256,
+        zoomControl:false,
+        center: {
+            lat: 50.005720,
+            lng: 36.229192
+        },
+        maxBounds: bounds
+    };
+    var map = L.map(id, mapOptions);
+    new L.Control.Zoom({ position: 'bottomright' , zoomInText: '', zoomOutText: ''}).addTo(map)
+
+    var locateOptions = {
+        position: 'bottomright',
+        icon : 'icon-location-arrow',
+        iconLoading : 'spinner icon-spinner',
+        iconElementTag: 'a',
+        drawCircle : false,
+        drawMarker : false,
+        strings: {
+            title: "Показать мое местоположение"
+        },
+        onLocationOutsideMapBounds : function(e) {
+            console.log('You are out of bounds!');
+            console.log(e)
+        }
+    }
+    L.control.locate(locateOptions).addTo(map);
+
+    var options = {default_text: "Как изменился Харьков с 1942го до сегодня", position: 'bottomright'};
+    L.control.bar(options).addTo(map);
+    L.control.social(options).addTo(map);
+
+    L.tileLayer(layer, {detectRetina : true}).addTo(map);
+    L.geoJson(geoJson, {
+        pointToLayer: function (feature, latlng) {
+            var marker = initializeMarker(latlng);
+            marker.on('click', function(e) {
+                markerClickListener(e.target.feature, isLeft);
+            });
+            return marker;
+        }
+    }).addTo(map);
+
+    return map;
+}
+function applySmallStyle(containerClasses) {
+    if(isPortraitOrientation() || window.innerHeight < 300) {
+        containerClasses.add('small');
+    } else {
+        containerClasses.remove('small');
+    }
+}
 function initializeMarker(latLng) {
     var pulsingIcon = L.icon.pulse({iconSize:[10,10],color:'#c00', fillColor:'#c00', animate:false, heatbeat:1});
     var marker = L.marker(latLng, {icon: pulsingIcon});
@@ -84,30 +147,6 @@ function initContentPanel() {
         }
         if (index < 0) index = geoJson.length - 1;
         markerClickListener(geoJson[index], false);
-    })
-}
-geoJson = []
-function loadGeoJson() {
-    $.ajax("geo.json").done(function (data) {
-        geoJson = data;
-        L.geoJson(data, {
-            pointToLayer: function (feature, latlng) {
-                var marker = initializeMarker(latlng);
-                marker.on('click', function(e) {
-                    markerClickListener(e.target.feature, true);
-                });
-                return marker;
-            }
-        }).addTo(after);
-        L.geoJson(data, {
-            pointToLayer: function (feature, latlng) {
-                var marker = initializeMarker(latlng);
-                marker.on('click', function(e) {
-                    markerClickListener(e.target.feature, false);
-                });
-                return marker;
-            }
-        }).addTo(before);
     })
 }
 function left() {

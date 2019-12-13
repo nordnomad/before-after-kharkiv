@@ -17,8 +17,9 @@
     <script src="https://unpkg.com/leaflet.tilelayer.fallback@1.0.4/dist/leaflet.tilelayer.fallback.js"
             crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/refresh.css"/>
-    <script type="text/javascript" src="js/refresh.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/geo.js"></script>
 
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 
@@ -125,97 +126,46 @@
     </div>
 </div>
 <script>
-    function buildMap(id, layer) {
-        var southWest = L.latLng(49.901689, 36.461400),
-            northEast = L.latLng(50.115857,  36.019992),
-            bounds = L.latLngBounds(southWest, northEast);
+    var after;
+    var before;
 
-        var options = {
-            attributionControl: false,
-            inertia: true,
-            maxZoom: 17,
-            minZoom: 13,
-            zoom: 16,
-            tileSize: 256,
-            zoomControl:false,
-            center: {
-                lat: 50.005720,
-                lng: 36.229192
-            },
-            maxBounds: bounds
+    document.addEventListener("DOMContentLoaded", function() {
+        var beforeLayerUrl = 'https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg';
+        before = buildMap('map-base', beforeLayerUrl, false);
+        L.tileLayer.fallback(beforeLayerUrl, {minNativeZoom: 13}).addTo(before);
+
+        var afterLayerUrl = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=';
+        var accessKey = 'pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q';
+        after = buildMap('map-overlay', afterLayerUrl + accessKey, true);
+
+        var container = document.querySelector('#container');
+        var containerClasses = container.classList;
+
+        $('#container').beforeAfter();
+
+        before.sync(after);
+        after.sync(before);
+
+        initContentPanel();
+
+        applySmallStyle(containerClasses);
+
+        window.onresize = function(event) {
+            applySmallStyle(containerClasses);
         };
-        var map = L.map(id, options);
-        new L.Control.Zoom({ position: 'bottomright' , zoomInText: '', zoomOutText: ''}).addTo(map)
 
-        var locateOptions = {
-            position: 'bottomright',
-            icon : 'icon-location-arrow',
-            iconLoading : 'spinner icon-spinner',
-            iconElementTag: 'a',
-            drawCircle : false,
-            drawMarker : false,
-            strings: {
-                title: "Показать мое местоположение"
-            },
-            onLocationOutsideMapBounds : function(e) {
-                console.log('You are out of bounds!');
-                console.log(e)
-            }
-        }
-        L.control.locate(locateOptions).addTo(map);
+        document.querySelector('#button-explore').addEventListener('click', function (event) {
+            containerClasses.remove('show-intro');
+            showMapControls();
+        }, false);
+        document.querySelector('#button-start').addEventListener('click', function (event) {
+            containerClasses.remove('show-intro');
+            markerClickListener(geoJson[0], false);
+        }, false);
 
-        var options = {default_text: "Как изменился Харьков с 1942го до сегодня", position: 'bottomright'};
-        L.control.bar(options).addTo(map);
-        L.control.social(options).addTo(map);
-
-        L.tileLayer(layer, {detectRetina : true}).addTo(map);
-
-        return map;
-    }
-
-    var beforeLayerUrl = 'https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg';
-	var before = buildMap('map-base', beforeLayerUrl);
-    L.tileLayer.fallback(beforeLayerUrl, {minNativeZoom: 13}).addTo(before);
-
-	var after = buildMap('map-overlay', 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q');
-
-    var container = document.querySelector('#container');
-    var containerClasses = container.classList;
-
-    $('#container').beforeAfter();
-
-    before.sync(after);
-	after.sync(before);
-
-    initContentPanel();
-
-    loadGeoJson();
-
-    function applySmallStyle() {
-        if(isPortraitOrientation() || window.innerHeight < 300) {
-            containerClasses.add('small');
-        } else {
-            containerClasses.remove('small');
-        }
-    }
-
-    applySmallStyle();
-
-    window.onresize = function(event) {
-        applySmallStyle();
-    };
-
-    document.querySelector('#button-explore').addEventListener('click', function (event) {
-        containerClasses.remove('show-intro');
-        showMapControls();
-    }, false);
-    document.querySelector('#button-start').addEventListener('click', function (event) {
-        containerClasses.remove('show-intro');
-        markerClickListener(geoJson[0], false);
-    }, false);
-
-    $('.leaflet-control-zoom-in').addClass('icon-plus');
-    $('.leaflet-control-zoom-out').addClass('icon-minus');
+        $('.leaflet-control-zoom-in').addClass('icon-plus');
+        $('.leaflet-control-zoom-out').addClass('icon-minus');
+    });
 </script>
 </body>
 </html>
