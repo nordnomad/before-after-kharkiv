@@ -33,7 +33,7 @@ L.Control.Social = L.Control.extend({
       .addListener(link, 'click', L.DomEvent.stopPropagation)
       .addListener(link, 'click', L.DomEvent.preventDefault)
       .addListener(link, 'click', this.share, {self: this, link: infos[2]});
-    };
+    }
 
     return this._container;
   }

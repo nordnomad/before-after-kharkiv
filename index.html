@@ -34,6 +34,7 @@
     <script type="text/javascript" src="js/L.Control.Locate.js"></script>
 
     <script type="text/javascript" src="js/leaflet.social.js"></script>
+    <script type="text/javascript" src="js/control.bar.js"></script>
 </head>
 <body>
 
@@ -194,7 +195,7 @@
                 return container;
             }
         });
-        map.addControl(new TourControl());
+<!--        map.addControl(new TourControl());-->
 
         var InfoControl = L.Control.extend({
             options: { position: 'bottomright' },
@@ -207,9 +208,10 @@
                 return container;
             }
         });
-        map.addControl(new InfoControl());
+<!--        map.addControl(new InfoControl());-->
 
         var options = {default_text: "Как изменился Харьков с 1942го до сегодня", position: 'bottomright'};
+        L.control.bar(options).addTo(map);
         L.control.social(options).addTo(map);
 
         L.tileLayer(layer, {detectRetina : true}).addTo(map);
