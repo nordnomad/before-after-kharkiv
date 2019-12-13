@@ -164,52 +164,6 @@
         }
         L.control.locate(locateOptions).addTo(map);
 
-        var FullScreenControl = L.Control.extend({
-            options: { position: 'bottomright' },
-            onAdd: function (map) {
-                var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control fullscreen-icon ');
-                L.DomUtil.create('a', 'icon-fullscreen', container);
-                container.onclick = function(event){
-                    var element = document.body;
-                    if (event instanceof HTMLElement) {
-                        element = event;
-                    }
-                    var isFullscreen = document.webkitIsFullScreen || document.mozFullScreen || false;
-                    element.requestFullScreen = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || function () { return false; };
-                    document.cancelFullScreen = document.cancelFullScreen || document.webkitCancelFullScreen || document.mozCancelFullScreen || function () { return false; };
-                    isFullscreen ? document.cancelFullScreen() : element.requestFullScreen();
-                }
-                return container;
-            }
-        });
-<!--        map.addControl(new FullScreenControl());-->
-
-        var TourControl = L.Control.extend({
-            options: { position: 'bottomright' },
-            onAdd: function (map) {
-                var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-                L.DomUtil.create('a', 'icon-map-signs', container);
-                container.onclick = function(event) {
-                    markerClickListener(geoJson[0], false);
-                }
-                return container;
-            }
-        });
-<!--        map.addControl(new TourControl());-->
-
-        var InfoControl = L.Control.extend({
-            options: { position: 'bottomright' },
-            onAdd: function (map) {
-                var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-                L.DomUtil.create('a', 'icon-question', container);
-                container.onclick = function(event) {
-                    console.log('InfoControl')
-                }
-                return container;
-            }
-        });
-<!--        map.addControl(new InfoControl());-->
-
         var options = {default_text: "Как изменился Харьков с 1942го до сегодня", position: 'bottomright'};
         L.control.bar(options).addTo(map);
         L.control.social(options).addTo(map);
