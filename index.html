@@ -238,7 +238,7 @@
     loadGeoJson();
 
     function applySmallStyle() {
-        if(isSmallWidth()) {
+        if(isPortraitOrientation() || window.innerHeight < 300) {
             containerClasses.add('small');
         } else {
             containerClasses.remove('small');

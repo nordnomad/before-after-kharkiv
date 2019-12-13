@@ -149,11 +149,13 @@ html, body, #map-base {
     z-index: 1;
     pointer-events: auto;
 }
-.small .content {
+@media screen and (orientation: portrait) {
+.content {
     top: auto;
     bottom: 0;
     width: 100%;
     height: auto
+}
 }
 .content-wrapper {
     position: relative;

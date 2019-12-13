@@ -29,7 +29,7 @@ function flyToTargetPoint(coordinates) {
     var projection = before.project(latLng, flyToZoom);
     var targetPoint;
     var mapBase = document.querySelector('#map-base')
-    if(isSmallWidth()) {
+    if(isPortraitOrientation()) {
         var mapHeight = mapBase.offsetHeight;
         targetPoint = projection.subtract([0, -mapHeight / 4]);
     } else {
@@ -140,7 +140,7 @@ function hideContent(){
     })
     $('.leaflet-control-container').show();
 }
-function isSmallWidth() {
+function isPortraitOrientation() {
     return window.matchMedia("(orientation: portrait)").matches
 }
 function hideMapControls() {
