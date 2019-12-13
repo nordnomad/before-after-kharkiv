@@ -141,7 +141,7 @@ function hideContent(){
     $('.leaflet-control-container').show();
 }
 function isSmallWidth() {
-    return document.body.clientWidth  < 580;
+    return window.matchMedia("(orientation: portrait)").matches
 }
 function hideMapControls() {
     $('.leaflet-control-container').hide();

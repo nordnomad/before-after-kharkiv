@@ -354,7 +354,7 @@ html, body, #map-base {
     padding: 0;
     line-height: 1em;
 }
-@media (max-width: 580px) {
+@media screen and (orientation: portrait) {
     #intro h1 {
         font-size: 5em;
         margin-top: 20px;

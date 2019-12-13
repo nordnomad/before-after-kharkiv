@@ -9,12 +9,13 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-          crossorigin=""/>
+          crossorigin="anonymous"/>
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
             integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-            crossorigin=""></script>
+            crossorigin="anonymous"></script>
 
-    <script src="https://unpkg.com/leaflet.tilelayer.fallback@1.0.4/dist/leaflet.tilelayer.fallback.js"></script>
+    <script src="https://unpkg.com/leaflet.tilelayer.fallback@1.0.4/dist/leaflet.tilelayer.fallback.js"
+            crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" href="css/refresh.css"/>
     <script type="text/javascript" src="js/refresh.js"></script>
@@ -33,7 +34,6 @@
     <script type="text/javascript" src="js/L.Control.Locate.js"></script>
 
     <script type="text/javascript" src="js/leaflet.social.js"></script>
-    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 </head>
 <body>
 
@@ -57,11 +57,11 @@
             <a href="#0" class="cd-panel-close">Close</a>
         </header>
 
-        <div class="content" id="content-1928">
+        <div class="content" id="content-1942">
             <div class="content-wrapper">
                 <h2 id="content-title-1942"></h2>
                 <div class="content-image front">
-                    <img id="content-img-1942" src="images/vokzal/vokzal_old.png">
+                    <img id="content-img-1942" src="">
                 </div>
                 <div class="content-text back">
                     <p id="content-description-1942"></p>
@@ -79,7 +79,7 @@
                         </a>
                     </div>
                 </div>
-                <a href="javascript:;" class="goto goto-explore" title="Selbst erkunden">
+                <a href="javascript:;" class="goto goto-explore" title="Исследовать">
                     <i class="icon-cross"></i>
                 </a>
             </div>
@@ -92,7 +92,7 @@
                 <div class="content-wrapper">
                     <h2 id="content-title-2015"></h2>
                         <div class="content-image">
-                            <img id="content-img-2015" src="images/vokzal/vokzal_new2.png">
+                            <img id="content-img-2015" src="">
                         </div>
                         <div class="content-text">
                             <p id="content-description-2015"></p>
@@ -111,7 +111,7 @@
                             </a>
                         </div>
                     </div>
-                    <a href="javascript:;" class="goto goto-explore" title="Selbst erkunden">
+                    <a href="javascript:;" class="goto goto-explore" title="Исследовать">
                         <i class="icon-cross"></i>
                     </a>
                 </div>
@@ -181,7 +181,7 @@
                 return container;
             }
         });
-        map.addControl(new FullScreenControl());
+<!--        map.addControl(new FullScreenControl());-->
 
         var TourControl = L.Control.extend({
             options: { position: 'bottomright' },
