@@ -1,3 +1,6 @@
+html { font-size: calc(1em + 1vw) }
+h1 { font-size: 2em }
+h2 { font-size: 1.5em }
 body {
     margin : 0;
     padding : 0;
@@ -184,7 +187,7 @@ html, body, #map-base {
     text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 .small .content h2 {
-    font-size: 1.6em;
+    font-size: 1em;
     margin: 0 0 5px;
     padding: 0
 }
@@ -193,11 +196,11 @@ html, body, #map-base {
     padding: 0;
     line-height: 1.4em;
     font-weight: 300;
-    font-size: 1.3em;
+    font-size: 1em;
     text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 .small .content p,.small .content .nav {
-    font-size: 1em
+    font-size: .6em
 }
 .content .nav {
    /* display: block;
@@ -253,7 +256,7 @@ html, body, #map-base {
     content: "\e924";
 }
 .content .goto-explore i {
-    font-size: .9em;
+    font-size: 1em;
 }
 .content .goto-explore {
     position: absolute;
@@ -262,7 +265,7 @@ html, body, #map-base {
     width: 1em;
     height: 1em;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1em;
     right: 0;
     top: 0;
@@ -280,7 +283,7 @@ html, body, #map-base {
 .small .content .goto-explore {
     top: 8px;
     right: 10px;
-    font-size: .8em
+    font-size: .6em
 }
 .small .content .content-text {
     display: block;
@@ -292,7 +295,7 @@ html, body, #map-base {
 .small .content .content-text p {
     margin: 0 0 10px;
     padding: 0;
-    font-size: 3.6vmin
+    font-size: .6em
 }
 #map-overlay {
     display: block;
