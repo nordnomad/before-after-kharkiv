@@ -7,6 +7,7 @@ body {
     width: 100%;
     height: 100%
 }
+p { margin: 0 0 10px;}
 html, body, #map-base {
 	height: 100%;
 	width: 100vw;
@@ -187,7 +188,7 @@ html, body, #map-base {
     text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 .small .content h2 {
-    font-size: 1em;
+    /*font-size: 1em;*/
     margin: 0 0 5px;
     padding: 0
 }
@@ -256,7 +257,7 @@ html, body, #map-base {
     content: "\e924";
 }
 .content .goto-explore i {
-    font-size: 1em;
+    /*font-size: 1em;*/
 }
 .content .goto-explore {
     position: absolute;
@@ -265,10 +266,10 @@ html, body, #map-base {
     width: 1em;
     height: 1em;
     text-align: center;
-    font-size: 1em;
+    /*font-size: 1em;*/
     line-height: 1em;
     right: 0;
-    top: 0;
+    top: -5px;
     background-color: #aaa;
     color: #000;
     border-radius: 100%;
