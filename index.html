@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>Харьков в 1942 и сейчас</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="css/L.Icon.Pulse.css" type='text/css'/>
     <script src="js/L.Icon.Pulse.js"></script>
 
-    <link rel="stylesheet" href="css/L.Control.Locate.css" />
+    <link rel="stylesheet" href="css/L.Control.Locate.css"/>
     <script type="text/javascript" src="js/L.Control.Locate.js"></script>
 
     <script type="text/javascript" src="js/leaflet.social.js"></script>
@@ -62,11 +62,16 @@
 
         <div class="content" id="content-1942">
             <div class="content-wrapper">
-                <h2 id="content-title-1942"></h2>
-                <div class="content-image front">
+                <div class="content-header">
+                    <h2 id="content-title-1942"></h2>
+                    <a href="javascript:;" class="goto goto-explore" title="Исследовать">
+                        <i class="icon-cross"></i>
+                    </a>
+                </div>
+                <div class="content-image">
                     <img id="content-img-1942" src="">
                 </div>
-                <div class="content-text back">
+                <div class="content-text">
                     <p id="content-description-1942"></p>
                 </div>
                 <div class="nav">
@@ -82,9 +87,6 @@
                         </a>
                     </div>
                 </div>
-                <a href="javascript:;" class="goto goto-explore" title="Исследовать">
-                    <i class="icon-cross"></i>
-                </a>
             </div>
         </div>
     </div>
@@ -93,13 +95,18 @@
             <div id="map-overlay"></div>
             <div class="content" id="content-2015">
                 <div class="content-wrapper">
-                    <h2 id="content-title-2015"></h2>
-                        <div class="content-image">
-                            <img id="content-img-2015" src="">
-                        </div>
-                        <div class="content-text">
-                            <p id="content-description-2015"></p>
-                        </div>
+                    <div class="content-header">
+                        <h2 id="content-title-2015"></h2>
+                        <a href="javascript:;" class="goto goto-explore" title="Исследовать">
+                            <i class="icon-cross"></i>
+                        </a>
+                    </div>
+                    <div class="content-image">
+                        <img id="content-img-2015" src="">
+                    </div>
+                    <div class="content-text">
+                        <p id="content-description-2015"></p>
+                    </div>
                     <div class="nav">
                         <div class="col2 col2left">
                             <a href="javascript:;" id="goto-1942" class="goto goto-red">
@@ -114,9 +121,6 @@
                             </a>
                         </div>
                     </div>
-                    <a href="javascript:;" class="goto goto-explore" title="Исследовать">
-                        <i class="icon-cross"></i>
-                    </a>
                 </div>
             </div>
         </div>

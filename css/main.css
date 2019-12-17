@@ -184,11 +184,9 @@ html, body, #map-base {
     padding: 0;
     line-height: 1.2em;
     font-weight: 300;
-    /*font-size: 2.5em;*/
     text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 .small .content h2 {
-    /*font-size: 1em;*/
     margin: 0 0 5px;
     padding: 0
 }
@@ -197,20 +195,7 @@ html, body, #map-base {
     padding: 0;
     line-height: 1.4em;
     font-weight: 300;
-    /*font-size: 1em;*/
     text-shadow: 0 0 10px rgba(0,0,0,.5);
-}
-.small .content p,.small .content .nav {
-    /*font-size: .6em*/
-}
-.content .nav {
-   /* display: block;
-    position: absolute;
-    bottom: 40px;
-    left: 20px;
-    right: 20px;*/
-}
-.small .content .nav {
 }
 .col2left {
     text-align: left;
@@ -221,19 +206,6 @@ html, body, #map-base {
 }
 .col2right {
     text-align: right;
-}
-.col3left {
-    text-align: left;
-}
-.col3 {
-    width: 33%;
-    float: left;
-}
-.col3right {
-    text-align: right;
-}
-.col3center {
-    text-align: none;
 }
 .content .nav .goto-red {
     background-color: #c00;
@@ -256,17 +228,11 @@ html, body, #map-base {
 .icon-cross:before {
     content: "\e924";
 }
-.content .goto-explore i {
-    /*font-size: 1em;*/
-}
 .content .goto-explore {
-    position: absolute;
     display: block;
-    position: absolute;
     width: 1em;
     height: 1em;
     text-align: center;
-    /*font-size: 1em;*/
     line-height: 1em;
     right: 0;
     top: -5px;
@@ -281,11 +247,6 @@ html, body, #map-base {
     -o-transition: background-color 200ms ease-out;
     transition: background-color 200ms ease-out;
 }
-.small .content .goto-explore {
-    top: 8px;
-    right: 10px;
-    font-size: .6em
-}
 .small .content .content-text {
     display: block;
     position: relative;
@@ -296,7 +257,6 @@ html, body, #map-base {
 .small .content .content-text p {
     margin: 0 0 10px;
     padding: 0;
-    /*font-size: .6em*/
 }
 #map-overlay {
     display: block;
@@ -387,4 +347,9 @@ img {
 }
 .leaflet-control a, .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out {
   font-size: 14px;
+}
+.content-header {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between
 }
