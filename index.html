@@ -37,6 +37,8 @@
     <script type="text/javascript" src="js/leaflet.social.js"></script>
     <script type="text/javascript" src="js/control.bar.js"></script>
     <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/leaflet-beautify-marker-icon.js"></script>
+    <link rel="stylesheet" href="css/leaflet-beautify-marker-icon.css"/>
 </head>
 <body>
 
@@ -52,40 +54,31 @@
         </a>
     </div>
     <div id="map-base"></div>
-    <div class="cd-panel from-left before">
-        <header class="cd-panel-header">
-            <h1 id="before-title">
-                <!-- Title of selected point -->
-            </h1>
-            <a href="#0" class="cd-panel-close">Close</a>
-        </header>
-
-        <div class="content" id="content-1942">
-            <div class="content-wrapper">
-                <div class="content-header">
-                    <h2 id="content-title-1942"></h2>
-                    <a href="javascript:;" class="goto goto-explore" title="Исследовать">
-                        <i class="icon-cross"></i>
+    <div class="content" id="content-1942">
+        <div class="content-wrapper">
+            <div class="content-header">
+                <h2 id="content-title-1942"></h2>
+                <a href="javascript:;" class="goto goto-explore" title="Исследовать">
+                    <i class="icon-cross"></i>
+                </a>
+            </div>
+            <div class="content-image">
+                <img id="content-img-1942" src="">
+            </div>
+            <div class="content-text">
+                <p id="content-description-1942"></p>
+            </div>
+            <div class="nav">
+                <div class="col2 col2left">
+                    <a href="javascript:;" id="goto-back" class="goto goto-red">
+                        <i class="icon-arrow-left2"></i> Назад
                     </a>
                 </div>
-                <div class="content-image">
-                    <img id="content-img-1942" src="">
-                </div>
-                <div class="content-text">
-                    <p id="content-description-1942"></p>
-                </div>
-                <div class="nav">
-                    <div class="col2 col2left">
-                        <a href="javascript:;" id="goto-back" class="goto goto-red">
-                            <i class="icon-arrow-left2"></i> Назад
-                        </a>
-                    </div>
-                    <div class="col2 col2right">
-                        <a href="javascript:;" id="goto-2015" class="goto goto-red">
-                            2015
-                            <i class="icon-arrow-right2"></i>
-                        </a>
-                    </div>
+                <div class="col2 col2right">
+                    <a href="javascript:;" id="goto-2015" class="goto goto-red">
+                        2015
+                        <i class="icon-arrow-right2"></i>
+                    </a>
                 </div>
             </div>
         </div>

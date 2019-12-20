@@ -176,7 +176,7 @@ html, body, #map-base {
     height: 100%;
     max-width: none;
     max-height: none;
-    padding: 5px 10px 40px
+    padding: 0 10px 40px
 }
 .content h2 {
     color: #fff;
@@ -185,10 +185,6 @@ html, body, #map-base {
     line-height: 1.2em;
     font-weight: 300;
     text-shadow: 0 0 10px rgba(0,0,0,.5);
-}
-.small .content h2 {
-    margin: 0 0 5px;
-    padding: 0
 }
 .content p, .content .nav {
     color: #fff;
@@ -234,8 +230,6 @@ html, body, #map-base {
     height: 1em;
     text-align: center;
     line-height: 1em;
-    right: 0;
-    top: -5px;
     background-color: #aaa;
     color: #000;
     border-radius: 100%;
@@ -348,8 +342,12 @@ img {
 .leaflet-control a, .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out {
   font-size: 14px;
 }
+.leaflet-container div{
+	font: 14px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
 .content-header {
     margin-bottom: 5px;
+    margin-top: 5px;
     display: flex;
     justify-content: space-between
 }
