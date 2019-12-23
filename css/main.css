@@ -70,7 +70,7 @@ html, body, #map-base {
     border-radius: 100%;
     text-align: center;
     line-height: 44px;
-    font-size: 1em;
+    font-size: 1.1em;
     z-index: 10;
     font-weight: 700;
     color: #fff;
@@ -316,11 +316,10 @@ html, body, #map-base {
 }
 @media screen and (orientation: portrait) {
     #intro h1 {
-        font-size: 5em;
-        margin-top: 20px;
+        font-size: 11vh;
     }
     #intro p {
-        font-size: 2.5em;
+        font-size: 6vh;
     }
 }
 .leaflet-control-container {
