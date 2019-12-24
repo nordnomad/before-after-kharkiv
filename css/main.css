@@ -285,7 +285,7 @@ html, body, #map-base {
 .show-intro #button-explore, .show-intro #button-start {
     display: inline-block;
     border-radius: 1em;
-    font-size: 3.5vh;
+    font-size: 3.5vmax;
     padding: .3em .8em .2em;
     background-color: #c00;
     color: #fff;
