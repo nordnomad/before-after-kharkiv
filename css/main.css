@@ -210,7 +210,7 @@ html, body, #map-base {
     background-color: #c00;
     color: #fff;
 }
-.content .nav .goto-red:hover {
+.content .nav .goto-red:active {
     background-color: #b20000
 }
 .content .nav .goto {
@@ -303,7 +303,7 @@ html, body, #map-base {
     box-shadow: 0 0 30px rgba(0,0,0,.5);
     text-shadow: 0 0 30px rgba(0,0,0,.5);
 }
-.show-intro #button-explore:hover, .show-intro #button-start:hover,.show-intro #button-explore:active, .show-intro #button-start:active {
+.show-intro #button-explore:active, .show-intro #button-start:active {
     background-color: #b20000
 }
 #intro h1 {
