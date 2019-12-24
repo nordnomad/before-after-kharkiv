@@ -113,7 +113,7 @@ html, body, #map-base {
     right: 0;
 }
 #control-slider i {
-    margin: 0 -.2em;
+    margin: 0 -.23em;
 }
 [class^="icon-"], [class*=" icon-"] {
     font-family: 'icomoon' !important;
