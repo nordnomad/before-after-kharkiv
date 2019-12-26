@@ -1,6 +1,6 @@
 html, body, #map-base {
-    margin : 0;
-    padding : 0;
+    margin: 0;
+    padding: 0;
 	height: 100%;
 	width: 100vw;
 	font-size: calc(.6em + 1vmin);
@@ -10,7 +10,6 @@ p {
     margin: 0 0 10px;
 }
 #container {
-    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -18,7 +17,6 @@ p {
     bottom: 0;
 }
 #map-base {
-    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -27,7 +25,6 @@ p {
     z-index: 1;
 }
 #map-clip {
-    display: block;
     position: absolute;
     top: 0;
     left: 50%;
@@ -38,7 +35,6 @@ p {
     border-left: 1px solid #c00;
 }
 #map-clip-inner {
-    display: block;
     position: absolute;
     top: 0;
     left: -100%;
@@ -46,7 +42,6 @@ p {
     bottom: 0;
 }
 #map-overlay {
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -55,7 +50,6 @@ p {
     z-index: 5;
 }
 #control-slider {
-    display: block;
     position: absolute;
     top: 10px;
     left: 50%;
@@ -85,7 +79,6 @@ p {
 }
 
 #control-slider::before, #control-slider::after {
-    display: block;
     position: absolute;
     padding: 1px 10px 0;
     top: 8px;
@@ -171,6 +164,12 @@ p {
     width: 100%;
     padding: 0 10px 0
 }
+.content-header {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between
+}
 .content-header h2 {
     margin: 0;
     line-height: 1.2em;
@@ -179,6 +178,11 @@ p {
 .content-text, .content-navigation {
     line-height: 1.4em;
 }
+.content-navigation {
+    justify-content: space-between;
+    display: flex;
+    padding-bottom: 5px
+}
 .btn {
     background-color: #c00;
     color: #fff;
@@ -186,7 +190,7 @@ p {
 .btn:active {
     background-color: #b20000
 }
-.content .content-navigation .goto {
+.goto {
     border-radius: 20px;
     padding: 5px 15px 5px;
     text-decoration: none;
@@ -195,19 +199,14 @@ p {
     -o-transition: background-color,box-shadow 200ms ease-out;
     transition: background-color,box-shadow 200ms ease-out;
 }
-.content-navigation {
-    justify-content: space-between;
-    display: flex;
-    padding-bottom: 5px
-}
-.content .content-navigation .goto i {
+.goto i {
     font-size: .9em;
     vertical-align: -9%;
 }
 .icon-cross:before {
     content: "\e924";
 }
-.content .goto-explore {
+.goto-explore {
     width: 1em;
     height: 1em;
     text-align: center;
@@ -216,31 +215,19 @@ p {
     color: #000;
     border-radius: 100%;
     text-decoration: none;
-    margin: 0;
     padding: .55em .5em .45em;
     -webkit-transition: background-color 200ms ease-out;
     -moz-transition: background-color 200ms ease-out;
     -o-transition: background-color 200ms ease-out;
     transition: background-color 200ms ease-out;
 }
-.small .content .content-text {
-    position: relative;
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: auto
-}
 .content-image {
     text-align: center;
 }
-.content-header {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    display: flex;
-    justify-content: space-between
+.content-image img {
+    max-width: 100%;
 }
-
 #map-overlay {
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -249,7 +236,6 @@ p {
     z-index: 5;
 }
 .show-intro #intro {
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -314,10 +300,6 @@ p {
 }
 .leaflet-control-container {
     display : none
-}
-img {
-    max-width: 100%;
-    max-height: 97%;
 }
 .leaflet-marker-icon {
     border-radius: 100%
