@@ -160,6 +160,10 @@ p {
     position: relative;
     margin: 6vh auto 0;
     width: 90%;
+    color: #fff;
+    font-weight: 300;
+    text-shadow: 0 0 10px rgba(0,0,0,.5);
+    text-align: justify
 }
 .small .content-wrapper {
     box-sizing: border-box;
@@ -167,25 +171,19 @@ p {
     width: 100%;
     padding: 0 10px 0
 }
-.content h2 {
-    color: #fff;
+.content-header h2 {
     margin: 0;
-    padding: 0;
     line-height: 1.2em;
     font-weight: 300;
-    text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
-.content p, .content .content-navigation {
-    color: #fff;
+.content-text, .content-navigation {
     line-height: 1.4em;
-    font-weight: 300;
-    text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
-.content .content-navigation .goto-red {
+.btn {
     background-color: #c00;
     color: #fff;
 }
-.content .content-navigation .goto-red:active {
+.btn:active {
     background-color: #b20000
 }
 .content .content-navigation .goto {
@@ -210,7 +208,6 @@ p {
     content: "\e924";
 }
 .content .goto-explore {
-    display: block;
     width: 1em;
     height: 1em;
     text-align: center;
@@ -227,15 +224,10 @@ p {
     transition: background-color 200ms ease-out;
 }
 .small .content .content-text {
-    display: block;
     position: relative;
     margin: 0;
     overflow-x: hidden;
     overflow-y: auto
-}
-.small .content .content-text p {
-    margin: 0 0 10px;
-    padding: 0;
 }
 .content-image {
     text-align: center;
@@ -274,13 +266,11 @@ p {
     user-select: none;
     cursor: default;
 }
-.show-intro #button-explore, .show-intro #button-start {
+.intro-button {
     display: inline-block;
     border-radius: 1em;
     font-size: 3.5vmax;
     padding: .3em .8em .2em;
-    background-color: #c00;
-    color: #fff;
     text-decoration: none;
     -webkit-transition: background-color,box-shadow 200ms ease-out;
     -moz-transition: background-color,box-shadow 200ms ease-out;
@@ -292,8 +282,10 @@ p {
     box-shadow: 0 0 30px rgba(0,0,0,.5);
     text-shadow: 0 0 30px rgba(0,0,0,.5);
 }
-.show-intro #button-explore:active, .show-intro #button-start:active {
-    background-color: #b20000
+@media screen and (min-width: 1200px) {
+  .intro-button {
+      font-size: 3.5vh
+  }
 }
 #intro h1 {
     font-size: 20vh;
@@ -327,9 +319,6 @@ img {
     max-width: 100%;
     max-height: 97%;
 }
-#content-description-2015, #content-description-1942 {
-    text-align: justify
-}
 .leaflet-marker-icon {
     border-radius: 100%
 }
@@ -338,9 +327,4 @@ img {
 }
 .leaflet-container div{
 	font: 14px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
-}
-@media screen and (min-width: 1200px) {
-  .show-intro #button-explore, .show-intro #button-start {
-      font-size: 3.5vh
-  }
 }
