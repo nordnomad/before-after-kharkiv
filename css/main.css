@@ -1,20 +1,13 @@
-html {
-    font-size: calc(.6em + 1vmin);
-    -webkit-text-size-adjust: 100%
-}
-h1 { font-size: 2em }
-h2 { font-size: 1.5em }
-body {
+html, body, #map-base {
     margin : 0;
     padding : 0;
-    width: 100%;
-    height: 100%
-}
-p { margin: 0 0 10px;}
-html, body, #map-base {
 	height: 100%;
 	width: 100vw;
+	font-size: calc(.6em + 1vmin);
 	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+p {
+    margin: 0 0 10px;
 }
 #container {
     display: block;
@@ -157,25 +150,22 @@ html, body, #map-base {
     pointer-events: auto;
 }
 @media screen and (orientation: portrait) {
-.content {
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    height: auto
-}
+    .content {
+        top: auto;
+        bottom: 0;
+        width: 100%;
+    }
 }
 .content-wrapper {
     position: relative;
     margin: 6vh auto 0;
-    height: 84vh;
     width: 90%;
 }
 .small .content-wrapper {
     box-sizing: border-box;
     margin: 0;
     width: 100%;
-    height: 100%;
-    padding: 0 10px 40px
+    padding: 0 10px 0
 }
 .content h2 {
     color: #fff;
@@ -185,32 +175,20 @@ html, body, #map-base {
     font-weight: 300;
     text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
-.content p, .content .nav {
+.content p, .content .content-navigation {
     color: #fff;
-    padding: 0;
     line-height: 1.4em;
     font-weight: 300;
     text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
-.col2left {
-    text-align: left;
-}
-.col2 {
-    width: 50%;
-    float: left;
-}
-.col2right {
-    text-align: right;
-}
-.content .nav .goto-red {
+.content .content-navigation .goto-red {
     background-color: #c00;
     color: #fff;
 }
-.content .nav .goto-red:active {
+.content .content-navigation .goto-red:active {
     background-color: #b20000
 }
-.content .nav .goto {
-    display: inline-block;
+.content .content-navigation .goto {
     border-radius: 20px;
     padding: 5px 15px 5px;
     text-decoration: none;
@@ -219,7 +197,12 @@ html, body, #map-base {
     -o-transition: background-color,box-shadow 200ms ease-out;
     transition: background-color,box-shadow 200ms ease-out;
 }
-.content .nav .goto i {
+.content-navigation {
+    justify-content: space-between;
+    display: flex;
+    padding-bottom: 5px
+}
+.content .content-navigation .goto i {
     font-size: .9em;
     vertical-align: -9%;
 }
@@ -254,6 +237,16 @@ html, body, #map-base {
     margin: 0 0 10px;
     padding: 0;
 }
+.content-image {
+    text-align: center;
+}
+.content-header {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between
+}
+
 #map-overlay {
     display: block;
     position: absolute;
@@ -334,9 +327,6 @@ img {
     max-width: 100%;
     max-height: 97%;
 }
-.content-image {
-    text-align: center;
-}
 #content-description-2015, #content-description-1942 {
     text-align: justify
 }
@@ -349,9 +339,8 @@ img {
 .leaflet-container div{
 	font: 14px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
-.content-header {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    display: flex;
-    justify-content: space-between
+@media screen and (min-width: 1200px) {
+  .show-intro #button-explore, .show-intro #button-start {
+      font-size: 3.5vh
+  }
 }
