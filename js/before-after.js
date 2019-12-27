@@ -59,8 +59,8 @@
     var cur = this;
     // Adjust the slider
     //TODO check if this code is useful
-//    var width = cur.width()+'px';
-//    cur.find('.resize img').css('width', width);
+    var width = cur.width()+'px';
+    cur.find('.resize #map-clip-inner').css('width', width);
 
     // Bind dragging events
     drags(cur.find('#control-slider'), cur.find('#map-clip'), cur);
@@ -68,9 +68,9 @@
 //TODO check if this code is useful
     // Update sliders on resize.
     // Because we all do this: i.imgur.com/YkbaV.gif
-//    $(window).resize(function(){
-//      var width = cur.width()+'px';
-//      cur.find('.resize img').css('width', width);
-//    });
+    $(window).resize(function(){
+      var width = cur.width()+'px';
+      cur.find('.resize #map-clip-inner').css('width', width);
+    });
   }
 }(jQuery));
