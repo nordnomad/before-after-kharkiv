@@ -68,7 +68,7 @@
 //TODO check if this code is useful
     // Update sliders on resize.
     // Because we all do this: i.imgur.com/YkbaV.gif
-    $(window).resize(function(){
+    window.addEventListener('resize', function() {
       var width = cur.width()+'px';
       cur.find('.resize #map-clip-inner').css('width', width);
     });

@@ -49,7 +49,7 @@
                 maxBounds: cityBounds
             };
             var map = L.map(id, mapOptions);
-            new L.Control.Zoom({position: 'bottomright' , zoomInText: '', zoomOutText: ''}).addTo(map)
+            new L.Control.Zoom({position: 'bottomright'}).addTo(map)
 
             var locateOptions = {
                 position: 'bottomright',
@@ -84,6 +84,7 @@
         _hideIntro: function(){
             this.containerClasses.remove('show-intro');
         },
+
         initialize: function (options) {
             var bMap = this._initializeBeforeMap();
             this.before = new Object();
@@ -93,8 +94,8 @@
             var container = document.querySelector(this.options.containerSelector);
             this.containerClasses = container.classList;
             $(this.options.containerSelector).beforeAfter();
-            this.before.map.sync(this.after.map);
-            this.after.map.sync(this.before.map);
+
+            KH.prototype._syncMaps({});
 
             document.querySelector('#button-explore').addEventListener('click', function (event) {
                 KH.prototype._hideIntro();
@@ -102,7 +103,7 @@
             }, false);
             document.querySelector('#button-start').addEventListener('click', function (event) {
                 KH.prototype._hideIntro();
-                /*markerClickListener(geoJson[0], false);*/
+                KH.prototype._markerClickListener(geoJson[0], false);
             }, false);
 
         },
@@ -132,8 +133,7 @@
         },
 
         _markerClickListener: function(feature, isLeft) {
-            this.before.map.unsync(this.after.map);
-            this.after.map.unsync(this.before.map);
+            KH.prototype._unsyncMaps();
 
             refreshContentPanel(feature.properties);
             if(isLeft){
@@ -143,10 +143,16 @@
             }
             selectedPoint = feature.geometry.coordinates;
             this._flyToTargetPoint(feature.geometry.coordinates);
-            var syncOptions = {noInitialSync : true}
+            KH.prototype._syncMaps({noInitialSync : true});
+        },
 
-            this.before.map.sync(this.after.map, syncOptions);
-            this.after.map.sync(this.before.map, syncOptions);
+        _unsyncMaps: function() {
+            this.before.map.unsync(this.after.map);
+            this.after.map.unsync(this.before.map);
+        },
+        _syncMaps: function(options) {
+            this.before.map.sync(this.after.map, options);
+            this.after.map.sync(this.before.map, options);
         },
 
         _flyToTargetPoint: function(coordinates) {
@@ -166,7 +172,7 @@
             hideMapControls();
 
             this.before.map.flyTo(targetLatLng, flyToZoom, {animate:false});
-            this.after.map.flyTo(targetLatLng, flyToZoom,{animate:false});
+            this.after.map.flyTo(targetLatLng, flyToZoom, {animate:false});
         }
     });
 

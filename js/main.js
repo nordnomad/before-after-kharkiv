@@ -15,16 +15,16 @@ function refreshContentPanel(properties) {
     document.querySelector('#content-img-2015').src = properties.img2015;
 }
 function initContentPanel() {
-    $('#goto-1942').on('click', function(e) {
+    document.querySelector('#goto-1942').addEventListener('click', function (event) {
          right();
     });
-    $('#goto-2015').on('click', function(e) {
+    document.querySelector('#goto-2015').addEventListener('click', function (event) {
          left();
     });
-    $('.goto.goto-explore').on('click', function(e) {
+    document.querySelector('.goto.goto-explore').addEventListener('click', function (event) {
         hideContent()
     });
-    $('#goto-next').on('click', function(e) {
+    document.querySelector('#goto-next').addEventListener('click', function (event) {
         var title = document.querySelector('#content-title-1942').innerHTML;
         var index = -1;
         for(var i=0; i < geoJson.length; i++){
@@ -36,7 +36,7 @@ function initContentPanel() {
         if (index >= geoJson.length) index = 0;
         KH.prototype._markerClickListener(geoJson[index], false);
     });
-    $('#goto-back').on('click', function(e) {
+    document.querySelector('#goto-back').addEventListener('click', function (event) {
         var title = document.querySelector('#content-title-1942').innerHTML;
         var index = -1;
         for(var i=0; i < geoJson.length; i++){
@@ -50,8 +50,8 @@ function initContentPanel() {
     })
 }
 function left() {
-    $('#control-slider').animate({'left': '0px'}, 'slow', 'linear', function(){showContent()})
-    $('#map-clip').animate({'left': '0px'}, 'slow', 'linear', function(){showContent()} )
+    [$('#control-slider'), $('#map-clip')].animate({'left': '0px'}, 'slow', 'linear');
+//    $('#map-clip').animate({'left': '0px'}, 'slow', 'linear');
     $('#map-clip-inner').animate({'left': '1px'}, 'slow', 'linear', function(){showContent()})
 }
 

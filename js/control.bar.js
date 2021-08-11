@@ -8,11 +8,12 @@ L.Control.Bar = L.Control.extend({
   },
 
   startTour: function () {
-    markerClickListener(geoJson[0], false);
+    KH.prototype._markerClickListener(geoJson[0], false);
   },
 
   showInfo: function () {
-    console.log('InfoControl')
+   //TODO implement
+    console.log('TODO InfoControl')
   },
 
   onAdd: function(map) {
