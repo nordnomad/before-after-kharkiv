@@ -1,3 +1,19 @@
+var contentTitle42 = document.querySelector('#content-title-1942');
+var contentTitle15 = document.querySelector('#content-title-2015');
+var contentDescription42 = document.querySelector('#content-description-1942');
+var contentDescription15 = document.querySelector('#content-description-2015');
+var contentImage42 = document.querySelector('#content-img-1942');
+var contentImage15 = document.querySelector('#content-img-2015');
+var goto42 = document.querySelector('#goto-1942');
+var goto15 = document.querySelector('#goto-2015');
+var gotoExplore = document.querySelector('.goto.goto-explore');
+var gotoNext = document.querySelector('#goto-next');
+var gotoBack = document.querySelector('#goto-back');
+var controlSlider = $('#control-slider');
+var mapClip = $('#map-clip');
+var mapClipInner = $('#map-clip-inner');
+var content = $('.content');
+
 function applySmallStyle(containerClasses) {
     if(isPortraitOrientation() || window.innerHeight < 300) {
         containerClasses.add('small');
@@ -7,25 +23,26 @@ function applySmallStyle(containerClasses) {
 }
 
 function refreshContentPanel(properties) {
-    document.querySelector('#content-title-1942').innerHTML = properties.title;
-    document.querySelector('#content-title-2015').innerHTML = properties.title;
-    document.querySelector('#content-description-1942').innerHTML = properties.desc1942;
-    document.querySelector('#content-description-2015').innerHTML = properties.desc2015;
-    document.querySelector('#content-img-1942').src = properties.img1942;
-    document.querySelector('#content-img-2015').src = properties.img2015;
+    contentTitle42.innerHTML = properties.title;
+    contentTitle15.innerHTML = properties.title;
+    contentDescription42.innerHTML = properties.desc1942;
+    contentDescription15.innerHTML = properties.desc2015;
+    contentImage42.src = properties.img1942;
+    contentImage15.src = properties.img2015;
+
 }
 function initContentPanel() {
-    document.querySelector('#goto-1942').addEventListener('click', function (event) {
+    goto42.addEventListener('click', function () {
          right();
     });
-    document.querySelector('#goto-2015').addEventListener('click', function (event) {
+    goto15.addEventListener('click', function () {
          left();
     });
-    document.querySelector('.goto.goto-explore').addEventListener('click', function (event) {
+    gotoExplore.addEventListener('click', function () {
         hideContent()
     });
-    document.querySelector('#goto-next').addEventListener('click', function (event) {
-        var title = document.querySelector('#content-title-1942').innerHTML;
+    gotoNext.addEventListener('click', function () {
+        var title = contentTitle42.innerHTML;
         var index = -1;
         for(var i=0; i < geoJson.length; i++){
             if (geoJson[i].properties.title == title) {
@@ -36,8 +53,8 @@ function initContentPanel() {
         if (index >= geoJson.length) index = 0;
         KH.prototype._markerClickListener(geoJson[index], false);
     });
-    document.querySelector('#goto-back').addEventListener('click', function (event) {
-        var title = document.querySelector('#content-title-1942').innerHTML;
+    gotoBack.addEventListener('click', function () {
+        var title = contentTitle42.innerHTML;
         var index = -1;
         for(var i=0; i < geoJson.length; i++){
             if (geoJson[i].properties.title == title) {
@@ -50,34 +67,34 @@ function initContentPanel() {
     })
 }
 function left() {
-    [$('#control-slider'), $('#map-clip')].animate({'left': '0px'}, 'slow', 'linear');
-//    $('#map-clip').animate({'left': '0px'}, 'slow', 'linear');
-    $('#map-clip-inner').animate({'left': '1px'}, 'slow', 'linear', function(){showContent()})
+    controlSlider.animate({'left': '0px'}, 'slow', 'linear');
+    mapClip.animate({'left': '0px'}, 'slow', 'linear');
+    mapClipInner.animate({'left': '1px'}, 'slow', 'linear', function(){showContent()})
 }
 
 function right() {
     var docW = document.body.clientWidth;
-    $('#control-slider').animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
-    $('#map-clip').animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()} )
-    $('#map-clip-inner').animate({'left': (-docW+1) +'px' }, 'slow', 'linear', function(){showContent()})
+    controlSlider.animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
+    mapClip.animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
+    mapClipInner.animate({'left': (-docW+1) +'px' }, 'slow', 'linear', function(){showContent()})
 }
 function center() {
     var docW = document.body.clientWidth / 2;
-    $('#control-slider').animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
-    $('#map-clip').animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()} )
-    $('#map-clip-inner').animate({'left': (-docW+1) +'px' }, 'slow', 'linear', function(){showContent()})
+    controlSlider.animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
+    mapClip.animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
+    mapClipInner.animate({'left': (-docW+1) +'px' }, 'slow', 'linear', function(){showContent()})
 }
 function showContent(){
-    $('.content').fadeIn('slow')
+    content.fadeIn('slow')
 }
 function hideContent(){
-    $('.content').fadeOut('slow', function() {
+    content.fadeOut('slow', function() {
         var docW = document.body.clientWidth / 2;
-        $('#control-slider').animate({'left': docW + 'px'}, 'slow')
-        $('#map-clip').animate({'left': docW + 'px'}, 'slow')
-        $('#map-clip-inner').animate({'left': (-docW+1) +'px' }, 'slow')
-    })
-    $('.leaflet-control-container').show();
+        controlSlider.animate({'left': docW + 'px'}, 'slow')
+        mapClip.animate({'left': docW + 'px'}, 'slow')
+        mapClipInner.animate({'left': (-docW+1) +'px' }, 'slow')
+    });
+    showMapControls()
 }
 function isPortraitOrientation() {
     return window.matchMedia("(orientation: portrait)").matches
