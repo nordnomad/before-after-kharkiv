@@ -13,6 +13,7 @@ var controlSlider = $('#control-slider');
 var mapClip = $('#map-clip');
 var mapClipInner = $('#map-clip-inner');
 var content = $('.content');
+var containerClasses = document.querySelector('#container').classList
 
 function applySmallStyle(containerClasses) {
     if(isPortraitOrientation() || window.innerHeight < 300) {
@@ -29,8 +30,8 @@ function refreshContentPanel(properties) {
     contentDescription15.innerHTML = properties.desc2015;
     contentImage42.src = properties.img1942;
     contentImage15.src = properties.img2015;
-
 }
+
 function initContentPanel() {
     goto42.addEventListener('click', function () {
          right();
@@ -51,7 +52,7 @@ function initContentPanel() {
             }
         }
         if (index >= geoJson.length) index = 0;
-        KH.prototype._markerClickListener(geoJson[index], false);
+        KH.prototype.markerClickListener(geoJson[index], false);
     });
     gotoBack.addEventListener('click', function () {
         var title = contentTitle42.innerHTML;
@@ -63,9 +64,31 @@ function initContentPanel() {
             }
         }
         if (index < 0) index = geoJson.length - 1;
-        KH.prototype._markerClickListener(geoJson[index], false);
+        KH.prototype.markerClickListener(geoJson[index], false);
     })
+    document.querySelector('#button-explore').addEventListener('click', function (event) {
+        hideIntro();
+        showMapControls();
+    }, false);
+    document.querySelector('#button-start').addEventListener('click', function (event) {
+        hideIntro();
+        KH.prototype.markerClickListener(geoJson[0], false);
+    }, false);
+
+    function hideIntro(){
+        containerClasses.remove('show-intro');
+    }
 }
+
+function markerClickHandler(feature, isLeft){
+    refreshContentPanel(feature.properties);
+    if(isLeft){
+        left();
+    } else {
+        right();
+    }
+}
+
 function left() {
     controlSlider.animate({'left': '0px'}, 'slow', 'linear');
     mapClip.animate({'left': '0px'}, 'slow', 'linear');

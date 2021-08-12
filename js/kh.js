@@ -1,19 +1,7 @@
 (function(window) {
     KH = L.Class.extend({
 
-    	options: {
-            containerSelector : '#container',
-            bounds: {
-                southWest: {
-                    lat: 49.901689,
-                    lng: 36.461400
-                },
-                northEast: {
-                    lat: 50.115857,
-                    lng: 36.019992
-                }
-            }
-    	},
+    	options: { },
 
         _initializeBeforeMap: function () {
             var beforeLayerUrl = 'https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg';
@@ -81,11 +69,10 @@
 
             return map;
         },
-        _hideIntro: function(){
-            this.containerClasses.remove('show-intro');
-        },
 
         initialize: function (options) {
+            this.options = options;
+            this.mapBase = document.querySelector('#map-base')
             var bMap = this._initializeBeforeMap();
             this.before = new Object();
             this.before.map = bMap;
@@ -94,56 +81,39 @@
             var container = document.querySelector(this.options.containerSelector);
             this.containerClasses = container.classList;
             $(this.options.containerSelector).beforeAfter();
-
-            KH.prototype._syncMaps({});
-
-            document.querySelector('#button-explore').addEventListener('click', function (event) {
-                KH.prototype._hideIntro();
-                showMapControls();
-            }, false);
-            document.querySelector('#button-start').addEventListener('click', function (event) {
-                KH.prototype._hideIntro();
-                KH.prototype._markerClickListener(geoJson[0], false);
-            }, false);
-
+            this._syncMaps({});
         },
 
         _initializeMarker: function (feature, latLng) {
-
-            var options2 = {
+            var defaultIcon = L.BeautifyIcon.icon({
                 iconShape: 'circle-dot',
                 borderWidth: 5,
                 borderColor: '#c00'
-            };
-            var marker = L.marker(latLng, {icon:  L.BeautifyIcon.icon(options2)});
-            marker.on('click', function(e) {
-                var iconOptions = {
-                          prefix: 'icon',
-                          icon: 'info',
-                          borderColor: '#c00',
-                          backgroundColor: '#c00',
-                          textColor: 'white'
-                        };
-                marker.setIcon(L.BeautifyIcon.icon(iconOptions));
-                var left = $('#map-clip').css('left');
+            });
 
-                KH.prototype._markerClickListener(e.target.feature, parseInt(left, 10) < e.layerPoint.x);
+            var marker = L.marker(latLng, {icon: defaultIcon});
+
+            var selectedIcon = L.BeautifyIcon.icon({
+                prefix: 'icon',
+                icon: 'info',
+                borderColor: '#c00',
+                backgroundColor: '#c00',
+                textColor: 'white'
+            });
+            marker.on('click', function(e) {
+                marker.setIcon(selectedIcon);
+                var left = $('#map-clip').css('left');
+                KH.prototype.markerClickListener(e.target.feature, parseInt(left, 10) < e.layerPoint.x);
             });
             return marker;
         },
 
-        _markerClickListener: function(feature, isLeft) {
-            KH.prototype._unsyncMaps();
-
-            refreshContentPanel(feature.properties);
-            if(isLeft){
-                left();
-            } else {
-                right();
-            }
+        markerClickListener: function(feature, isLeft) {
+            this._unsyncMaps();
+            this.options.markerClickCallback(feature, isLeft);
             selectedPoint = feature.geometry.coordinates;
-            this._flyToTargetPoint(feature.geometry.coordinates);
-            KH.prototype._syncMaps({noInitialSync : true});
+            this.flyToTargetPoint(feature.geometry.coordinates);
+            this._syncMaps({noInitialSync : true});
         },
 
         _unsyncMaps: function() {
@@ -155,17 +125,16 @@
             this.after.map.sync(this.before.map, options);
         },
 
-        _flyToTargetPoint: function(coordinates) {
+        flyToTargetPoint: function(coordinates) {
             var flyToZoom = 16;
             var latLng = {'lat' : coordinates[1], 'lng' : coordinates[0]}
             var projection = this.before.map.project(latLng, flyToZoom);
             var targetPoint;
-            var mapBase = document.querySelector('#map-base')
             if(isPortraitOrientation()) {
-                var mapHeight = mapBase.offsetHeight;
+                var mapHeight = this.mapBase.offsetHeight;
                 targetPoint = projection.subtract([0, -mapHeight / 4]);
             } else {
-                var mapWidth = mapBase.offsetWidth;
+                var mapWidth = this.mapBase.offsetWidth;
                 targetPoint = projection.subtract([mapWidth / 4, 0]);
             }
             var targetLatLng = this.before.map.unproject(targetPoint, flyToZoom);

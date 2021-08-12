@@ -8,7 +8,7 @@ L.Control.Bar = L.Control.extend({
   },
 
   startTour: function () {
-    KH.prototype._markerClickListener(geoJson[0], false);
+    KH.prototype.markerClickListener(geoJson[0], false);
   },
 
   showInfo: function () {
