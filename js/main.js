@@ -6,7 +6,7 @@ var contentImage42 = document.querySelector('#content-img-1942');
 var contentImage15 = document.querySelector('#content-img-2015');
 var goto42 = document.querySelector('#goto-1942');
 var goto15 = document.querySelector('#goto-2015');
-var gotoExplore = document.querySelector('.goto.goto-explore');
+var gotoExplore = document.querySelectorAll('.goto.goto-explore');
 var gotoNext = document.querySelector('#goto-next');
 var gotoBack = document.querySelector('#goto-back');
 var controlSlider = $('#control-slider');
@@ -39,9 +39,11 @@ function initContentPanel() {
     goto15.addEventListener('click', function () {
          left();
     });
-    gotoExplore.addEventListener('click', function () {
-        hideContent()
-    });
+    gotoExplore.forEach(function(element) {
+        element.addEventListener('click', function () {
+            hideContent()
+        });
+    })
     gotoNext.addEventListener('click', function () {
         var title = contentTitle42.innerHTML;
         var index = -1;
