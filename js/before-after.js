@@ -8,7 +8,12 @@
       resizeElement.addClass('ba-resizable');
 
       // Check if it's a mouse or touch event and pass along the correct value
-      var startX = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
+      var startX;
+      if(e.pageX) {
+        startX = e.pageX
+      } else if(e.originalEvent.touches) {
+        startX = e.originalEvent.touches[0].pageX;
+      }
 
       // Get the initial position
       var dragWidth = dragElement.outerWidth(),
@@ -25,7 +30,12 @@
       dragElement.parents().on("mousemove.ba-events touchmove.ba-events", function(e) {
 
         // Check if it's a mouse or touch event and pass along the correct value
-        var moveX = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
+        var moveX
+        if(e.pageX) {
+            moveX = e.pageX
+         } else if(e.originalEvent.touches) {
+            moveX = e.originalEvent.touches[0].pageX;
+         }
 
         var leftValue = moveX + posX - dragWidth;
 
@@ -41,9 +51,18 @@
         var widthValue = (leftValue + dragWidth/2 - containerOffset);
 
         // Set the new values for the slider and the handle.
-        document.querySelector('.ba-draggable').style.left = widthValue +'px';
-        document.querySelector('.ba-resizable').style.left = widthValue +'px';
-        document.querySelector('.ba-resizable #map-clip-inner').style.left = (-widthValue+1) +'px';
+        var draggable = document.querySelector('.ba-draggable');
+        if(draggable) {
+            draggable.style.left = widthValue +'px';
+        }
+        var resizable = document.querySelector('.ba-resizable');
+        if(resizable) {
+            resizable.style.left = widthValue +'px';
+        }
+        var mapClip = document.querySelector('.ba-resizable #map-clip-inner');
+        if(mapClip) {
+            mapClip.style.left = (-widthValue+1) +'px';
+        }
       }).on('mouseup.ba-events touchend.ba-events touchcancel.ba-events', function(){
         dragElement.removeClass('ba-draggable');
         resizeElement.removeClass('ba-resizable');
