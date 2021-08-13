@@ -8,12 +8,7 @@
       resizeElement.addClass('ba-resizable');
 
       // Check if it's a mouse or touch event and pass along the correct value
-      var startX;
-      if(e.pageX) {
-        startX = e.pageX
-      } else if(e.originalEvent.touches) {
-        startX = e.originalEvent.touches[0].pageX;
-      }
+      var startX = (e.pageX != undefined) ? e.pageX : e.originalEvent.touches[0].pageX;
 
       // Get the initial position
       var dragWidth = dragElement.outerWidth(),
@@ -30,12 +25,7 @@
       dragElement.parents().on("mousemove.ba-events touchmove.ba-events", function(e) {
 
         // Check if it's a mouse or touch event and pass along the correct value
-        var moveX
-        if(e.pageX) {
-            moveX = e.pageX
-         } else if(e.originalEvent.touches) {
-            moveX = e.originalEvent.touches[0].pageX;
-         }
+        var moveX = (e.pageX != undefined) ? e.pageX : e.originalEvent.touches[0].pageX;
 
         var leftValue = moveX + posX - dragWidth;
 
