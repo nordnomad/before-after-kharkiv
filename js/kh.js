@@ -2,10 +2,11 @@
     KH = L.Class.extend({
 
     	options: { },
-
         _initializeBeforeMap: function () {
             var beforeLayerUrl = 'https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg';
-            var before = this._buildMap('map-base', beforeLayerUrl, false);
+            var markers = [];
+            var before = this._buildMap('map-base', beforeLayerUrl, markers);
+            before.markers = markers;
             L.tileLayer.fallback(beforeLayerUrl, {minNativeZoom: 13}).addTo(before);
             return before;
         },
@@ -13,10 +14,13 @@
         _initializeAfterMap: function() {
             var afterLayerUrl = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=';
             var accessKey = 'pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q';
-            return this._buildMap('map-overlay', afterLayerUrl + accessKey, true);
+            var markers = [];
+            var after = this._buildMap('map-overlay', afterLayerUrl + accessKey, markers);
+            after.markers = markers;
+            return after;
         },
 
-        _buildMap: function(id, layer, isLeft) {
+        _buildMap: function(id, layer, markers) {
             var bounds = this.options.bounds;
             var southWest = L.latLng(bounds.southWest.lat, bounds.southWest.lng),
                 northEast = L.latLng(bounds.northEast.lat, bounds.northEast.lng),
@@ -63,7 +67,9 @@
             L.tileLayer(layer, {detectRetina : true}).addTo(map);
             L.geoJson(geoJson, {
                 pointToLayer: function (feature, latLng) {
-                    return KH.prototype._initializeMarker(feature, latLng);
+                    var marker = KH.prototype._initializeMarker(feature, latLng);
+                    markers.push(marker);
+                    return marker;
                 }
             }).addTo(map);
 
@@ -93,15 +99,7 @@
 
             var marker = L.marker(latLng, {icon: defaultIcon});
 
-            var selectedIcon = L.BeautifyIcon.icon({
-                prefix: 'icon',
-                icon: 'info',
-                borderColor: '#c00',
-                backgroundColor: '#c00',
-                textColor: 'white'
-            });
             marker.on('click', function(e) {
-                marker.setIcon(selectedIcon);
                 var left = $('#map-clip').css('left');
                 KH.prototype.markerClickListener(e.target.feature, parseInt(left, 10) < e.layerPoint.x);
             });
@@ -110,6 +108,25 @@
 
         markerClickListener: function(feature, isLeft) {
             this._unsyncMaps();
+
+//             var selectedIcon = L.BeautifyIcon.icon({
+//                            prefix: 'icon',
+//                            icon: 'info',
+//                            borderColor: '#c00',
+//                            backgroundColor: '#c00',
+//                            textColor: 'white'
+//                        });
+//            marker.setIcon(selectedIcon);
+            var properties = feature.properties;
+            this.before.map.markers.forEach(function(marker){
+                layerName = layer.options.name;
+                markerName = properties.title
+                if(layerName == markerName){
+
+                }
+
+            });
+
             this.options.markerClickCallback(feature, isLeft);
             selectedPoint = feature.geometry.coordinates;
             this.flyToTargetPoint(feature.geometry.coordinates);
