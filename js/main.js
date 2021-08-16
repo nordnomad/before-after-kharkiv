@@ -41,6 +41,7 @@ function initContentPanel() {
     });
     gotoExplore.forEach(function(element) {
         element.addEventListener('click', function () {
+            KH.prototype.unselectMarker();
             hideContent()
         });
     })

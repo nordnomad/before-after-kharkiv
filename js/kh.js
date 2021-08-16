@@ -108,29 +108,58 @@
 
         markerClickListener: function(feature, isLeft) {
             this._unsyncMaps();
-
-//             var selectedIcon = L.BeautifyIcon.icon({
-//                            prefix: 'icon',
-//                            icon: 'info',
-//                            borderColor: '#c00',
-//                            backgroundColor: '#c00',
-//                            textColor: 'white'
-//                        });
-//            marker.setIcon(selectedIcon);
-            var properties = feature.properties;
-            this.before.map.markers.forEach(function(marker){
-                layerName = layer.options.name;
-                markerName = properties.title
-                if(layerName == markerName){
-
-                }
-
-            });
+            this.unselectMarker();
+            this._selectMarker(feature.properties.title);
 
             this.options.markerClickCallback(feature, isLeft);
             selectedPoint = feature.geometry.coordinates;
             this.flyToTargetPoint(feature.geometry.coordinates);
             this._syncMaps({noInitialSync : true});
+        },
+
+        _selectMarker: function(clickedMarkerTitle){
+            var selectedIcon = L.BeautifyIcon.icon({
+                    prefix: 'icon',
+                    icon: 'info',
+                    borderColor: '#c00',
+                    backgroundColor: '#c00',
+                    textColor: 'white'
+            });
+            var markerIndex;
+            this.before.map.markers.forEach(function(marker, index){
+                var title = marker.feature.properties.title;
+                if(clickedMarkerTitle == title){
+                    markerIndex = index;
+                }
+            });
+            var markerSelectedAfter = this.after.map.markers[markerIndex];
+            markerSelectedAfter.setIcon(selectedIcon)
+            this.after.map.selectedMarker = markerSelectedAfter;
+
+            var markerSelectedBefore = this.before.map.markers[markerIndex];
+            markerSelectedBefore.setIcon(selectedIcon)
+            this.before.map.selectedMarker = markerSelectedBefore;
+        },
+
+        unselectMarker: function(){
+            var defaultIcon = L.BeautifyIcon.icon({
+                iconShape: 'circle-dot',
+                borderWidth: 5,
+                borderColor: '#c00'
+            });
+
+            if(this.before.map.selectedMarker){
+                this.before.map.selectedMarker.setIcon(L.BeautifyIcon.icon({
+                                                                       iconShape: 'circle-dot',
+                                                                       borderWidth: 5,
+                                                                       borderColor: '#c00'
+                                                                   }));
+                this.after.map.selectedMarker.setIcon(L.BeautifyIcon.icon({
+                                                                      iconShape: 'circle-dot',
+                                                                      borderWidth: 5,
+                                                                      borderColor: '#c00'
+                                                                  }))
+            }
         },
 
         _unsyncMaps: function() {
