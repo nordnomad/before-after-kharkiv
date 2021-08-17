@@ -28,8 +28,13 @@ function refreshContentPanel(properties) {
     contentTitle15.innerHTML = properties.title;
     contentDescription42.innerHTML = properties.desc1942;
     contentDescription15.innerHTML = properties.desc2015;
-    contentImage42.src = properties.img1942;
-    contentImage15.src = properties.img2015;
+    contentImage42.setAttribute('data-src', properties.img1942)
+    contentImage15.setAttribute('data-src', properties.img2015);
+}
+
+function loadImage(imageName, width, height) {
+
+    return 'https://res.cloudinary.com/dpcafrjml/image/upload/h_'+height +',w_' +width +'/' + imageName
 }
 
 function initContentPanel() {
@@ -111,7 +116,12 @@ function center() {
     mapClipInner.animate({'left': (-docW+1) +'px' }, 'slow', 'linear', function(){showContent()})
 }
 function showContent(){
-    content.fadeIn('slow')
+    content.fadeIn('slow');
+    var width =  Number($('#content-description-1942').width().toFixed(0));
+    var height = Number((width * 10 / 16).toFixed(0));
+    var imageName = contentImage42.getAttribute('data-src');
+
+    contentImage42.src = loadImage(imageName, width, height);
 }
 function hideContent(){
     content.fadeOut('slow', function() {

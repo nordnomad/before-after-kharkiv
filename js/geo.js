@@ -362,7 +362,7 @@ geoJson = [
       "title": "Университет Каразина",
       "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
       "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "images/karazina/karazina_old.jpg",
+      "img1942": "karazina_old.jpg",
       "img2015": "images/karazina/karazina_new.jpg"
     },
     "geometry": {
