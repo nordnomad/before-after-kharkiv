@@ -1,7 +1,4 @@
-/* Compatible with Leaflet 0.7 */
 .leaflet-control-locate a {
-  /*font-size: 1.4em;*/
-  /*color: #444;*/
   color: black;
   cursor: pointer;
 }
@@ -30,5 +27,3 @@
     stroke-width: 1;
   }
 }
-
-/*# sourceMappingURL=L.Control.Locate.css.map */

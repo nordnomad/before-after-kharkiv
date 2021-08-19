@@ -147,18 +147,9 @@
                 borderWidth: 5,
                 borderColor: '#c00'
             });
-
             if(this.before.map.selectedMarker){
-                this.before.map.selectedMarker.setIcon(L.BeautifyIcon.icon({
-                                                                       iconShape: 'circle-dot',
-                                                                       borderWidth: 5,
-                                                                       borderColor: '#c00'
-                                                                   }));
-                this.after.map.selectedMarker.setIcon(L.BeautifyIcon.icon({
-                                                                      iconShape: 'circle-dot',
-                                                                      borderWidth: 5,
-                                                                      borderColor: '#c00'
-                                                                  }))
+                this.before.map.selectedMarker.setIcon(defaultIcon);
+                this.after.map.selectedMarker.setIcon(defaultIcon)
             }
         },
 

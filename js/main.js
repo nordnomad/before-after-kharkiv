@@ -33,7 +33,6 @@ function refreshContentPanel(properties) {
 }
 
 function loadImage(imageName, width, height) {
-
     return 'https://res.cloudinary.com/dpcafrjml/image/upload/h_'+height +',w_' +width +'/' + imageName
 }
 
@@ -105,23 +104,20 @@ function left() {
 
 function right() {
     var docW = document.body.clientWidth;
-    controlSlider.animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
-    mapClip.animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
-    mapClipInner.animate({'left': (-docW+1) +'px' }, 'slow', 'linear', function(){showContent()})
-}
-function center() {
-    var docW = document.body.clientWidth / 2;
-    controlSlider.animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
-    mapClip.animate({'left': docW + 'px'}, 'slow', 'linear', function(){showContent()})
+    controlSlider.animate({'left': docW + 'px'}, 'slow', 'linear')
+    mapClip.animate({'left': docW + 'px'}, 'slow', 'linear')
     mapClipInner.animate({'left': (-docW+1) +'px' }, 'slow', 'linear', function(){showContent()})
 }
 function showContent(){
     content.fadeIn('slow');
-    var width =  Number($('#content-description-1942').width().toFixed(0));
+    var width =  Number(contentDescription42.offsetWidth.toFixed(0));
     var height = Number((width * 10 / 16).toFixed(0));
-    var imageName = contentImage42.getAttribute('data-src');
 
-    contentImage42.src = loadImage(imageName, width, height);
+    var imageName42 = contentImage42.getAttribute('data-src');
+    contentImage42.src = loadImage(imageName42, width, height);
+
+    var imageName15 = contentImage15.getAttribute('data-src');
+    contentImage15.src = loadImage(imageName15, width, height);
 }
 function hideContent(){
     content.fadeOut('slow', function() {
