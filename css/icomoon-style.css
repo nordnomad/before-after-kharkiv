@@ -24,25 +24,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.icon-fullscreen-exit:before {
-  content: "\e900";
-}
-.icon-collapse:before {
-  content: "\e900";
-}
-.icon-shrink:before {
-  content: "\e900";
-}
-.icon-reduce:before {
-  content: "\e900";
-}
-.icon-fullscreen:before {
-  content: "\e901";
-}
-.icon-expand:before {
-  content: "\e901";
-}
 .icon-cross:before {
   content: "\ea0f";
 }
@@ -55,23 +36,11 @@
 .icon-question:before {
   content: "\ea09";
 }
-.icon-plus:before {
-  content: "\ea0a";
-}
-.icon-minus:before {
-  content: "\ea0b";
-}
 .icon-info:before {
   content: "\ea0c";
 }
 .icon-facebook:before {
   content: "\e904";
-}
-.icon-facebook-f:before {
-  content: "\e904";
-}
-.icon-twitter:before {
-  content: "\e905";
 }
 .icon-map-o:before {
   content: "\e906";
