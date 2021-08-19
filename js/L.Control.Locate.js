@@ -279,6 +279,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
                 var link = L.DomUtil.create('a', 'leaflet-bar-part leaflet-bar-part-single', container);
                 link.title = options.strings.title;
                 var icon = L.DomUtil.create(options.iconElementTag, options.icon, link);
+                icon.href = '#';
                 return { link: link, icon: icon };
             },
             /** This event is called in case of any location error that is not a time out error. */
