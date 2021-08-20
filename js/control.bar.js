@@ -11,20 +11,9 @@ L.Control.Bar = L.Control.extend({
     KH.prototype.markerClickListener(geoJson[0], false);
   },
 
-  showInfo: function () {
-   //TODO implement
-    console.log('TODO InfoControl')
-  },
-
   onAdd: function(map) {
     this.map = map;
     this._container = L.DomUtil.create('div', 'leaflet-control leaflet-bar');
-    var question = L.DomUtil.create('a', 'icon-question', this._container);
-    question.href='#';
-    L.DomEvent
-          .addListener(question, 'click', L.DomEvent.stopPropagation)
-          .addListener(question, 'click', L.DomEvent.preventDefault)
-          .addListener(question, 'click', this.showInfo);
     var tour = L.DomUtil.create('a', 'icon-map-signs', this._container);
     tour.href='#';
     L.DomEvent

@@ -151,7 +151,7 @@ p {
 }
 .content-wrapper {
     position: relative;
-    margin: 6vh auto 0;
+    margin: 2vh auto;
     width: 90%;
     color: #fff;
     font-weight: 300;
@@ -181,7 +181,7 @@ p {
 .content-navigation {
     justify-content: space-between;
     display: flex;
-    padding-bottom: 5px
+    /*padding-bottom: 5px*/
 }
 .btn {
     background-color: #c00;
