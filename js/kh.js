@@ -22,9 +22,11 @@
 
         _buildMap: function(id, layer, markers) {
             var bounds = this.options.bounds;
+            var center = this.options.center;
             var southWest = L.latLng(bounds.southWest.lat, bounds.southWest.lng),
                 northEast = L.latLng(bounds.northEast.lat, bounds.northEast.lng),
-                cityBounds = L.latLngBounds(southWest, northEast);
+                cityBounds = L.latLngBounds(southWest, northEast),
+                cityCenter = L.latLng(center.lat, center.lng);
 
             var mapOptions = {
                 attributionControl: false,
@@ -34,10 +36,7 @@
                 zoom: 16,
                 tileSize: 256,
                 zoomControl:false,
-                center: {
-                    lat: 50.005720,
-                    lng: 36.229192
-                },
+                center: cityCenter,
                 maxBounds: cityBounds
             };
             var map = L.map(id, mapOptions);
@@ -63,6 +62,153 @@
             var options = {default_text: "Как изменился Харьков с 1942го до сегодня", position: 'bottomright'};
             L.control.bar(options).addTo(map);
             L.control.social(options).addTo(map);
+
+            var dropDownId = id + '_city';
+            var legend = L.control({position: 'topright'});
+            legend.onAdd = function (map) {
+                var div = L.DomUtil.create('div', 'info legend');
+                div.innerHTML = '<select id="' + dropDownId + '">' +
+                                    '<option value="Харків">Харків</option>'+
+                                    '<option value="Київ">Київ</option>'+
+                                    '<option value="Одеса">Одеса</option>'+
+                                    '<option value="Черкаси">Черкаси</option>'+
+                                    '<option value="Чугуїв">Чугуїв</option>'+
+                                    '<option value="Зміїв">Зміїв</option>'+
+                                 '</select>';
+                div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
+                return div;
+            };
+            legend.addTo(map);
+
+            $("#" + dropDownId).change(function(e){
+                console.log($("#" + dropDownId).val());
+                var cityOptions;
+                switch ($("#" + dropDownId).val()) {
+                  case "Київ":
+                  cityOptions = {
+                     containerSelector : '#container',
+                     bounds: {
+                         southWest: {
+                             lat: 50.316890,
+                             lng: 30.247317
+                         },
+                         northEast: {
+                             lat: 50.600066,
+                             lng: 30.820969
+                         },
+                     },
+                     center: {
+                         lat: 50.450861,
+                         lng: 30.522817
+                     },
+                     markerClickCallback : function(){console.log('marker')}
+                  };
+                  break;
+                  case "Одеса":
+                  cityOptions = {
+                       containerSelector : '#container',
+                       bounds: {
+                           southWest: {
+                               lat: 46.325519,
+                               lng: 30.610956
+                           },
+                           northEast: {
+                               lat: 46.601843,
+                               lng: 30.822774
+                           },
+                       },
+                       center: {
+                           lat: 46.487240,
+                           lng: 30.739251
+                       },
+                       markerClickCallback : function(){console.log('marker')}
+                  };
+                  break;
+                  case "Черкаси":
+                  cityOptions = {
+                     containerSelector : '#container',
+                     bounds: {
+                         southWest: {
+                             lat: 49.371235,
+                             lng: 32.147075
+                         },
+                         northEast: {
+                             lat: 49.496047,
+                             lng: 31.967732
+                         },
+                     },
+                     center: {
+                         lat: 49.445328,
+                         lng: 32.060941
+                     },
+                     markerClickCallback : function(){console.log('marker')}
+                  };
+                  break;
+                  case "Чугуїв":
+                  cityOptions = {
+                       containerSelector : '#container',
+                       bounds: {
+                           southWest: {
+                               lat: 49.813861,
+                               lng: 36.721748
+                           },
+                           northEast: {
+                               lat: 49.856975,
+                               lng: 36.637754
+                           },
+                       },
+                       center: {
+                           lat: 49.834577,
+                           lng: 36.692798
+                       },
+                       markerClickCallback : function(){console.log('marker')}
+                  };
+                  break;
+                  case "Зміїв":
+                  cityOptions = {
+                         containerSelector : '#container',
+                         bounds: {
+                             southWest: {
+                                 lat: 49.661712,
+                                 lng: 36.413192
+                             },
+                             northEast: {
+                                 lat: 49.710952,
+                                 lng: 36.308050
+                             },
+                         },
+                         center: {
+                             lat: 49.683279,
+                             lng: 36.356204
+                         },
+                         markerClickCallback : function(){console.log('marker')}
+                  };
+                  break;
+                  case "Харків":
+                  break;
+                }
+                var kyivOptions = {
+                    containerSelector : '#container',
+                    bounds: {
+                        southWest: {
+                            lat: 50.316890,
+                            lng: 30.247317
+                        },
+                        northEast: {
+                            lat: 50.600066,
+                            lng: 30.820969
+                        },
+                    },
+                    center: {
+                        lat: 50.450861,
+                        lng: 30.522817
+                    },
+                    markerClickCallback : function(){console.log('marker')}
+                };
+                KH.prototype.before.map.remove();
+                KH.prototype.after.map.remove();
+                KH.prototype.initialize(cityOptions);
+            });
 
             L.tileLayer(layer, {detectRetina : true}).addTo(map);
             L.geoJson(geoJson, {

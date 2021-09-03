@@ -12,8 +12,10 @@ L.Control.Bar = L.Control.extend({
   },
 
   showInfo: function () {
-   //TODO implement
-    console.log('TODO InfoControl')
+    var win =  L.control.window(KH.prototype.after.map,{title:'Hello world!',maxWidth:400,modal: true})
+                   .content('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac sollicitudin eros, ut imperdiet felis. Pellentesque pretium mi ante, et faucibus ipsum rutrum sed. Proin accumsan luctus consectetur. In sit amet purus id dui scelerisque ultricies non porta dui. Cras sit amet arcu non est efficitur molestie.')
+                   .prompt({callback:function(){alert('This is called after OK click!')}})
+                   .show()
   },
 
   onAdd: function(map) {

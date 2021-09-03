@@ -13,6 +13,10 @@ var options = {
                     lng: 36.019992
                 }
             },
+            center: {
+                lat: 50.005720,
+                lng: 36.229192
+            },
             markerClickCallback : markerClickHandler
     	};
 

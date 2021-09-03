@@ -18,3 +18,4 @@ Plugins
  - to share current map location - https://github.com/CliffCloud/Leaflet.LocationShare
  - pulsing icons - https://github.com/mapshakers/leaflet-icon-pulse
  - replaces 404 Tiles by scaled lower zoom Tiles - https://github.com/ghybs/Leaflet.TileLayer.Fallback
+ - popup - https://github.com/mapshakers/leaflet-control-window
