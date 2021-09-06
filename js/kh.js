@@ -64,190 +64,173 @@
             L.control.bar(options).addTo(map);
             L.control.social(options).addTo(map);
 
-            var dropDownId = id + '_city';
-            var legend = L.control({position: 'topright'});
-            legend.onAdd = function (map) {
-                var div = L.DomUtil.create('div', 'info legend');
-                div.innerHTML = '<select id="' + dropDownId + '">' +
-                                    '<option value="Харків">Харків</option>'+
-                                    '<option value="Київ">Київ</option>'+
-                                    '<option value="Одеса">Одеса</option>'+
-                                    '<option value="Черкаси">Черкаси</option>'+
-                                    '<option value="Чугуїв">Чугуїв</option>'+
-                                    '<option value="Зміїв">Зміїв</option>'+
-                                 '</select>';
-                div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
-                return div;
-            };
-            legend.addTo(map);
-
-var items = [
-  { label: "Харків", value: "kharkiv" },
-  { label: "Київ", value: "kyiv" },
-  { label: "Черкаси", value: "cherkasy" },
-  { label: "Одеса", value: "odesa" },
-];
-L.control
-  .select({
-    position: "bottomright",
-    items: items,
-    onSelect: function(newItemValue) {
-      drawMarker(newItemValue);
-    }
-  })
-  .addTo(map);
-            $("#" + dropDownId).change(function(e){
-                console.log($("#" + dropDownId).val());
-                KH.prototype.selectedCity = $("#" + dropDownId).val();
-                var cityOptions;
-                switch ($("#" + dropDownId).val()) {
-                  case "Київ":
-                  cityOptions = {
-                     containerSelector : '#container',
-                     bounds: {
-                         southWest: {
-                             lat: 50.316890,
-                             lng: 30.247317
-                         },
-                         northEast: {
-                             lat: 50.600066,
-                             lng: 30.820969
-                         },
-                     },
-                     center: {
-                         lat: 50.450861,
-                         lng: 30.522817
-                     },
-                     markerClickCallback : function(){console.log('marker')}
-                  };
-                  break;
-                  case "Одеса":
-                  cityOptions = {
-                       containerSelector : '#container',
-                       bounds: {
-                           southWest: {
-                               lat: 46.325519,
-                               lng: 30.610956
-                           },
-                           northEast: {
-                               lat: 46.601843,
-                               lng: 30.822774
-                           },
-                       },
-                       center: {
-                           lat: 46.487240,
-                           lng: 30.739251
-                       },
-                       markerClickCallback : function(){console.log('marker')}
-                  };
-                  break;
-                  case "Черкаси":
-                  cityOptions = {
-                     containerSelector : '#container',
-                     bounds: {
-                         southWest: {
-                             lat: 49.371235,
-                             lng: 32.147075
-                         },
-                         northEast: {
-                             lat: 49.496047,
-                             lng: 31.967732
-                         },
-                     },
-                     center: {
-                         lat: 49.445328,
-                         lng: 32.060941
-                     },
-                     markerClickCallback : function(){console.log('marker')}
-                  };
-                  break;
-                  case "Чугуїв":
-                  cityOptions = {
-                       containerSelector : '#container',
-                       bounds: {
-                           southWest: {
-                               lat: 49.813861,
-                               lng: 36.721748
-                           },
-                           northEast: {
-                               lat: 49.856975,
-                               lng: 36.637754
-                           },
-                       },
-                       center: {
-                           lat: 49.834577,
-                           lng: 36.692798
-                       },
-                       markerClickCallback : function(){console.log('marker')}
-                  };
-                  break;
-                  case "Зміїв":
-                  cityOptions = {
-                         containerSelector : '#container',
-                         bounds: {
-                             southWest: {
-                                 lat: 49.661712,
-                                 lng: 36.413192
-                             },
-                             northEast: {
-                                 lat: 49.710952,
-                                 lng: 36.308050
-                             },
-                         },
-                         center: {
-                             lat: 49.683279,
-                             lng: 36.356204
-                         },
-                         markerClickCallback : function(){console.log('marker')}
-                  };
-                  break;
-                  case "Харків":
-                  cityOptions = {
-                          containerSelector : '#container',
-                          bounds: {
-                              southWest: {
-                                  lat: 49.901689,
-                                  lng: 36.461400
-                              },
-                              northEast: {
-                                  lat: 50.115857,
-                                  lng: 36.019992
-                              }
-                          },
-                          center: {
-                              lat: 50.005720,
-                              lng: 36.229192
-                          },
-                          markerClickCallback : markerClickHandler
-                    }
-                  break;
+            var items = [
+              { label: "Харків", value: "kharkiv" },
+              { label: "Київ", value: "kyiv" },
+              { label: "Черкаси", value: "cherkasy" },
+              { label: "Одеса", value: "odesa" },
+            ];
+            L.control.select({
+                position: "bottomright",
+                iconMain: "\u2261",
+            //    iconChecked: "\u25C9",
+                iconChecked: "",
+                iconUnchecked: "",
+                selectedDefault: true,
+                items: items,
+                onSelect: function(newItemValue) {
+                  console.log(newItemValue);
+                                  KH.prototype.selectedCity = newItemValue;
+                                  var cityOptions;
+                                  switch (newItemValue) {
+                                    case "kyiv":
+                                    cityOptions = {
+                                       containerSelector : '#container',
+                                       bounds: {
+                                           southWest: {
+                                               lat: 50.316890,
+                                               lng: 30.247317
+                                           },
+                                           northEast: {
+                                               lat: 50.600066,
+                                               lng: 30.820969
+                                           },
+                                       },
+                                       center: {
+                                           lat: 50.450861,
+                                           lng: 30.522817
+                                       },
+                                       markerClickCallback : function(){console.log('marker')}
+                                    };
+                                    break;
+                                    case "odesa":
+                                    cityOptions = {
+                                         containerSelector : '#container',
+                                         bounds: {
+                                             southWest: {
+                                                 lat: 46.325519,
+                                                 lng: 30.610956
+                                             },
+                                             northEast: {
+                                                 lat: 46.601843,
+                                                 lng: 30.822774
+                                             },
+                                         },
+                                         center: {
+                                             lat: 46.487240,
+                                             lng: 30.739251
+                                         },
+                                         markerClickCallback : function(){console.log('marker')}
+                                    };
+                                    break;
+                                    case "cherkasy":
+                                    cityOptions = {
+                                       containerSelector : '#container',
+                                       bounds: {
+                                           southWest: {
+                                               lat: 49.371235,
+                                               lng: 32.147075
+                                           },
+                                           northEast: {
+                                               lat: 49.496047,
+                                               lng: 31.967732
+                                           },
+                                       },
+                                       center: {
+                                           lat: 49.445328,
+                                           lng: 32.060941
+                                       },
+                                       markerClickCallback : function(){console.log('marker')}
+                                    };
+                                    break;
+                                    case "Чугуїв":
+                                    cityOptions = {
+                                         containerSelector : '#container',
+                                         bounds: {
+                                             southWest: {
+                                                 lat: 49.813861,
+                                                 lng: 36.721748
+                                             },
+                                             northEast: {
+                                                 lat: 49.856975,
+                                                 lng: 36.637754
+                                             },
+                                         },
+                                         center: {
+                                             lat: 49.834577,
+                                             lng: 36.692798
+                                         },
+                                         markerClickCallback : function(){console.log('marker')}
+                                    };
+                                    break;
+                                    case "Зміїв":
+                                    cityOptions = {
+                                           containerSelector : '#container',
+                                           bounds: {
+                                               southWest: {
+                                                   lat: 49.661712,
+                                                   lng: 36.413192
+                                               },
+                                               northEast: {
+                                                   lat: 49.710952,
+                                                   lng: 36.308050
+                                               },
+                                           },
+                                           center: {
+                                               lat: 49.683279,
+                                               lng: 36.356204
+                                           },
+                                           markerClickCallback : function(){console.log('marker')}
+                                    };
+                                    break;
+                                    case "kharkiv":
+                                    cityOptions = {
+                                            containerSelector : '#container',
+                                            bounds: {
+                                                southWest: {
+                                                    lat: 49.901689,
+                                                    lng: 36.461400
+                                                },
+                                                northEast: {
+                                                    lat: 50.115857,
+                                                    lng: 36.019992
+                                                }
+                                            },
+                                            center: {
+                                                lat: 50.005720,
+                                                lng: 36.229192
+                                            },
+                                            markerClickCallback : markerClickHandler
+                                      }
+                                    break;
+                                  }
+                                  var kyivOptions = {
+                                      containerSelector : '#container',
+                                      bounds: {
+                                          southWest: {
+                                              lat: 50.316890,
+                                              lng: 30.247317
+                                          },
+                                          northEast: {
+                                              lat: 50.600066,
+                                              lng: 30.820969
+                                          },
+                                      },
+                                      center: {
+                                          lat: 50.450861,
+                                          lng: 30.522817
+                                      },
+                                      markerClickCallback : function(){console.log('marker')}
+                                  };
+                                  KH.prototype.before.map.remove();
+                                  KH.prototype.after.map.remove();
+                                  KH.prototype.initialize(cityOptions);
+                                  showMapControls();
+                                  $('#map-overlay_city').val(KH.prototype.selectedCity);
+                                  $('#map-base_city').val(KH.prototype.selectedCity);
                 }
-                var kyivOptions = {
-                    containerSelector : '#container',
-                    bounds: {
-                        southWest: {
-                            lat: 50.316890,
-                            lng: 30.247317
-                        },
-                        northEast: {
-                            lat: 50.600066,
-                            lng: 30.820969
-                        },
-                    },
-                    center: {
-                        lat: 50.450861,
-                        lng: 30.522817
-                    },
-                    markerClickCallback : function(){console.log('marker')}
-                };
-                KH.prototype.before.map.remove();
-                KH.prototype.after.map.remove();
-                KH.prototype.initialize(cityOptions);
-                showMapControls();
-                $('#map-overlay_city').val(KH.prototype.selectedCity);
-                $('#map-base_city').val(KH.prototype.selectedCity);
-
-            });
+              })
+            .addTo(map);
 
             L.tileLayer(layer, {detectRetina : true}).addTo(map);
             L.geoJson(geoJson, {
