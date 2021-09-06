@@ -2,6 +2,7 @@
     KH = L.Class.extend({
 
     	options: { },
+    	selectedCity: "Харків",
         _initializeBeforeMap: function () {
             var beforeLayerUrl = 'https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg';
             var markers = [];
@@ -82,6 +83,7 @@
 
             $("#" + dropDownId).change(function(e){
                 console.log($("#" + dropDownId).val());
+                KH.prototype.selectedCity = $("#" + dropDownId).val();
                 var cityOptions;
                 switch ($("#" + dropDownId).val()) {
                   case "Київ":
@@ -185,6 +187,24 @@
                   };
                   break;
                   case "Харків":
+                  cityOptions = {
+                          containerSelector : '#container',
+                          bounds: {
+                              southWest: {
+                                  lat: 49.901689,
+                                  lng: 36.461400
+                              },
+                              northEast: {
+                                  lat: 50.115857,
+                                  lng: 36.019992
+                              }
+                          },
+                          center: {
+                              lat: 50.005720,
+                              lng: 36.229192
+                          },
+                          markerClickCallback : markerClickHandler
+                    }
                   break;
                 }
                 var kyivOptions = {
@@ -208,6 +228,10 @@
                 KH.prototype.before.map.remove();
                 KH.prototype.after.map.remove();
                 KH.prototype.initialize(cityOptions);
+                showMapControls();
+                $('#map-overlay_city').val(KH.prototype.selectedCity);
+                $('#map-base_city').val(KH.prototype.selectedCity);
+
             });
 
             L.tileLayer(layer, {detectRetina : true}).addTo(map);

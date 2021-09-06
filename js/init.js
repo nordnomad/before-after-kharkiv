@@ -34,6 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
         var container = document.getElementById('container');
         var containerClasses = container.classList;
         applySmallStyle(containerClasses);
-        KH.prototype.flyToTargetPoint(selectedPoint)
+        if(selectedPoint) KH.prototype.flyToTargetPoint(selectedPoint)
     }
 });
