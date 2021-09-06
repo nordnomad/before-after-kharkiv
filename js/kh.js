@@ -81,6 +81,21 @@
             };
             legend.addTo(map);
 
+var items = [
+  { label: "Харків", value: "kharkiv" },
+  { label: "Київ", value: "kyiv" },
+  { label: "Черкаси", value: "cherkasy" },
+  { label: "Одеса", value: "odesa" },
+];
+L.control
+  .select({
+    position: "bottomright",
+    items: items,
+    onSelect: function(newItemValue) {
+      drawMarker(newItemValue);
+    }
+  })
+  .addTo(map);
             $("#" + dropDownId).change(function(e){
                 console.log($("#" + dropDownId).val());
                 KH.prototype.selectedCity = $("#" + dropDownId).val();
