@@ -2,7 +2,7 @@
     KH = L.Class.extend({
 
     	options: { },
-    	selectedCity: "Харків",
+    	selectedCity: "kharkiv",
         _initializeBeforeMap: function () {
             var beforeLayerUrl = 'https://17200.selcdn.ru/AerialWWII/Z{z}/{y}/{x}.jpg';
             var markers = [];
@@ -72,8 +72,7 @@
             ];
             L.control.select({
                 position: "bottomright",
-                iconMain: "\u2261",
-            //    iconChecked: "\u25C9",
+                iconMain: "",
                 iconChecked: "",
                 iconUnchecked: "",
                 selectedDefault: true,
@@ -226,8 +225,6 @@
                                   KH.prototype.after.map.remove();
                                   KH.prototype.initialize(cityOptions);
                                   showMapControls();
-                                  $('#map-overlay_city').val(KH.prototype.selectedCity);
-                                  $('#map-base_city').val(KH.prototype.selectedCity);
                 }
               })
             .addTo(map);
@@ -240,7 +237,7 @@
                     return marker;
                 }
             }).addTo(map);
-
+            $('.leaflet-control-select').find('a').addClass('icon-office')
             return map;
         },
 

@@ -27,13 +27,14 @@ L.Control.Bar = L.Control.extend({
           .addListener(question, 'click', L.DomEvent.stopPropagation)
           .addListener(question, 'click', L.DomEvent.preventDefault)
           .addListener(question, 'click', this.showInfo);
-    var tour = L.DomUtil.create('a', 'icon-map-signs', this._container);
-    tour.href='#';
-    L.DomEvent
-          .addListener(tour, 'click', L.DomEvent.stopPropagation)
-          .addListener(tour, 'click', L.DomEvent.preventDefault)
-          .addListener(tour, 'click', this.startTour);
-
+    if(KH.prototype.selectedCity == "kharkiv") {
+        var tour = L.DomUtil.create('a', 'icon-map-signs', this._container);
+        tour.href='#';
+        L.DomEvent
+              .addListener(tour, 'click', L.DomEvent.stopPropagation)
+              .addListener(tour, 'click', L.DomEvent.preventDefault)
+              .addListener(tour, 'click', this.startTour);
+    }
     return this._container;
   }
 });
