@@ -116,7 +116,7 @@ p {
     content: "\e92c";
 }
 #control-slider::after {
-    content: "2015";
+    content: "2021";
     text-align: left;
     padding-left: 40px;
     left: 0;
@@ -400,4 +400,7 @@ p {
 }
 .icon-office:before {
   content: "\e905";
+}
+.leaflet-top {
+    top: 70px;
 }

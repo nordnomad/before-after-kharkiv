@@ -7,7 +7,7 @@
 
 .leaflet-control-select .leaflet-control-select-menu:nth-of-type(1) {
   position: absolute;
-  top: -110px;
+  top: -2px;
   left: -56px; }
 
 .leaflet-control-select .leaflet-control-select-menu:nth-of-type(n + 2) {

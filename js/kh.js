@@ -71,7 +71,7 @@
               { label: "Одеса", value: "odesa" },
             ];
             L.control.select({
-                position: "bottomright",
+                position: "topright",
                 iconMain: "",
                 iconChecked: "",
                 iconUnchecked: "",
