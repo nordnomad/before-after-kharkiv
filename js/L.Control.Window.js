@@ -36,7 +36,7 @@ L.Control.Window = L.Control.extend({
 
         this._containerTitleBar = L.DomUtil.create('div', 'titlebar',this._container);
         this.titleContent = L.DomUtil.create('h2', 'title',this._containerTitleBar);
-        this._containerContent =  L.DomUtil.create('div', 'content' ,this._container);
+        this._containerContent =  L.DomUtil.create('div', 'content-modal' ,this._container);
         this._containerPromptButtons =  L.DomUtil.create('div', 'promptButtons' ,this._container);
 
         if (this.options.closeButton) {
