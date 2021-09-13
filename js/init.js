@@ -23,6 +23,7 @@ var options = {
 document.addEventListener("DOMContentLoaded", function() {
     KH.prototype.initialize(options);
     initContentPanel();
+    doneResizing();
 
     var resizeId;
     window.addEventListener('resize', function() {
