@@ -274,9 +274,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "ХНАТОБ",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "title": "Театр опери і балету",
+      "desc1942": "Будинок на передньому плані збудовано у 1840 р. У кінці XIX сторіччя там відкрилося Купецьке зібрання. у 20ті рр. там знаходисвя Діловий клуб, завданням якого було налагодження комунікації між владою та приватним бізнесом.",
+      "desc2015": "Після війни в будинку знаходився міський ретрансляційний вузол. У 1974 р. при підготовці до будівництва нового будинку театру, колишній клуб було знесено. Новий будинок у стилі постмодернізм занінчили у 1991 р. за 21 рік.",
       "img1942": "hnatob_old.jpg",
       "img2015": "hnatob_new.jpg"
     },
