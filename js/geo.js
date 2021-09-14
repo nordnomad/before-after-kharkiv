@@ -325,9 +325,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Отель Харьков",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "title": "Готель Харків",
+      "desc1942": "Готель був побудований у 1936 р. у стилі конструктивізм. У той час називався Інтернационал. Проект будинку отримав золоту медаль на Всесвітній виставці у Парижу в 1937 р. Постраждав у роки війни.",
+      "desc2015": "Будинок був відновлений тільки 1974 р. з елементами сталінського ампіру. В той самий час готель отримав сучасну назву. У 1976 р. до основної будівлі був прибудованій шістнадцятиповерховий корпус.",
       "img1942": "kharkiv_otel_old.jpg",
       "img2015": "kharkiv_otel_new.jpg"
     },
@@ -342,9 +342,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Станция метро - химкорус ",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "title": "Хімічний корпус - Станція метро",
+      "desc1942": "Будівля хімічного факультету Харківського Університету була збудовано за проєктом архітектора В. В. Велічко у 1914 р. Під час Другої світової війни будівля була зруйнована.",
+      "desc2015": "Після війни будівлю демонтували. У 1995 р. була відкрита станція метро Держпром і її єдиний вихід зараз знаходиться на місці де розташовувався корпус хімічного факультету.",
       "img1942": "him_korpus_old.jpg",
       "img2015": "him_korpus_new.jpg"
     },
@@ -359,9 +359,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Университет Каразина",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "title": "Головний корпус університету ім. Каразіна",
+      "desc1942": "Будинок було збудовано 1932 р. у стилі конструктивізм. У ньому планувалося розмістити уряд УССР, але після переносу столиці до Києва, там розмістили проектні и будівельні організації. Будинок стали називати Домом Проектів.",
+      "desc2015": "Під час Другої світової будинок сильно постраждав і його передали університету ім. Каразіна. Силами студентів у 1961 р. була проведена повна реставрація в результаті якой архітектурний стиль змінився на сталінський ампір.",
       "img1942": "karazina_old.jpg",
       "img2015": "karazina_new.jpg"
     },
@@ -393,9 +393,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Зоологический мост",
-      "desc1942": "До строительства мостика перебраться через Клочковский спуск можно было по двум головоломным лестницам",
-      "desc2015": "Мост был построен до 1953го года, а с конца 2000-х стал популярным у влюблённых, которые вешают на него множество замочков",
+      "title": "Зоологічний міст",
+      "desc1942": "До будівництва мосту перебратися через Клочківський узвіз можна було двома головоломними сходами.",
+      "desc2015": "Міст збудували до 1953 р., а в 2021 провели реконстукцію. Носить неофіційну назву Міст закоханих.",
       "img1942": "zoologichesky_most_old.jpg",
       "img2015": "zoologichesky_most_new.jpg"
     },
