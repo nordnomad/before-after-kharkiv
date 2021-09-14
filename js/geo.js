@@ -427,9 +427,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Гигант",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "title": "Гуртожиток Гігант",
+      "desc1942": "Гуртожиток у стилі конструктивізм був збудований у 1931 р. Складається за 10 секцій, зміщених одна до одної, що дозволило освітити усі коридори. Будинок містив пральні, бані, дезінфікувальні апарати - не чувані на той час санітарні умови.",
+      "desc2015": "У роки війни будинок гуртожитку був сильно пошкоджений. Відновлення почали у 1949 р. а в 1952 р. були введені в експлуатацію перші 4 секції. Під час відновлення була проведена реконструкція яка дещо змінила архітектурний вигляд будинку.",
       "img1942": "gigant_old.jpg",
       "img2015": "gigant_new.jpg"
     },
