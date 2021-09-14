@@ -308,9 +308,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "ХОДА",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "title": "Харківська ОДА",
+      "desc1942": "Будинок Губернского зібрання був збудований у 1900 р. у стилі неоренесанс. У 1932 р. будинок був перебудований у стилі конструктивім для ЦК КПУ.",
+      "desc2015": "Будинок був зруйнований під час війни і був відбудований у 1954 р. в єдиному стилі з готелем Харків. Зараз у будинку розміщується Харківська ОДА.",
       "img1942": "hoda_old.jpg",
       "img2015": "hoda_new.jpg"
     },
@@ -359,7 +359,7 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Головний корпус університету ім. Каразіна",
+      "title": "Корпус університету ім. Каразіна",
       "desc1942": "Будинок було збудовано 1932 р. у стилі конструктивізм. У ньому планувалося розмістити уряд УССР, але після переносу столиці до Києва, там розмістили проектні и будівельні організації. Будинок стали називати Домом Проектів.",
       "desc2015": "Під час Другої світової будинок сильно постраждав і його передали університету ім. Каразіна. Силами студентів у 1961 р. була проведена повна реставрація в результаті якой архітектурний стиль змінився на сталінський ампір.",
       "img1942": "karazina_old.jpg",
@@ -376,9 +376,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Сумская, 39",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "title": "Сумська, 39",
+      "desc1942": "Збудований у 1882 р. архитектором Б.Г.Михайловським за кошти І.Г.Харитоненка. Тут розташовувався медичний факультет університету.",
+      "desc2015": "На місці зруйнованого під час війни будинку у 1954 р. був збудований великий будинок для проектних організацій за проектом Г. Вегмана.",
       "img1942": "sumskaya_39_old.jpg",
       "img2015": "sumskaya_39_new.jpg"
     },
