@@ -60,6 +60,7 @@ function initContentPanel() {
         });
     })
     gotoNext.addEventListener('click', function () {
+        contentImage42.src = "image/spinner.svg";
         var title = contentTitle42.innerHTML;
         var index = -1;
         for(var i=0; i < geoJson.length; i++){
@@ -72,6 +73,7 @@ function initContentPanel() {
         KH.prototype.markerClickListener(geoJson[index], false);
     });
     gotoBack.addEventListener('click', function () {
+        contentImage42.src = "image/spinner.svg";
         var title = contentTitle42.innerHTML;
         var index = -1;
         for(var i=0; i < geoJson.length; i++){
@@ -122,6 +124,11 @@ function showContent(){
     content.fadeIn('slow');
     var width =  Number(contentDescription42.offsetWidth.toFixed(0));
     var height = Number((width * 10 / 16).toFixed(0));
+
+    contentImage42.setAttribute('width', width);
+    contentImage42.setAttribute('height', height);
+    contentImage15.setAttribute('width', width);
+    contentImage15.setAttribute('height', height);
 
     var imageName42 = contentImage42.getAttribute('data-src');
     contentImage42.src = loadImage(imageName42, width, height);
