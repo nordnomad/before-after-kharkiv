@@ -43,7 +43,7 @@ function refreshContentPanel(properties) {
 }
 
 function loadImage(imageName, width, height) {
-    return 'https://res.cloudinary.com/dpcafrjml/image/upload/dpr_2.0,h_'+height +',w_' +width +'/' + imageName
+    return 'https://res.cloudinary.com/dpcafrjml/image/upload/dpr_2.0,h_'+height +',w_' +width +',c_fill/' + imageName
 }
 
 function initContentPanel() {
@@ -123,7 +123,7 @@ function right() {
 function showContent(){
     content.fadeIn('slow');
     var width =  Number(contentDescription42.offsetWidth.toFixed(0));
-    var height = Number((width * 10 / 16).toFixed(0));
+    var height = Number((width * 9 / 16).toFixed(0));
 
     contentImage42.setAttribute('width', width);
     contentImage42.setAttribute('height', height);
