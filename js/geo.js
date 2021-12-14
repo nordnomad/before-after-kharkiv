@@ -138,9 +138,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Горсовет",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "title": "Міськрада",
+      "desc1942": "Міський Дім - місце де засідала міська дума був збудований у 1885 р. Цей будинок був перебудований у 1932 р. Була добудована башта, а загальна висота склала п'ять поверхів, ліпнина була прибрана з фасадів.",
+      "desc2015": "Пошкоджений війною будинок відновили у 50-х рр. у стилі сталінського ампіру. Башті надбудували другий ярус, фасади збагатив декор українських мотивів: шестикутні вікна, вертикальні 'вишивані рушники' між вікнами.",
       "img1942": "gorsovet_old.jpg",
       "img2015": "gorsovet_new.jpg"
     },
@@ -172,9 +172,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Соборный спуск - пассаж",
-      "desc1942": "В 1858 году было построено одно из самых больших городских зданий того времени - \"Большой корпус\". В нем размещались оптовые и розничные магазины. В 1875 в его части был открыт аналог современного Даффи - Пассаж",
-      "desc2015": "На месте пассажа был разбит Покровский сквер с фонтанами и клумбами. С верхней террасы можно полюбоваться залопанской частью города, например, Благовещенским собором. Местные художники устроили в сквере галерею под открытым небом и продают здесь свои картины",
+      "title": "Пассаж - Покровський сквер",
+      "desc1942": "У 1858 р. було збудоване найбільше міський будинок того часу - 'Великий корпус'. У будинку розміщувалися гуртові та роздрібні магазини, а у 1875 р. у його чатині був відкрився 'Пассаж' - аналог сучасного Даффі.",
+      "desc2015": "Після ушкоджень під час війни було вирішено знести рештки будинку і на їх місці розбити Покровський сквер. Зараз місцеві художники влаштували тут галерею під відкритим небом и продають свої картини.",
       "img1942": "soborny_passazh_old.jpg",
       "img2015": "soborny_passazh_new.jpg"
     },
