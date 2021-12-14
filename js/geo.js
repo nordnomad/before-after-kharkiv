@@ -121,9 +121,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Дом со шпилем",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
+      "title": "Дім зі шпилем",
+      "desc1942": "Фото зроблене у 20-х рр. минулого століття, видно весь квартал, який тепер займає Дім зі шпилем. Значна частина цих будинків постраждала у 1943 р. під час звільнення міста.",
+      "desc2015": "У 1954 р. завершилось будівництво головної семиповерхової частини дому з одинадцятиповерховою баштою зі шпилем. У башті виділялися квартири для керівників підприємств.",
       "img1942": "dom_so_shpilem_old.jpg",
       "img2015": "dom_so_shpilem_new.jpg"
     },
