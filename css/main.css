@@ -185,6 +185,7 @@ p {
 .btn {
     background-color: #c00;
     color: #fff;
+    cursor: pointer
 }
 .btn:active {
     background-color: #b20000
