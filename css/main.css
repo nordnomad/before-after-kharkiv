@@ -219,6 +219,7 @@ p {
     -moz-transition: background-color 200ms ease-out;
     -o-transition: background-color 200ms ease-out;
     transition: background-color 200ms ease-out;
+    cursor: pointer
 }
 .content-image {
     text-align: center;
