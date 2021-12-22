@@ -1,0 +1,3 @@
+<Directory / >
+DirectoryIndex index.html
+</Directory>
