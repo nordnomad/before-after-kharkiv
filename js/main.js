@@ -101,6 +101,8 @@ function initContentPanel() {
 
 function markerClickHandler(feature, isLeft){
     refreshContentPanel(feature.properties);
+    contentImage42.src = "image/spinner.svg";
+    contentImage15.src = "image/spinner.svg";
     if(isLeft){
         left();
     } else {
