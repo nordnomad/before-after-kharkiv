@@ -251,7 +251,7 @@
             this.after.map = this._initializeAfterMap();
             var container = document.querySelector(this.options.containerSelector);
             this.containerClasses = container.classList;
-            $(this.options.containerSelector).beforeAfter();
+//            $(this.options.containerSelector).beforeAfter();
             this._syncMaps({syncCursor: true});
         },
 
