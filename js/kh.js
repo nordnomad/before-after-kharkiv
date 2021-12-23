@@ -324,7 +324,7 @@
         },
         _syncMaps: function(options) {
 //            this.before.map.sync(this.after.map, options);
-            //this.after.map.sync(this.before.map, options);
+            this.after.map.sync(this.before.map, options);
         },
 
         flyToTargetPoint: function(coordinates) {
