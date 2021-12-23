@@ -323,7 +323,7 @@
             this.after.map.unsync(this.before.map);
         },
         _syncMaps: function(options) {
-            this.before.map.sync(this.after.map, options);
+//            this.before.map.sync(this.after.map, options);
             this.after.map.sync(this.before.map, options);
         },
 
