@@ -252,7 +252,7 @@
             var container = document.querySelector(this.options.containerSelector);
             this.containerClasses = container.classList;
             $(this.options.containerSelector).beforeAfter();
-            this._syncMaps({});
+            this._syncMaps({syncCursor: true});
         },
 
         _initializeMarker: function (feature, latLng) {
