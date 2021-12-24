@@ -58,7 +58,7 @@
                     console.log(e)
                 }
             }
-            L.control.locate(locateOptions).addTo(map);
+//            L.control.locate(locateOptions).addTo(map);
 
             var options = {default_text: "Как изменился Харьков с 1942го до сегодня", position: 'bottomright'};
             L.control.bar(options).addTo(map);
@@ -337,10 +337,10 @@
                             var f = L.Map.prototype._tryAnimatedZoom.call(a, b, d, e);
                             return f
                         },
-                    })
+
+                    });
 
                     L.extend(a, {
-
                         panBy: function(d, e) {
                             c && console.log("panBy"),
                             b.panBy(d, e),
