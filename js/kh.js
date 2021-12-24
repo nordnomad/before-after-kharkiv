@@ -251,7 +251,7 @@
             this.after.map = this._initializeAfterMap();
             var container = document.querySelector(this.options.containerSelector);
             this.containerClasses = container.classList;
-//            $(this.options.containerSelector).beforeAfter();
+            $(this.options.containerSelector).beforeAfter();
             this._syncMaps({});
         },
 
@@ -328,10 +328,19 @@
             l(this.before.map, this.after.map)
             function l(a, b) {
                     "use strict";
-                    var c = !1
+                    var c = true
                       , d = a.dragging._draggable
                       , e = b.dragging._draggable;
+                    L.extend(b, {
+                        _tryAnimatedZoom: function(b, d, e) {
+                            c && console.log("_tryAnimatedZoom2", Date.now() - c, b, d, e);
+                            var f = L.Map.prototype._tryAnimatedZoom.call(a, b, d, e);
+                            return f
+                        },
+                    })
+
                     L.extend(a, {
+
                         panBy: function(d, e) {
                             c && console.log("panBy"),
                             b.panBy(d, e),
