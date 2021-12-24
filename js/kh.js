@@ -252,7 +252,7 @@
             var container = document.querySelector(this.options.containerSelector);
             this.containerClasses = container.classList;
 //            $(this.options.containerSelector).beforeAfter();
-            this._syncMaps({syncCursor: true});
+            this._syncMaps({});
         },
 
         _initializeMarker: function (feature, latLng) {
@@ -319,12 +319,56 @@
         },
 
         _unsyncMaps: function() {
-            this.before.map.unsync(this.after.map);
-            this.after.map.unsync(this.before.map);
+//            this.before.map.unsync(this.after.map);
+//            this.after.map.unsync(this.before.map);
         },
         _syncMaps: function(options) {
-            this.before.map.sync(this.after.map, options);
-            this.after.map.sync(this.before.map, options);
+//            this.before.map.sync(this.after.map, options);
+//            this.after.map.sync(this.before.map, options);
+            l(this.before.map, this.after.map)
+            function l(a, b) {
+                    "use strict";
+                    var c = !1
+                      , d = a.dragging._draggable
+                      , e = b.dragging._draggable;
+                    L.extend(a, {
+                        panBy: function(d, e) {
+                            c && console.log("panBy"),
+                            b.panBy(d, e),
+                            L.Map.prototype.panBy.call(a, d, e)
+                        },
+                        _move: function(d, e, f) {
+                            return c && console.log("_move", Date.now() - c),
+                            b._move(d, e, f),
+                            L.Map.prototype._move.call(a, d, e, f)
+                        },
+                        _onResize: function(d, e) {
+                            return c && console.log("_onResize"),
+                            b._onResize(d, !0),
+                            L.Map.prototype._onResize.call(a, d)
+                        },
+                        _tryAnimatedZoom: function(b, d, e) {
+                            c && console.log("_tryAnimatedZoom", Date.now() - c, b, d, e);
+                            var f = L.Map.prototype._tryAnimatedZoom.call(a, b, d, e);
+                            return f
+                        },
+                        _resetView: function(c, d) {
+                            return b._resetView(c, d),
+                            L.Map.prototype._resetView.call(a, c, d)
+                        }
+                    }),
+                    a.on("zoomanim", function(a) {
+                        c && console.log("zoomanim1", Date.now() - c),
+                        b._animateZoom(a.center, a.zoom, !0, a.noUpdate)
+                    }),
+                    d._updatePosition = function() {
+                        c && console.log("_updatePosition", Date.now() - c),
+                        L.Draggable.prototype._updatePosition.call(d),
+                        L.DomUtil.setPosition(e._element, d._newPos),
+                        b.fire("moveend")
+                    }
+                }
+
         },
 
         flyToTargetPoint: function(coordinates) {
