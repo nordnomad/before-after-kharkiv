@@ -405,3 +405,6 @@ p {
 .leaflet-top {
     top: 70px;
 }
+.leaflet-control-select-menu {
+    font-size: 14px;
+}

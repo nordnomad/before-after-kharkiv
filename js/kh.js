@@ -335,7 +335,7 @@
             l(this.before.map, this.after.map)
             function l(a, b) {
                     "use strict";
-                    var c = true
+                    var c = false
                       , d = a.dragging._draggable
                       , e = b.dragging._draggable;
 
