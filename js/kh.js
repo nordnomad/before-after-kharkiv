@@ -254,9 +254,9 @@
             $(this.options.containerSelector).beforeAfter();
             this._syncMaps({});
 
-            var oldParent = document.querySelector('#map-base .leaflet-control-container');
+            var oldParent = document.querySelector('#map-overlay .leaflet-control-container');
             oldParent.remove();
-            document.querySelector('#map-overlay .leaflet-control-container').remove();
+            document.querySelector('#map-base .leaflet-control-container').remove();
             var newParent = document.querySelector('#my-controls');
             newParent.appendChild(oldParent)
 
@@ -338,6 +338,17 @@
                     var c = true
                       , d = a.dragging._draggable
                       , e = b.dragging._draggable;
+
+                    L.extend(b, {
+                        _tryAnimatedZoom: function(b, d, e) {
+                            c && console.log("_tryAnimatedZoom2", Date.now() - c, b, d, e);
+                            var f = L.Map.prototype._tryAnimatedZoom.call(a, b, d, e);
+                            return f
+                        },
+                        setView: function(d, e, f) {
+                            L.Map.prototype.setView.call(a,d, e, f)
+                        },
+                    });
 
                     L.extend(a, {
                         panBy: function(d, e) {
