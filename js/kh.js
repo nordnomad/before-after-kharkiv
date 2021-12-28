@@ -254,9 +254,9 @@
             $(this.options.containerSelector).beforeAfter();
             this._syncMaps({});
 
-            var oldParent = document.querySelector('#map-overlay .leaflet-control-container');
+            var oldParent = document.querySelector('#map-base .leaflet-control-container');
             oldParent.remove();
-            document.querySelector('#map-base .leaflet-control-container').remove();
+            document.querySelector('#map-overlay .leaflet-control-container').remove();
             var newParent = document.querySelector('#my-controls');
             newParent.appendChild(oldParent)
 
