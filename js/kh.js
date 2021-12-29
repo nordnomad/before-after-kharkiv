@@ -294,14 +294,14 @@
         },
 
         markerClickListener: function(feature, isLeft) {
-            this._unsyncMaps();
+//            this._unsyncMaps();
             this.unselectMarker();
             this._selectMarker(feature.properties.title);
 
             this.options.markerClickCallback(feature, isLeft);
             selectedPoint = feature.geometry.coordinates;
             this.flyToTargetPoint(feature.geometry.coordinates);
-            this._syncMaps({noInitialSync : true});
+//            this._syncMaps({noInitialSync : true});
         },
 
         _selectMarker: function(clickedMarkerTitle){
@@ -434,7 +434,7 @@
             var targetLatLng = this.before.map.unproject(targetPoint, flyToZoom);
             hideMapControls();
 
-            this.before.map.setView(targetLatLng, flyToZoom, {animate:false});
+            this.before.map.setView(targetLatLng, flyToZoom, {animate:true});
 //            this.after.map.flyTo(targetLatLng, flyToZoom, {animate:false});
         }
     });
