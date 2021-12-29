@@ -19,4 +19,5 @@ Plugins
  - pulsing icons - https://github.com/mapshakers/leaflet-icon-pulse
  - replaces 404 Tiles by scaled lower zoom Tiles - https://github.com/ghybs/Leaflet.TileLayer.Fallback
  - popup - https://github.com/mapshakers/leaflet-control-window
+         - https://github.com/w8r/Leaflet.Modal
  - toolbar dropdown - https://github.com/adammertel/Leaflet.Control.Select

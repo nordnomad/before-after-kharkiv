@@ -270,12 +270,20 @@
         },
 
         _initializeMarker: function (feature, latLng) {
-            var defaultIcon = L.BeautifyIcon.icon({
+         /*   var defaultIcon = L.BeautifyIcon.icon({
                 iconShape: 'circle-dot',
+                iconSize: [32, 32],
+                iconAnchor: [16, 16],
                 borderWidth: 5,
                 borderColor: '#c00'
-            });
+            });*/
 
+            var defaultIcon = L.divIcon({
+                            iconSize: [32, 32],
+                            iconAnchor: [16, 16],
+                            html: '<div class="marker-info"><i class="icon-info"></i></div>',
+                            className: "marker-wrapper"
+                        })
             var marker = L.marker(latLng, {icon: defaultIcon});
 
             marker.on('click', function(e) {
@@ -297,13 +305,19 @@
         },
 
         _selectMarker: function(clickedMarkerTitle){
-            var selectedIcon = L.BeautifyIcon.icon({
+            /*var selectedIcon = L.BeautifyIcon.icon({
                     prefix: 'icon',
                     icon: 'info',
                     borderColor: '#c00',
                     backgroundColor: '#c00',
                     textColor: 'white'
-            });
+            });*/
+            var selectedIcon = L.divIcon({
+                iconSize: [32, 32],
+                iconAnchor: [16, 16],
+                html: '<div class="marker-info hover"><i class="icon-info"></i></div>',
+                className: "marker-wrapper"
+            })
             var markerIndex;
             this.before.map.markers.forEach(function(marker, index){
                 var title = marker.feature.properties.title;
@@ -312,20 +326,28 @@
                 }
             });
             var markerSelectedAfter = this.after.map.markers[markerIndex];
-            markerSelectedAfter.setIcon(selectedIcon)
+//            markerSelectedAfter.setIcon(selectedIcon)
+            $(markerSelectedAfter._icon).addClass('hover')
             this.after.map.selectedMarker = markerSelectedAfter;
 
             var markerSelectedBefore = this.before.map.markers[markerIndex];
-            markerSelectedBefore.setIcon(selectedIcon)
+            $(markerSelectedBefore._icon).addClass('hover')
+//            markerSelectedBefore.setIcon(selectedIcon)
             this.before.map.selectedMarker = markerSelectedBefore;
         },
 
         unselectMarker: function(){
-            var defaultIcon = L.BeautifyIcon.icon({
+            /*var defaultIcon = L.BeautifyIcon.icon({
                 iconShape: 'circle-dot',
                 borderWidth: 5,
                 borderColor: '#c00'
-            });
+            });*/
+            var defaultIcon = L.divIcon({
+                iconSize: [32, 32],
+                iconAnchor: [16, 16],
+                html: '<div class="marker-info"><i class="icon-info"></i></div>',
+                className: "marker-wrapper"
+            })
             if(this.before.map.selectedMarker){
                 this.before.map.selectedMarker.setIcon(defaultIcon);
                 this.after.map.selectedMarker.setIcon(defaultIcon)
