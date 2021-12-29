@@ -434,7 +434,7 @@
             var targetLatLng = this.before.map.unproject(targetPoint, flyToZoom);
             hideMapControls();
 
-            this.before.map.flyTo(targetLatLng, flyToZoom, {animate:false});
+            this.before.map.setView(targetLatLng, flyToZoom, {animate:false});
 //            this.after.map.flyTo(targetLatLng, flyToZoom, {animate:false});
         }
     });
