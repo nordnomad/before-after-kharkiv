@@ -50,6 +50,7 @@
                 iconElementTag: 'a',
                 drawCircle : false,
                 drawMarker : false,
+                showPopup: false,
                 strings: {
                     title: "Показать мое местоположение"
                 },
