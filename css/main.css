@@ -426,10 +426,10 @@ p {
     background-color: rgba(204,0,0,1);
     color: rgba(255,255,255,1);
     box-shadow: 0 0 8px rgba(0,0,0,1);
-    width: 14px;
-    height: 14px;
-    margin-left: 9px;
-    margin-top: 9px;
-    font-size: 10px;
-    line-height: 16px
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 22px
 }
