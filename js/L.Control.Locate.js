@@ -582,7 +582,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
          * Uses the event retrieved from onLocationFound from the map.
          */
         _drawMarker: function() {
-            if (this._event.accuracy === undefined) {
+            /*if (this._event.accuracy === undefined) {
                 this._event.accuracy = 0;
             }
 
@@ -635,7 +635,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
                 this._compass
                     .bindPopup(L.Util.template(t, {distance: distance, unit: unit}))
                     ._popup.setLatLng(latlng);
-            }
+            }*/
         },
 
         /**
