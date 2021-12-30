@@ -289,7 +289,7 @@
 
             marker.on('click', function(e) {
                 var left = $('#map-clip').css('left');
-                KH.prototype.markerClickListener(e.target.feature, parseInt(left, 10) < e.layerPoint.x);
+                KH.prototype.markerClickListener(e.target.feature, parseInt(left, 10) < e.containerPoint.x);
             });
             return marker;
         },
