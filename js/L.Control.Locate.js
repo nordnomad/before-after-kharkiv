@@ -550,7 +550,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
          *
          */
         _drawCompass: function() {
-            if (!this._event) {
+           /* if (!this._event) {
                 return;
             }
 
@@ -573,7 +573,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
             if (this._compass && (!this.options.showCompass || this._compassHeading === null)) {
                 this._compass.removeFrom(this._layer);
                 this._compass = null;
-            }
+            }*/
         },
 
         /**
