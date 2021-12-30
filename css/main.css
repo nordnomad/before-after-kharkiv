@@ -428,8 +428,7 @@ p {
     box-shadow: 0 0 8px rgba(0,0,0,1);
     width: 20px;
     height: 20px;
-    margin-left: 6px;
-    margin-top: 6px;
+    margin: 6px;
     font-size: 14px;
-    line-height: 22px
+    line-height: 1.6
 }
