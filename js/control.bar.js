@@ -12,9 +12,9 @@ L.Control.Bar = L.Control.extend({
   },
 
   showInfo: function () {
-    var win =  L.control.window(KH.prototype.after.map,{title:'Про сайт',modal: true})
-                   .content('dfadf')
-                   .show()
+//    var win =  L.control.window(KH.prototype.after.map,{title:'Про сайт',modal: true})
+//                   .content('dfadf')
+//                   .show()
 //L.DomEvent.on(document.querySelector('.open-modal-long'), 'click', function() {
 //    map.fire('modal', {
 //      content: '<h1>Про сайт</h1> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac sollicitudin eros, ut imperdiet felis. Pellentesque pretium mi ante, et faucibus ipsum rutrum sed. Proin accumsan luctus consectetur. In sit amet purus id dui scelerisque ultricies non porta dui. Cras sit amet arcu non est efficitur molestie.'
