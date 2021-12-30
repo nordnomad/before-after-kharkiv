@@ -268,10 +268,9 @@
                   content: '<h1>Про сайт</h1> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac sollicitudin eros, ut imperdiet felis. Pellentesque pretium mi ante, et faucibus ipsum rutrum sed. Proin accumsan luctus consectetur. In sit amet purus id dui scelerisque ultricies non porta dui. Cras sit amet arcu non est efficitur molestie.'
                 });
               })
-            $(window).on('touchstart', function(){
-            alert('1')
+            /*$(window).on('touchstart', function(){
             bMap.closeModal()
-            })
+            })*/
         },
 
         _initializeMarker: function (feature, latLng) {
