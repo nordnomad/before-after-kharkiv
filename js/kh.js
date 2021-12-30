@@ -261,7 +261,7 @@
             var newParent = document.querySelector('#my-controls');
             newParent.appendChild(oldParent)
 
-            var modal;
+           /* var modal;
             L.DomEvent
               .on(document.querySelector('.icon-question'), 'click', function() {
                 modal = bMap.fire('modal', {
@@ -270,7 +270,7 @@
               })
             $(window).on('touchstart', function(){
             modal.closeModal()
-            })
+            })*/
         },
 
         _initializeMarker: function (feature, latLng) {
