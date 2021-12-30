@@ -269,6 +269,7 @@
                 });
               })
             $(window).on('touchstart', function(){
+            alert('1')
             bMap.closeModal()
             })
         },
