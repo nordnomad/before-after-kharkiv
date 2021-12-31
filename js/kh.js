@@ -286,12 +286,16 @@
         },
 
         markerClickListener: function(feature, isLeft) {
+            let title = feature.properties.title;
+            if(this.before.map.selectedMarker?.feature.properties.title == title) {
+                return;
+            }
             this.unselectMarker();
-            this._selectMarker(feature.properties.title);
+            this._selectMarker(title);
 
             this.options.markerClickCallback(feature, isLeft);
             selectedPoint = feature.geometry.coordinates;
-            this.flyToTargetPoint(feature.geometry.coordinates);
+            this.flyToTargetPoint(selectedPoint);
         },
 
         _selectMarker: function(clickedMarkerTitle){
