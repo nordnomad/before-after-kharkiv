@@ -331,6 +331,8 @@
             if(this.before.map.selectedMarker){
                 this.before.map.selectedMarker.setIcon(defaultIcon);
                 this.after.map.selectedMarker.setIcon(defaultIcon)
+                this.before.map.selectedMarker = null;
+                this.after.map.selectedMarker = null;
             }
         },
 

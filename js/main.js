@@ -115,6 +115,9 @@ function right() {
 }
 function showContent(){
     content.fadeIn('slow');
+    resizeImage();
+}
+function resizeImage() {
     var width =  Number(contentDescription42.offsetWidth.toFixed(0));
     var height = Number((width * 9 / 16).toFixed(0));
 
@@ -124,10 +127,13 @@ function showContent(){
     contentImage15.setAttribute('height', height);
 
     var imageName42 = contentImage42.getAttribute('data-src');
-    contentImage42.src = loadImage(imageName42, width, height);
-
+    if(imageName42) {
+        contentImage42.src = loadImage(imageName42, width, height);
+    }
     var imageName15 = contentImage15.getAttribute('data-src');
-    contentImage15.src = loadImage(imageName15, width, height);
+    if(imageName15) {
+        contentImage15.src = loadImage(imageName15, width, height);
+    }
 }
 function hideContent(){
     content.fadeOut('slow', function() {

@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var container = document.getElementById('container');
         var containerClasses = container.classList;
         applySmallStyle(containerClasses);
+        resizeImage()
         if(typeof selectedPoint !== 'undefined' && selectedPoint) {
             KH.prototype.flyToTargetPoint(selectedPoint)
         }
