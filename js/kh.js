@@ -391,8 +391,6 @@
                 targetPoint = projection.subtract([mapWidth / 4, 0]);
             }
             var targetLatLng = this.before.map.unproject(targetPoint, flyToZoom);
-            hideMapControls();
-
             this.before.map.setView(targetLatLng, flyToZoom, {animate:true});
         }
     });

@@ -93,6 +93,7 @@ function markerClickHandler(feature, isLeft){
     refreshContentPanel(feature.properties);
     contentImage42.src = "image/spinner.svg";
     contentImage15.src = "image/spinner.svg";
+    hideMapControls();
     if(isLeft){
         left();
     } else {
