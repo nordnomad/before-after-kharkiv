@@ -261,27 +261,15 @@
             var newParent = document.querySelector('#my-controls');
             newParent.appendChild(oldParent)
 
-
             L.DomEvent
               .on(document.querySelector('.icon-question'), 'click', function() {
                 bMap.fire('modal', {
                   content: '<h1>Про сайт</h1> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac sollicitudin eros, ut imperdiet felis. Pellentesque pretium mi ante, et faucibus ipsum rutrum sed. Proin accumsan luctus consectetur. In sit amet purus id dui scelerisque ultricies non porta dui. Cras sit amet arcu non est efficitur molestie.'
                 });
               })
-            /*$(window).on('touchstart', function(){
-            bMap.closeModal()
-            })*/
         },
 
         _initializeMarker: function (feature, latLng) {
-         /*   var defaultIcon = L.BeautifyIcon.icon({
-                iconShape: 'circle-dot',
-                iconSize: [32, 32],
-                iconAnchor: [16, 16],
-                borderWidth: 5,
-                borderColor: '#c00'
-            });*/
-
             var defaultIcon = L.divIcon({
                             iconSize: [32, 32],
                             iconAnchor: [16, 16],
@@ -298,24 +286,15 @@
         },
 
         markerClickListener: function(feature, isLeft) {
-//            this._unsyncMaps();
             this.unselectMarker();
             this._selectMarker(feature.properties.title);
 
             this.options.markerClickCallback(feature, isLeft);
             selectedPoint = feature.geometry.coordinates;
             this.flyToTargetPoint(feature.geometry.coordinates);
-//            this._syncMaps({noInitialSync : true});
         },
 
         _selectMarker: function(clickedMarkerTitle){
-            /*var selectedIcon = L.BeautifyIcon.icon({
-                    prefix: 'icon',
-                    icon: 'info',
-                    borderColor: '#c00',
-                    backgroundColor: '#c00',
-                    textColor: 'white'
-            });*/
             var selectedIcon = L.divIcon({
                 iconSize: [32, 32],
                 iconAnchor: [16, 16],
@@ -330,22 +309,15 @@
                 }
             });
             var markerSelectedAfter = this.after.map.markers[markerIndex];
-//            markerSelectedAfter.setIcon(selectedIcon)
             $(markerSelectedAfter._icon).addClass('hover')
             this.after.map.selectedMarker = markerSelectedAfter;
 
             var markerSelectedBefore = this.before.map.markers[markerIndex];
             $(markerSelectedBefore._icon).addClass('hover')
-//            markerSelectedBefore.setIcon(selectedIcon)
             this.before.map.selectedMarker = markerSelectedBefore;
         },
 
         unselectMarker: function(){
-            /*var defaultIcon = L.BeautifyIcon.icon({
-                iconShape: 'circle-dot',
-                borderWidth: 5,
-                borderColor: '#c00'
-            });*/
             var defaultIcon = L.divIcon({
                 iconSize: [32, 32],
                 iconAnchor: [16, 16],
@@ -358,30 +330,13 @@
             }
         },
 
-        _unsyncMaps: function() {
-//            this.before.map.unsync(this.after.map);
-//            this.after.map.unsync(this.before.map);
-        },
         _syncMaps: function(options) {
-//            this.before.map.sync(this.after.map, options);
-//            this.after.map.sync(this.before.map, options);
             l(this.before.map, this.after.map)
             function l(a, b) {
                     "use strict";
                     var c = false
                       , d = a.dragging._draggable
                       , e = b.dragging._draggable;
-
-//                    L.extend(b, {
-//                        _tryAnimatedZoom: function(b, d, e) {
-//                            c && console.log("_tryAnimatedZoom2", Date.now() - c, b, d, e);
-//                            var f = L.Map.prototype._tryAnimatedZoom.call(a, b, d, e);
-//                            return f
-//                        },
-//                        setView: function(d, e, f) {
-//                            L.Map.prototype.setView.call(a,d, e, f)
-//                        },
-//                    });
 
                     L.extend(a, {
                         panBy: function(d, e) {
@@ -439,7 +394,6 @@
             hideMapControls();
 
             this.before.map.setView(targetLatLng, flyToZoom, {animate:true});
-//            this.after.map.flyTo(targetLatLng, flyToZoom, {animate:false});
         }
     });
 
