@@ -127,11 +127,11 @@ function resizeImage() {
     contentImage15.setAttribute('height', height);
 
     var imageName42 = contentImage42.getAttribute('data-src');
-    if(imageName42) {
+    if(imageName42 && width > 0 && height > 0) {
         contentImage42.src = loadImage(imageName42, width, height);
     }
     var imageName15 = contentImage15.getAttribute('data-src');
-    if(imageName15) {
+    if(imageName15  && width > 0 && height > 0) {
         contentImage15.src = loadImage(imageName15, width, height);
     }
 }
