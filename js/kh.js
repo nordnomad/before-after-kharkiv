@@ -101,7 +101,7 @@
                                            lat: 50.450861,
                                            lng: 30.522817
                                        },
-                                       markerClickCallback : function(){console.log('marker')}
+                                       markerClickCallback : function(){}
                                     };
                                     break;
                                     case "odesa":
@@ -121,7 +121,7 @@
                                              lat: 46.487240,
                                              lng: 30.739251
                                          },
-                                         markerClickCallback : function(){console.log('marker')}
+                                         markerClickCallback : function(){}
                                     };
                                     break;
                                     case "cherkasy":
@@ -141,7 +141,7 @@
                                            lat: 49.445328,
                                            lng: 32.060941
                                        },
-                                       markerClickCallback : function(){console.log('marker')}
+                                       markerClickCallback : function(){}
                                     };
                                     break;
                                     case "Чугуїв":
@@ -161,7 +161,7 @@
                                              lat: 49.834577,
                                              lng: 36.692798
                                          },
-                                         markerClickCallback : function(){console.log('marker')}
+                                         markerClickCallback : function(){}
                                     };
                                     break;
                                     case "Зміїв":
@@ -181,7 +181,7 @@
                                                lat: 49.683279,
                                                lng: 36.356204
                                            },
-                                           markerClickCallback : function(){console.log('marker')}
+                                           markerClickCallback : function(){}
                                     };
                                     break;
                                     case "kharkiv":
@@ -329,22 +329,18 @@
 
                     L.extend(a, {
                         panBy: function(d, e) {
-                            c && console.log("panBy"),
                             b.panBy(d, e),
                             L.Map.prototype.panBy.call(a, d, e)
                         },
                         _move: function(d, e, f) {
-                            return c && console.log("_move", Date.now() - c),
-                            b._move(d, e, f),
+                            return b._move(d, e, f),
                             L.Map.prototype._move.call(a, d, e, f)
                         },
                         _onResize: function(d, e) {
-                            return c && console.log("_onResize"),
-                            b._onResize(d, !0),
+                            return b._onResize(d, !0),
                             L.Map.prototype._onResize.call(a, d)
                         },
                         _tryAnimatedZoom: function(b, d, e) {
-                            c && console.log("_tryAnimatedZoom", Date.now() - c, b, d, e);
                             var f = L.Map.prototype._tryAnimatedZoom.call(a, b, d, e);
                             return f
                         },
@@ -354,11 +350,9 @@
                         }
                     }),
                     a.on("zoomanim", function(a) {
-                        c && console.log("zoomanim1", Date.now() - c),
                         b._animateZoom(a.center, a.zoom, !0, a.noUpdate)
                     }),
                     d._updatePosition = function() {
-                        c && console.log("_updatePosition", Date.now() - c),
                         L.Draggable.prototype._updatePosition.call(d),
                         L.DomUtil.setPosition(e._element, d._newPos),
                         b.fire("moveend")
