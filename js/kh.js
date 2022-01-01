@@ -55,8 +55,7 @@
                     title: "Показати моє місцезнаходження"
                 },
                 onLocationOutsideMapBounds : function(e) {
-                    console.log('You are out of bounds!');
-                    console.log(e)
+                    alert('Нажаль ви знаходитесь поза межами доступної карти:(')
                 }
             }
             L.control.locate(locateOptions).addTo(map);
