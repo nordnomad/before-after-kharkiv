@@ -39,6 +39,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if(typeof selectedPoint !== 'undefined' && selectedPoint) {
             KH.prototype.flyToTargetPoint(selectedPoint)
         }
+        if(window.innerHeight < 380) {
+            $('.leaflet-control-select').hide()
+        } else {
+            $('.leaflet-control-select').show()
+        }
     }
 });
 

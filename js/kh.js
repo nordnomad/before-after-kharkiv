@@ -71,7 +71,7 @@
               { label: "Черкаси", value: "cherkasy" },
               { label: "Одеса", value: "odesa" },
             ];
-            var dropdownControl = L.control.select({
+            L.control.select({
                 position: "topright",
                 iconMain: "",
                 iconChecked: "",
@@ -211,9 +211,7 @@
                                   KH.prototype.initialize(cityOptions);
                                   showMapControls();
                 }
-              });
-            map.dropdownControl = dropdownControl;
-            dropdownControl.addTo(map);
+              }).addTo(map);
 
             L.tileLayer(layer, {detectRetina : true}).addTo(map);
             L.geoJson(geoJson, {
