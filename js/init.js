@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-$(document).mouseup(function(e) {
+$(document).on('mouseup', function(e) {
     var container = $('.leaflet-control-select-menu');
     if (!container.is(e.target) && container.has(e.target).length === 0) {
         container.remove();

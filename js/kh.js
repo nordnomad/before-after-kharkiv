@@ -52,7 +52,7 @@
                 drawMarker : false,
                 showPopup: false,
                 strings: {
-                    title: "Показать мое местоположение"
+                    title: "Показати моє місцезнаходження"
                 },
                 onLocationOutsideMapBounds : function(e) {
                     console.log('You are out of bounds!');
@@ -61,7 +61,7 @@
             }
             L.control.locate(locateOptions).addTo(map);
 
-            var options = {default_text: "Как изменился Харьков с 1942го до сегодня", position: 'bottomright'};
+            var options = {default_text: "Як змінився Харків з 1942 р. до сьогодні", position: 'bottomright'};
             L.control.bar(options).addTo(map);
             L.control.social(options).addTo(map);
 
@@ -71,7 +71,7 @@
               { label: "Черкаси", value: "cherkasy" },
               { label: "Одеса", value: "odesa" },
             ];
-            L.control.select({
+            var dropdownControl = L.control.select({
                 position: "topright",
                 iconMain: "",
                 iconChecked: "",
@@ -79,7 +79,9 @@
                 selectedDefault: true,
                 items: items,
                 onSelect: function(newItemValue) {
-                  console.log(newItemValue);
+                                  if(KH.prototype.selectedCity == newItemValue) {
+                                    return;
+                                  }
                                   KH.prototype.selectedCity = newItemValue;
                                   var cityOptions;
                                   switch (newItemValue) {
@@ -204,31 +206,14 @@
                                       }
                                     break;
                                   }
-                                  var kyivOptions = {
-                                      containerSelector : '#container',
-                                      bounds: {
-                                          southWest: {
-                                              lat: 50.316890,
-                                              lng: 30.247317
-                                          },
-                                          northEast: {
-                                              lat: 50.600066,
-                                              lng: 30.820969
-                                          },
-                                      },
-                                      center: {
-                                          lat: 50.450861,
-                                          lng: 30.522817
-                                      },
-                                      markerClickCallback : function(){console.log('marker')}
-                                  };
                                   KH.prototype.before.map.remove();
                                   KH.prototype.after.map.remove();
                                   KH.prototype.initialize(cityOptions);
                                   showMapControls();
                 }
-              })
-            .addTo(map);
+              });
+            map.dropdownControl = dropdownControl;
+            dropdownControl.addTo(map);
 
             L.tileLayer(layer, {detectRetina : true}).addTo(map);
             L.geoJson(geoJson, {
@@ -287,7 +272,8 @@
 
         markerClickListener: function(feature, isLeft) {
             let title = feature.properties.title;
-            if(this.before.map.selectedMarker?.feature.properties.title == title) {
+            let selectedMarker = this.before.map.selectedMarker;
+            if(selectedMarker && selectedMarker.feature.properties.title == title) {
                 return;
             }
             this.unselectMarker();
