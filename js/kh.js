@@ -52,11 +52,9 @@
                 drawMarker : false,
                 showPopup: false,
                 strings: {
-                    title: "Показати моє місцезнаходження"
+                    title: "Показати моє місцезнаходження",
+                    outsideMapBoundsMsg: 'Нажаль ви знаходитесь поза межами доступної карти:('
                 },
-                onLocationOutsideMapBounds : function(e) {
-                    alert('Нажаль ви знаходитесь поза межами доступної карти:(')
-                }
             }
             L.control.locate(locateOptions).addTo(map);
 
