@@ -79,7 +79,15 @@
     // Because we all do this: i.imgur.com/YkbaV.gif
     window.addEventListener('resize', function() {
       var width = cur.width()+'px';
-      cur.find('.resize #map-clip-inner').css('width', width);
+      let mapClip = cur.find('.resize #map-clip-inner');
+      mapClip.css('width', width);
+      let left = mapClip.css('left').replace(/[^-\d\.]/g, '');
+      if ((-1 * left) > cur.width()) {
+        let value = (cur.width() - 1) + 'px';
+        mapClip.css('left', '-' + value)
+        $('#control-slider').css('left', value)
+        $('#map-clip').css('left', value)
+      }
     });
   }
 }(jQuery));
