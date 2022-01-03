@@ -67,6 +67,8 @@
               { label: "Київ", value: "kyiv" },
               { label: "Черкаси", value: "cherkasy" },
               { label: "Одеса", value: "odesa" },
+              { label: "Чугуїв", value: "chuguiv" },
+              { label: "Зміїв", value: "zmiiv" },
             ];
             L.control.select({
                 position: "topright",
@@ -142,7 +144,7 @@
                                        markerClickCallback : function(){}
                                     };
                                     break;
-                                    case "Чугуїв":
+                                    case "chuguiv":
                                     cityOptions = {
                                          containerSelector : '#container',
                                          bounds: {
@@ -162,7 +164,7 @@
                                          markerClickCallback : function(){}
                                     };
                                     break;
-                                    case "Зміїв":
+                                    case "zmiiv":
                                     cityOptions = {
                                            containerSelector : '#container',
                                            bounds: {
@@ -206,6 +208,7 @@
                                   KH.prototype.before.map.remove();
                                   KH.prototype.after.map.remove();
                                   KH.prototype.initialize(cityOptions);
+                                  // TODO extract to main.js
                                   showMapControls();
                 }
               }).addTo(map);
@@ -269,7 +272,6 @@
             let title = feature.properties.title;
             let selectedMarker = this.before.map.selectedMarker;
             if(selectedMarker && selectedMarker.feature.properties.title == title) {
-                alert('selectedMarker = ' +  selectedMarker)
                 return;
             }
             this.unselectMarker();
