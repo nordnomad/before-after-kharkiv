@@ -269,6 +269,7 @@
             let title = feature.properties.title;
             let selectedMarker = this.before.map.selectedMarker;
             if(selectedMarker && selectedMarker.feature.properties.title == title) {
+                alert('selectedMarker = ' +  selectedMarker)
                 return;
             }
             this.unselectMarker();
