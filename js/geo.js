@@ -33,40 +33,6 @@ geoJson = [
       ]
     }
   },
-  /*{
-    "type": "Feature",
-    "properties": {
-      "title": "ТЦ Павловский",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "tc_pavlovsky_old.jpg",
-      "img2015": "tc_pavlovsky_new.jpg"
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        36.230848,
-        49.987504
-      ]
-    }
-  },*/
-  /*{
-    "type": "Feature",
-    "properties": {
-      "title": "Магазин мехов",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "meha_old.jpg",
-      "img2015": "meha_new.jpg"
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        36.233215,
-        49.988206
-      ]
-    }
-  },*/
   {
     "type": "Feature",
     "properties": {
@@ -152,27 +118,10 @@ geoJson = [
       ]
     }
   },
-  /*{
-    "type": "Feature",
-    "properties": {
-      "title": "Соборный спуск - Люсин мостик",
-      "desc1942": "В 1875 году через спуск от одного из выходов пассажа к университетской горке был перекинут пешеходный мостик, который, приглядевшись, видно на карте. В отличие от зданий вокруг, мостик выдержал и пережил войну",
-      "desc2015": "После войны он был перенесен в сад Шевченка. Городская легенда гласит, что перенести мост распорядился один из городских чиновников. Его жене по имени Люся, якобы было неудобно обходить балку по пути на работу. Так мостик стали называть Люсиным",
-      "img1942": "soborny_most_old.jpg",
-      "img2015": "soborny_most_new.jpg"
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        36.229080,
-        49.990418
-      ]
-    }
-  },*/
   {
     "type": "Feature",
     "properties": {
-      "title": "Пассаж - Покровський сквер",
+      "title": "Покровський сквер",
       "desc1942": "У 1858 р. було збудоване найбільше міський будинок того часу - 'Великий корпус'. У будинку розміщувалися гуртові та роздрібні магазини, а у 1875 р. у його чатині був відкрився 'Пассаж' - аналог сучасного Даффі.",
       "desc2015": "Після ушкоджень під час війни було вирішено знести рештки будинку і на їх місці розбити Покровський сквер. Зараз місцеві художники влаштували тут галерею під відкритим небом и продають свої картини.",
       "img1942": "soborny_passazh_old.jpg",
@@ -189,9 +138,9 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Соборный спуск - присутственные места",
-      "desc1942": "На южной стороне спуска размещалось здание присутственных мест,  которое потом было реконструировано в стиле конструктивизм и там разместился дом красной армии.",
-      "desc2015": "На месте дома армии установили памятник с вечным огнем и разбили сквер вокруг. http://the-past.inf.ua/list-2-1-35.html",
+      "title": "Соборный спуск",
+      "desc1942": "Перший будинок губернських присутніх місць був збудований 1808 та зазнав кілька перебудов, остання під Дім Червоної Армії відбулась у 1932 р. у наслідок неї будинок отримав конструктивістський вигляд.",
+      "desc2015": "Будинок був зруйнований під час війни, на його місці відкрили сквер та пам'ятник борцям жовтневої революції. Зараз пам'ятник має інший зміст «Героям, які поклали голову за незалежність і свободу України».",
       "img1942": "soborny_mesta_old.jpg",
       "img2015": "soborny_mesta_new.jpg"
     },
@@ -206,7 +155,7 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Готель «Гранд-готель»",
+      "title": "«Гранд-готель»",
       "desc1942": "Розкішний триповерховий готель з'явився у 1830 р. Її власников був купець Павлов, на честь якого и названа проща. Готель був одним із найроскішніших готелів дореволюційного Харкова.",
       "desc2015": "У роки війни готель був зруйнований. На початку ХХІ сторіччя його місці був встановленний монумент до десятої річниці незалежності. Але простояв він на майдані лише десять років.",
       "img1942": "grand_otel_old.jpg",
@@ -342,7 +291,7 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Хімічний факультет - Станція Держпром",
+      "title": "Станція Держпром",
       "desc1942": "Будівля хімічного факультету Харківського Університету збудована за проєктом архітектора В. В. Велічко у 1914 р. і була повністю зруйнована під час Другої світової війни.",
       "desc2015": "Після війни будівлю повністю демонтували. У 1995 р. була відкрита станція метро Держпром і її єдиний вихід зараз знаходиться там де розташовувався корпус хімічного факультету.",
       "img1942": "him_korpus_old.jpg",
@@ -359,7 +308,7 @@ geoJson = [
   {
     "type": "Feature",
     "properties": {
-      "title": "Корпус університету ім. Каразіна",
+      "title": "Університет ім. Каразіна",
       "desc1942": "Споруду було зведено у 1932 р. у стилі конструктивізму. У ній планувалося розмістити уряд УССР. Після переносу столиці до Києва, там розмістили проектні и будівельні організації і стали називати - Будинок Проєктів.",
       "desc2015": "Під час Другої світової будинок сильно постраждав і його передали університету ім. Каразіна. Силами студентів у 1961 р. була проведена повна реставрація в результаті якой архітектурний стиль змінився на сталінський ампір.",
       "img1942": "karazina_old.jpg",
@@ -407,23 +356,6 @@ geoJson = [
       ]
     }
   },
-  /*{
-    "type": "Feature",
-    "properties": {
-      "title": "Горбатый мост",
-      "desc1942": "Nec ultrices dui sapien eget mi proin. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Augue mauris augue neque gravida in fermentum. Nisi vitae suscipit tellus mauris a diam maecenas sed. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.",
-      "desc2015": "Elementum tempus egestas sed sed. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Leo vel orci porta non pulvinar neque laoreet suspendisse. Nisl pretium fusce id velit ut. Arcu risus quis varius quam quisque id.",
-      "img1942": "gorbaty_most_old.jpg",
-      "img2015": "gorbaty_most_new.jpg"
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        36.243996,
-        49.992660
-      ]
-    }
-  },*/
   {
     "type": "Feature",
     "properties": {
@@ -440,5 +372,23 @@ geoJson = [
         50.006355
       ]
     }
-  }
+  },
+   {
+      "type": "Feature",
+      "properties": {
+        "title": "Молодіжний парк",
+        "desc1942": "Між вулицями Пушкінська і Алчевських знаходилося Івано-Усікновенське кладовище — колишнє Перше міське кладовище — найвідоміше кладовище Харкова, де ховали відомих харків'ян XIX — поч. XX ст. Післявійни місця поховання відомих харків'ян узяли під охорону держави, а кладовище закрили.",
+        "desc2015": "На початку 1970-х на місці кладовища зробили Молодіжний парк. Нащадки похованих там харків'ян, в тому числі академіків Багалія, Бекетова та Потебні, домоглися часткового перепоховання. Могили найвидатніших діячів перенесли на цвинтар №13 по вул. Пушкінській 108, решту — на інші кладовища міста.",
+        "img1942": "molodizhny_old.jpg",
+        "img2015": "molodizhny_new.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.248024,
+          50.008072
+        ]
+      }
+    }
+
 ]
