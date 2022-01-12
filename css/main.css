@@ -419,3 +419,7 @@ p {
 .icon-office {
     border-radius: 4px;
 }
+.leaflet-modal .icon-cross{
+    float: right;
+    cursor:pointer
+}
