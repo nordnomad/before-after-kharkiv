@@ -247,7 +247,14 @@
             L.DomEvent
               .on(document.querySelector('.icon-question'), 'click', function() {
                 bMap.fire('modal', {
-                  content: '<h1>Про сайт</h1> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac sollicitudin eros, ut imperdiet felis. Pellentesque pretium mi ante, et faucibus ipsum rutrum sed. Proin accumsan luctus consectetur. In sit amet purus id dui scelerisque ultricies non porta dui. Cras sit amet arcu non est efficitur molestie.'
+                  content: `<h1>Про сайт</h1>
+                            <em>Даний проект було створено мною виключно для власного задоволення та поєднання моєї любові до карт, програування та Харкова. Проект не має та не буде мати жодних комерційних цілей.<em>
+                            <ul>
+                            <li>При створені сайту надихався цим проектом <a href="https://1928.tagesspiegel.de">tagesspiegel</a> і з нього взяв деякі стилі та користувацький досвід.</li>
+                            <li>Німецькі карти були взяти звідси <a href="http://warfly.ru/?lat=49.983903&lon=36.240807&z=16">warfly</a></li>
+                            <li>Фотографії та опис підготували користувачі інстаграм <a href="https://www.instagram.com/nord.nomad/">nord.nomad</a> та <a href="https://www.instagram.com/vitaly.ushakov/">vitaly.ushakov</a></li>
+                            <li>Якщо ви побачили помилку в контенті або функіональності сайту будь ласка напишіть указаним користувачам.</li>
+                            <ul>`
                 });
               })
         },
