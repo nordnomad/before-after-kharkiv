@@ -33,6 +33,7 @@ p {
     z-index: 3;
     overflow: hidden!important;
     border-left: 1px solid #c00;
+    pointer-events: none;
 }
 #map-clip-inner {
     position: absolute;
@@ -151,7 +152,7 @@ p {
 }
 .content-wrapper {
     position: relative;
-    margin: 6vh auto 0;
+    margin: 12vh auto 0;
     width: 90%;
     color: #fff;
     font-weight: 300;
@@ -321,22 +322,6 @@ p {
 .leaflet-control-locate.active.following a {
   color: #FC8428;
 }
-/*leaflet-beautify-marker-icon.css*/
-.beautify-marker {
-    text-align: center;
-    font-weight: 700;
-    font-family: monospace;
-    position:absolute;
-     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.beautify-marker.circle {
-    border-radius: 100%;
-}
-.beautify-marker.circle-dot, .beautify-marker.doughnut {
-    border-radius: 100%;
-}
 /*icomoon-styles.css*/
 @font-face {
   font-family: 'icomoon';
@@ -403,4 +388,34 @@ p {
 }
 .leaflet-top {
     top: 70px;
+}
+.leaflet-control-select-menu {
+    font-size: 14px;
+}
+.marker-info {
+    color: rgba(255,255,255,0);
+    background-color: rgba(204,0,0,1);
+    border-radius: 16px;
+    box-shadow: 0 0 1px rgb(0 0 0);
+    text-align: center;
+    width: 8px;
+    height: 8px;
+    margin-left: 12px;
+    margin-top: 12px;
+    font-size: 6px;
+    line-height: 9px;
+    -webkit-appearance: none;
+}
+.marker-wrapper.hover .marker-info {
+    background-color: rgba(204,0,0,1);
+    color: rgba(255,255,255,1);
+    box-shadow: 0 0 8px rgba(0,0,0,1);
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+    font-size: 14px;
+    line-height: 1.6
+}
+.icon-office {
+    border-radius: 4px;
 }

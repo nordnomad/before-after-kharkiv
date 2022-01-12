@@ -3,13 +3,281 @@
   https://github.com/adammertel/Leaflet.Control.List
   Adam Mertel | univie
 */
-"use strict";L.Control.Select=L.Control.extend({options:{position:"topright",iconMain:"\u2261",iconChecked:"\u25C9",// "☑"
-iconUnchecked:"\u2D54",//"❒",
-iconGroupChecked:"\u25B6",iconGroupUnchecked:"\u22B3",multi:false,items:[],// {value: 'String', 'label': 'String', items?: [items]}
-id:"",selectedDefault:false,additionalClass:"",onOpen:function a(){},onClose:function a(){},onGroupOpen:function a(b){},onSelect:function a(b){}},initialize:function a(b){var c=this;this.menus=[];L.Util.setOptions(this,b);var d=this.options;this.options.items.forEach(function(a){if(!a.label){a.label=a.value}});if(d.multi){d.selectedDefault=d.selectedDefault instanceof Array?d.selectedDefault:[]}else{d.selectedDefault=d.selectedDefault||(d.items instanceof Array&&d.items.length>0?d.items[0].value:false)}this.state={selected:d.selectedDefault,// false || multi ? {value} : [{value}]
-open:false// false || 'top' || {value}
-};// assigning parents to items
-var e=function a(b){if(c._isGroup(b)){b.items.map(function(c){c.parent=b.value;a(c)})}};this.options.items.map(function(a){a.parent="top";e(a)});// assigning children to items
-var f=function a(b){var d=[];if(c._isGroup(b)){b.items.map(function(b){d.push(b.value);d=d.concat(a(b))})}return d};var g=function a(b){b.children=f(b);if(c._isGroup(b)){b.items.map(function(b){a(b)})}};this.options.items.map(function(a){g(a)})},onAdd:function a(b){this.map=b;var c=this.options;this.container=L.DomUtil.create("div","leaflet-control leaflet-bar leaflet-control-select");this.container.setAttribute("id",c.id);var d=L.DomUtil.create("a","leaflet-control-button ",this.container);d.innerHTML=c.iconMain;b.on("click",this._hideMenu,this);L.DomEvent.on(d,"click",L.DomEvent.stop);L.DomEvent.on(d,"click",this._iconClicked,this);L.DomEvent.disableClickPropagation(this.container);L.DomEvent.disableScrollPropagation(this.container);this.render();return this.container},_emit:function a(b,c){var d={};switch(b){case"ITEM_SELECT":if(this.options.multi){d.selected=this.state.selected.slice();if(this.state.selected.includes(c.item.value)){d.selected=d.selected.filter(function(a){return a!==c.item.value})}else{d.selected.push(c.item.value)}}else{d.selected=c.item.value}d.open=c.item.parent;break;case"GROUP_OPEN":d.open=c.item.value;break;case"GROUP_CLOSE":d.open=c.item.parent;break;case"MENU_OPEN":d.open="top";break;case"MENU_CLOSE":d.open=false;break;}this._setState(d);this.render()},_setState:function a(b){// events
-if(this.options.onSelect&&b.selected&&(this.options.multi&&b.selected.length!==this.state.selected.length||!this.options.multi&&b.selected!==this.state.selected)){this.options.onSelect(b.selected)}if(this.options.onGroupOpen&&b.open&&b.open!==this.state.open){this.options.onGroupOpen(b.open)}if(this.options.onOpen&&b.open==="top"){this.options.onOpen()}if(this.options.onClose&&!b.open){this.options.onClose()}this.state=Object.assign(this.state,b)},_isGroup:function a(b){return"items"in b},_isSelected:function a(b){var c=this.state.selected;if(c){if(this._isGroup(b)){if("children"in b){return this.options.multi?c.find(function(a){return b.children.includes(a)}):b.children.includes(c)}else{return false}}return this.options.multi?c.indexOf(b.value)>-1:c===b.value}else{return false}},_isOpen:function a(b){var c=this.state.open;return c&&(c===b.value||b.children.includes(c))},_hideMenu:function a(){this._emit("MENU_CLOSE",{})},_iconClicked:function a(){this._emit("MENU_OPEN",{})},_itemClicked:function a(b){if(this._isGroup(b)){this.state.open===b.value?this._emit("GROUP_CLOSE",{item:b}):this._emit("GROUP_OPEN",{item:b})}else{this._emit("ITEM_SELECT",{item:b})}},_renderRadioIcon:function a(b,c){var d=L.DomUtil.create("span","radio icon",c);d.innerHTML=b?this.options.iconChecked:this.options.iconUnchecked},_renderGroupIcon:function a(b,c){var d=L.DomUtil.create("span","group icon",c);d.innerHTML=b?this.options.iconGroupChecked:this.options.iconGroupUnchecked},_renderItem:function a(b,c){var d=this;var e=this._isSelected(b);var f=L.DomUtil.create("div","leaflet-control-select-menu-line",c);var g=L.DomUtil.create("div","leaflet-control-select-menu-line-content",f);var h=L.DomUtil.create("span","text",g);h.innerHTML=b.label;if(this._isGroup(b)){this._renderGroupIcon(e,g);// adding classes to groups and opened group
-L.DomUtil.addClass(f,"group");this._isOpen(b)&&L.DomUtil.addClass(f,"group-opened");this._isOpen(b)&&this._renderMenu(f,b.items)}else{this._renderRadioIcon(e,g)}L.DomEvent.addListener(g,"click",function(a){d._itemClicked(b)});return f},_renderMenu:function a(b,c){var d=this;var e=L.DomUtil.create("div","leaflet-control-select-menu leaflet-bar ",b);this.menus.push(e);c.map(function(a){d._renderItem(a,e)})},_clearMenus:function a(){this.menus.map(function(a){return a.remove()});this.meus=[]},render:function a(){this._clearMenus();if(this.state.open){this._renderMenu(this.container,this.options.items)}},/* public methods */close:function a(){this._hideMenu()}});L.control.select=function(a){return new L.Control.Select(a)};
+"use strict";
+
+L.Control.Select = L.Control.extend({
+  options: {
+    position: "topright",
+    iconMain: "≡",
+    iconChecked: "◉",
+    // "☑"
+    iconUnchecked: "ⵔ",
+    //"❒",
+    iconGroupChecked: "▶",
+    iconGroupUnchecked: "⊳",
+    multi: false,
+    items: [],
+    // {value: 'String', 'label': 'String', items?: [items]}
+    id: "",
+    selectedDefault: false,
+    additionalClass: "",
+    onOpen: function onOpen() {},
+    onClose: function onClose() {},
+    onGroupOpen: function onGroupOpen(itemGroup) {},
+    onSelect: function onSelect(item) {}
+  },
+  initialize: function initialize(options) {
+    var _this = this;
+
+    this.menus = [];
+    L.Util.setOptions(this, options);
+    var opts = this.options;
+    this.options.items.forEach(function (item) {
+      if (!item.label) {
+        item.label = item.value;
+      }
+    });
+
+    if (opts.multi) {
+      opts.selectedDefault = opts.selectedDefault instanceof Array ? opts.selectedDefault : [];
+    } else {
+      opts.selectedDefault = opts.selectedDefault || (opts.items instanceof Array && opts.items.length > 0 ? opts.items[0].value : false);
+    }
+
+    this.state = {
+      selected: opts.selectedDefault,
+      // false || multi ? {value} : [{value}]
+      open: false // false || 'top' || {value}
+
+    }; // assigning parents to items
+
+    var assignParent = function assignParent(item) {
+      if (_this._isGroup(item)) {
+        item.items.map(function (item2) {
+          item2.parent = item.value;
+          assignParent(item2);
+        });
+      }
+    };
+
+    this.options.items.map(function (item) {
+      item.parent = "top";
+      assignParent(item);
+    }); // assigning children to items
+
+    var getChildren = function getChildren(item) {
+      var children = [];
+
+      if (_this._isGroup(item)) {
+        item.items.map(function (item2) {
+          children.push(item2.value);
+          children = children.concat(getChildren(item2));
+        });
+      }
+
+      return children;
+    };
+
+    var assignChildrens = function assignChildrens(item) {
+      item.children = getChildren(item);
+
+      if (_this._isGroup(item)) {
+        item.items.map(function (item2) {
+          assignChildrens(item2);
+        });
+      }
+    };
+
+    this.options.items.map(function (item) {
+      assignChildrens(item);
+    });
+  },
+  onAdd: function onAdd(map) {
+    this.map = map;
+    var opts = this.options;
+    this.container = L.DomUtil.create("div", "leaflet-control leaflet-bar leaflet-control-select");
+    this.container.setAttribute("id", opts.id);
+    var icon = L.DomUtil.create("a", "leaflet-control-button ", this.container);
+    icon.innerHTML = opts.iconMain;
+    map.on("click", this._hideMenu, this);
+    L.DomEvent.on(icon, "click", L.DomEvent.stop);
+    L.DomEvent.on(icon, "click", this._iconClicked, this);
+    L.DomEvent.disableClickPropagation(this.container);
+    L.DomEvent.disableScrollPropagation(this.container);
+    this.render();
+    return this.container;
+  },
+  _emit: function _emit(action, data) {
+    var newState = {};
+
+    switch (action) {
+      case "ITEM_SELECT":
+        if (this.options.multi) {
+          newState.selected = this.state.selected.slice();
+
+          if (this.state.selected.includes(data.item.value)) {
+            newState.selected = newState.selected.filter(function (s) {
+              return s !== data.item.value;
+            });
+          } else {
+            newState.selected.push(data.item.value);
+          }
+        } else {
+          newState.selected = data.item.value;
+        }
+
+        newState.open = data.item.parent;
+        break;
+
+      case "GROUP_OPEN":
+        newState.open = data.item.value;
+        break;
+
+      case "GROUP_CLOSE":
+        newState.open = data.item.parent;
+        break;
+
+      case "MENU_OPEN":
+        newState.open = "top";
+        break;
+
+      case "MENU_CLOSE":
+        newState.open = false;
+        break;
+    }
+
+    this._setState(newState);
+
+    this.render();
+  },
+  _setState: function _setState(newState) {
+    // events
+    if (this.options.onSelect && newState.selected && (this.options.multi && newState.selected.length !== this.state.selected.length || !this.options.multi && newState.selected !== this.state.selected)) {
+      this.options.onSelect(newState.selected);
+    }
+
+    if (this.options.onGroupOpen && newState.open && newState.open !== this.state.open) {
+      this.options.onGroupOpen(newState.open);
+    }
+
+    if (this.options.onOpen && newState.open === "top") {
+      this.options.onOpen();
+    }
+
+    if (this.options.onClose && !newState.open) {
+      this.options.onClose();
+    }
+
+    this.state = Object.assign(this.state, newState);
+  },
+  _isGroup: function _isGroup(item) {
+    return "items" in item;
+  },
+  _isSelected: function _isSelected(item) {
+    var sel = this.state.selected;
+
+    if (sel) {
+      if (this._isGroup(item)) {
+        if ("children" in item) {
+          return this.options.multi ? sel.find(function (s) {
+            return item.children.includes(s);
+          }) : item.children.includes(sel);
+        } else {
+          return false;
+        }
+      }
+
+      return this.options.multi ? sel.indexOf(item.value) > -1 : sel === item.value;
+    } else {
+      return false;
+    }
+  },
+  _isOpen: function _isOpen(item) {
+    var open = this.state.open;
+    return open && (open === item.value || item.children.includes(open));
+  },
+  _hideMenu: function _hideMenu() {
+    this._emit("MENU_CLOSE", {});
+  },
+  _iconClicked: function _iconClicked() {
+    this._emit("MENU_OPEN", {});
+  },
+  _itemClicked: function _itemClicked(item) {
+    if (this._isGroup(item)) {
+      this.state.open === item.value ? this._emit("GROUP_CLOSE", {
+        item: item
+      }) : this._emit("GROUP_OPEN", {
+        item: item
+      });
+    } else {
+      this._emit("ITEM_SELECT", {
+        item: item
+      });
+    }
+  },
+  _renderRadioIcon: function _renderRadioIcon(selected, contentDiv) {
+    var radio = L.DomUtil.create("span", "radio icon", contentDiv);
+    radio.innerHTML = selected ? this.options.iconChecked : this.options.iconUnchecked;
+  },
+  _renderGroupIcon: function _renderGroupIcon(selected, contentDiv) {
+    var group = L.DomUtil.create("span", "group icon", contentDiv);
+    group.innerHTML = selected ? this.options.iconGroupChecked : this.options.iconGroupUnchecked;
+  },
+  _renderItem: function _renderItem(item, menu) {
+    var _this2 = this;
+
+    var selected = this._isSelected(item);
+
+    var p = L.DomUtil.create("div", "leaflet-control-select-menu-line", menu);
+    var pContent = L.DomUtil.create("div", "leaflet-control-select-menu-line-content", p);
+    var textSpan = L.DomUtil.create("span", "text", pContent);
+    textSpan.innerHTML = item.label;
+
+    if (this._isGroup(item)) {
+      this._renderGroupIcon(selected, pContent); // adding classes to groups and opened group
+
+
+      L.DomUtil.addClass(p, "group");
+      this._isOpen(item) && L.DomUtil.addClass(p, "group-opened");
+      this._isOpen(item) && this._renderMenu(p, item.items);
+    } else {
+      this._renderRadioIcon(selected, pContent);
+    }
+
+    L.DomEvent.addListener(pContent, "click", function (e) {
+      _this2._itemClicked(item);
+    });
+    return p;
+  },
+  _renderMenu: function _renderMenu(parent, items) {
+    var _this3 = this;
+
+    var menu = L.DomUtil.create("div", "leaflet-control-select-menu leaflet-bar ", parent);
+    this.menus.push(menu);
+    items.map(function (item) {
+      _this3._renderItem(item, menu);
+    });
+  },
+  _clearMenus: function _clearMenus() {
+    this.menus.map(function (menu) {
+      return menu.remove();
+    });
+    this.meus = [];
+  },
+  render: function render() {
+    this._clearMenus();
+
+    if (this.state.open) {
+      this._renderMenu(this.container, this.options.items);
+    }
+  },
+
+  /* public methods */
+  close: function close() {
+    this._hideMenu();
+  }
+});
+
+L.control.select = function (options) {
+  return new L.Control.Select(options);
+};

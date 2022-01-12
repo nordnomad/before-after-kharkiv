@@ -300,7 +300,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
                 title: "Show me where I am",
                 metersUnit: "meters",
                 feetUnit: "feet",
-                popup: "You are within {distance} {unit} from this point",
+                popup: "1111You are within {distance} {unit} from this point",
                 outsideMapBoundsMsg: "You seem located outside the boundaries of the map"
             },
             /** The default options passed to leaflets locate method. */
@@ -550,7 +550,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
          *
          */
         _drawCompass: function() {
-            if (!this._event) {
+           /* if (!this._event) {
                 return;
             }
 
@@ -573,7 +573,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
             if (this._compass && (!this.options.showCompass || this._compassHeading === null)) {
                 this._compass.removeFrom(this._layer);
                 this._compass = null;
-            }
+            }*/
         },
 
         /**
@@ -582,7 +582,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
          * Uses the event retrieved from onLocationFound from the map.
          */
         _drawMarker: function() {
-            if (this._event.accuracy === undefined) {
+            /*if (this._event.accuracy === undefined) {
                 this._event.accuracy = 0;
             }
 
@@ -635,7 +635,7 @@ You can find the project at: https://github.com/domoritz/leaflet-locatecontrol
                 this._compass
                     .bindPopup(L.Util.template(t, {distance: distance, unit: unit}))
                     ._popup.setLatLng(latlng);
-            }
+            }*/
         },
 
         /**

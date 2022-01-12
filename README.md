@@ -5,7 +5,6 @@ Demonstration can be accessed here https://before-after-kharkiv.herokuapp.com/in
 Documentation about leaflet - https://leafletjs.com/plugins.html
 Old maps were taken from this site - http://warfly.ru/?lat=49.983903&lon=36.240807&z=16
 Draft content - https://docs.google.com/spreadsheets/d/12f2SE_4sy2jeUGPB-1uua37YvqWdk2YWEvWMrDVpgyU/edit
-Change image size - https://www.iloveimg.com/ru
 
 Plugins
  - with customizations - for before-after functionality https://github.com/jotform/before-after.js
@@ -19,4 +18,31 @@ Plugins
  - pulsing icons - https://github.com/mapshakers/leaflet-icon-pulse
  - replaces 404 Tiles by scaled lower zoom Tiles - https://github.com/ghybs/Leaflet.TileLayer.Fallback
  - popup - https://github.com/mapshakers/leaflet-control-window
+         - https://github.com/w8r/Leaflet.Modal
  - toolbar dropdown - https://github.com/adammertel/Leaflet.Control.Select
+
+New Photos to take
+ - Південний вокзал 
+ - Привокзальна площа
+ - «Гранд-готель»??
+ - Сергієвська площа
+ - Покровський сквер
+ - Соборний узвіз??
+ - Дім зі шпилем??
+ - Міська Рада??
+ - Площа Конституції??
+ - Кірха
+ - Театр опери і балету??
+ - Сад Шевченко??
+ - Молодіжний парк
+ - Гуртожиток Гігант??
+ - Стадіон Металіст
+
+Old photos to update
+ - Соборний узвіз - может конструктивизм вставить, білі краї на фотці
+ - Готель «Метрополь» - обрезалась фотка
+ - Кірха - обрезалась
+ - Сад Шевченко - может другую фотку сделать
+ - Молодіжний парк - обрезалась фотка
+ - Покровський сквер - білий край
+ - Привокзальна площа - мутна фотка

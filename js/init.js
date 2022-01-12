@@ -35,6 +35,21 @@ document.addEventListener("DOMContentLoaded", function() {
         var container = document.getElementById('container');
         var containerClasses = container.classList;
         applySmallStyle(containerClasses);
-        if(selectedPoint) KH.prototype.flyToTargetPoint(selectedPoint)
+        resizeImage()
+        if(typeof selectedPoint !== 'undefined' && selectedPoint) {
+            KH.prototype.flyToTargetPoint(selectedPoint)
+        }
+        if(window.innerHeight < 380) {
+            $('.leaflet-control-select').hide()
+        } else {
+            $('.leaflet-control-select').show()
+        }
+    }
+});
+
+$(document).on('mouseup', function(e) {
+    var container = $('.leaflet-control-select-menu');
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        container.remove();
     }
 });

@@ -50,17 +50,15 @@
                 iconElementTag: 'a',
                 drawCircle : false,
                 drawMarker : false,
+                showPopup: false,
                 strings: {
-                    title: "Показать мое местоположение"
+                    title: "Показати моє місцезнаходження",
+                    outsideMapBoundsMsg: 'Нажаль ви знаходитесь поза межами доступної карти:('
                 },
-                onLocationOutsideMapBounds : function(e) {
-                    console.log('You are out of bounds!');
-                    console.log(e)
-                }
             }
             L.control.locate(locateOptions).addTo(map);
 
-            var options = {default_text: "Как изменился Харьков с 1942го до сегодня", position: 'bottomright'};
+            var options = {default_text: "Як змінився Харків з 1942 р. до сьогодні", position: 'bottomright'};
             L.control.bar(options).addTo(map);
             L.control.social(options).addTo(map);
 
@@ -69,6 +67,8 @@
               { label: "Київ", value: "kyiv" },
               { label: "Черкаси", value: "cherkasy" },
               { label: "Одеса", value: "odesa" },
+              { label: "Чугуїв", value: "chuguiv" },
+              { label: "Зміїв", value: "zmiiv" },
             ];
             L.control.select({
                 position: "topright",
@@ -78,7 +78,9 @@
                 selectedDefault: true,
                 items: items,
                 onSelect: function(newItemValue) {
-                  console.log(newItemValue);
+                                  if(KH.prototype.selectedCity == newItemValue) {
+                                    return;
+                                  }
                                   KH.prototype.selectedCity = newItemValue;
                                   var cityOptions;
                                   switch (newItemValue) {
@@ -99,7 +101,7 @@
                                            lat: 50.450861,
                                            lng: 30.522817
                                        },
-                                       markerClickCallback : function(){console.log('marker')}
+                                       markerClickCallback : function(){}
                                     };
                                     break;
                                     case "odesa":
@@ -119,7 +121,7 @@
                                              lat: 46.487240,
                                              lng: 30.739251
                                          },
-                                         markerClickCallback : function(){console.log('marker')}
+                                         markerClickCallback : function(){}
                                     };
                                     break;
                                     case "cherkasy":
@@ -139,10 +141,10 @@
                                            lat: 49.445328,
                                            lng: 32.060941
                                        },
-                                       markerClickCallback : function(){console.log('marker')}
+                                       markerClickCallback : function(){}
                                     };
                                     break;
-                                    case "Чугуїв":
+                                    case "chuguiv":
                                     cityOptions = {
                                          containerSelector : '#container',
                                          bounds: {
@@ -159,10 +161,10 @@
                                              lat: 49.834577,
                                              lng: 36.692798
                                          },
-                                         markerClickCallback : function(){console.log('marker')}
+                                         markerClickCallback : function(){}
                                     };
                                     break;
-                                    case "Зміїв":
+                                    case "zmiiv":
                                     cityOptions = {
                                            containerSelector : '#container',
                                            bounds: {
@@ -179,7 +181,7 @@
                                                lat: 49.683279,
                                                lng: 36.356204
                                            },
-                                           markerClickCallback : function(){console.log('marker')}
+                                           markerClickCallback : function(){}
                                     };
                                     break;
                                     case "kharkiv":
@@ -203,31 +205,13 @@
                                       }
                                     break;
                                   }
-                                  var kyivOptions = {
-                                      containerSelector : '#container',
-                                      bounds: {
-                                          southWest: {
-                                              lat: 50.316890,
-                                              lng: 30.247317
-                                          },
-                                          northEast: {
-                                              lat: 50.600066,
-                                              lng: 30.820969
-                                          },
-                                      },
-                                      center: {
-                                          lat: 50.450861,
-                                          lng: 30.522817
-                                      },
-                                      markerClickCallback : function(){console.log('marker')}
-                                  };
                                   KH.prototype.before.map.remove();
                                   KH.prototype.after.map.remove();
                                   KH.prototype.initialize(cityOptions);
+                                  // TODO extract to main.js
                                   showMapControls();
                 }
-              })
-            .addTo(map);
+              }).addTo(map);
 
             L.tileLayer(layer, {detectRetina : true}).addTo(map);
             L.geoJson(geoJson, {
@@ -253,43 +237,58 @@
             this.containerClasses = container.classList;
             $(this.options.containerSelector).beforeAfter();
             this._syncMaps({});
+
+            var oldParent = document.querySelector('#map-base .leaflet-control-container');
+            oldParent.remove();
+            document.querySelector('#map-overlay .leaflet-control-container').remove();
+            var newParent = document.querySelector('#my-controls');
+            newParent.appendChild(oldParent)
+
+            L.DomEvent
+              .on(document.querySelector('.icon-question'), 'click', function() {
+                bMap.fire('modal', {
+                  content: '<h1>Про сайт</h1> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac sollicitudin eros, ut imperdiet felis. Pellentesque pretium mi ante, et faucibus ipsum rutrum sed. Proin accumsan luctus consectetur. In sit amet purus id dui scelerisque ultricies non porta dui. Cras sit amet arcu non est efficitur molestie.'
+                });
+              })
         },
 
         _initializeMarker: function (feature, latLng) {
-            var defaultIcon = L.BeautifyIcon.icon({
-                iconShape: 'circle-dot',
-                borderWidth: 5,
-                borderColor: '#c00'
-            });
-
+            var defaultIcon = L.divIcon({
+                            iconSize: [32, 32],
+                            iconAnchor: [16, 16],
+                            html: '<div class="marker-info"><i class="icon-info"></i></div>',
+                            className: "marker-wrapper"
+                        })
             var marker = L.marker(latLng, {icon: defaultIcon});
 
             marker.on('click', function(e) {
                 var left = $('#map-clip').css('left');
-                KH.prototype.markerClickListener(e.target.feature, parseInt(left, 10) < e.layerPoint.x);
+                KH.prototype.markerClickListener(e.target.feature, parseInt(left, 10) < e.containerPoint.x);
             });
             return marker;
         },
 
         markerClickListener: function(feature, isLeft) {
-            this._unsyncMaps();
+            let title = feature.properties.title;
+            let selectedMarker = this.before.map.selectedMarker;
+            if(selectedMarker && selectedMarker.feature.properties.title == title) {
+                return;
+            }
             this.unselectMarker();
-            this._selectMarker(feature.properties.title);
+            this._selectMarker(title);
 
             this.options.markerClickCallback(feature, isLeft);
             selectedPoint = feature.geometry.coordinates;
-            this.flyToTargetPoint(feature.geometry.coordinates);
-            this._syncMaps({noInitialSync : true});
+            this.flyToTargetPoint(selectedPoint);
         },
 
         _selectMarker: function(clickedMarkerTitle){
-            var selectedIcon = L.BeautifyIcon.icon({
-                    prefix: 'icon',
-                    icon: 'info',
-                    borderColor: '#c00',
-                    backgroundColor: '#c00',
-                    textColor: 'white'
-            });
+            var selectedIcon = L.divIcon({
+                iconSize: [32, 32],
+                iconAnchor: [16, 16],
+                html: '<div class="marker-info hover"><i class="icon-info"></i></div>',
+                className: "marker-wrapper"
+            })
             var markerIndex;
             this.before.map.markers.forEach(function(marker, index){
                 var title = marker.feature.properties.title;
@@ -298,33 +297,69 @@
                 }
             });
             var markerSelectedAfter = this.after.map.markers[markerIndex];
-            markerSelectedAfter.setIcon(selectedIcon)
+            $(markerSelectedAfter._icon).addClass('hover')
             this.after.map.selectedMarker = markerSelectedAfter;
 
             var markerSelectedBefore = this.before.map.markers[markerIndex];
-            markerSelectedBefore.setIcon(selectedIcon)
+            $(markerSelectedBefore._icon).addClass('hover')
             this.before.map.selectedMarker = markerSelectedBefore;
         },
 
         unselectMarker: function(){
-            var defaultIcon = L.BeautifyIcon.icon({
-                iconShape: 'circle-dot',
-                borderWidth: 5,
-                borderColor: '#c00'
-            });
+            var defaultIcon = L.divIcon({
+                iconSize: [32, 32],
+                iconAnchor: [16, 16],
+                html: '<div class="marker-info"><i class="icon-info"></i></div>',
+                className: "marker-wrapper"
+            })
             if(this.before.map.selectedMarker){
                 this.before.map.selectedMarker.setIcon(defaultIcon);
                 this.after.map.selectedMarker.setIcon(defaultIcon)
+                this.before.map.selectedMarker = null;
+                this.after.map.selectedMarker = null;
             }
         },
 
-        _unsyncMaps: function() {
-            this.before.map.unsync(this.after.map);
-            this.after.map.unsync(this.before.map);
-        },
         _syncMaps: function(options) {
-            this.before.map.sync(this.after.map, options);
-            this.after.map.sync(this.before.map, options);
+            l(this.before.map, this.after.map)
+            function l(a, b) {
+                    "use strict";
+                    var c = false
+                      , d = a.dragging._draggable
+                      , e = b.dragging._draggable;
+
+                    L.extend(a, {
+                        panBy: function(d, e) {
+                            b.panBy(d, e),
+                            L.Map.prototype.panBy.call(a, d, e)
+                        },
+                        _move: function(d, e, f) {
+                            return b._move(d, e, f),
+                            L.Map.prototype._move.call(a, d, e, f)
+                        },
+                        _onResize: function(d, e) {
+                            return b._onResize(d, !0),
+                            L.Map.prototype._onResize.call(a, d)
+                        },
+                        _tryAnimatedZoom: function(b, d, e) {
+                            var f = L.Map.prototype._tryAnimatedZoom.call(a, b, d, e);
+                            return f
+                        },
+                        _resetView: function(c, d) {
+                            return b._resetView(c, d),
+                            L.Map.prototype._resetView.call(a, c, d)
+                        }
+                    }),
+                    a.on("zoomanim", function(a) {
+                        b._animateZoom(a.center, a.zoom, !0, a.noUpdate)
+                    }),
+                    d._updatePosition = function() {
+                        L.Draggable.prototype._updatePosition.call(d),
+                        L.DomUtil.setPosition(e._element, d._newPos),
+                        b.fire("moveend")
+                    }
+                }
+
         },
 
         flyToTargetPoint: function(coordinates) {
@@ -340,10 +375,7 @@
                 targetPoint = projection.subtract([mapWidth / 4, 0]);
             }
             var targetLatLng = this.before.map.unproject(targetPoint, flyToZoom);
-            hideMapControls();
-
-            this.before.map.flyTo(targetLatLng, flyToZoom, {animate:false});
-            this.after.map.flyTo(targetLatLng, flyToZoom, {animate:false});
+            this.before.map.setView(targetLatLng, flyToZoom, {animate:true});
         }
     });
 
