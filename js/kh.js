@@ -58,7 +58,7 @@
             }
             L.control.locate(locateOptions).addTo(map);
 
-            var options = {default_text: "Як змінився Харків з 1942 р. до сьогодні", position: 'bottomright'};
+            var options = {default_text: "Порівняйте змінилась вулична мережа та архітектура Харкова з 1942 р. і до сьогодні", position: 'bottomright'};
             L.control.bar(options).addTo(map);
             L.control.social(options).addTo(map);
 
