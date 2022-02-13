@@ -4,6 +4,7 @@ L.Control.Social = L.Control.extend({
     default_text: "What a nice map",
     links: [
       ['facebook', "Facebook", "https://www.facebook.com/sharer.php?u=_url_&t=_text_"],
+//      ['twitter', "Twitter", "http://twitter.com/intent/tweet?text=_text_&url=_url_"],
       ['telegram', "Telegram", "https://telegram.me/share/url?url=_url_&text=_text_"],
     ]
   },

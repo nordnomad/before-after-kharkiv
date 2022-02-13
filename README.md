@@ -6,8 +6,6 @@ Documentation about leaflet - https://leafletjs.com/plugins.html
 Old maps were taken from this site - http://warfly.ru/?lat=49.983903&lon=36.240807&z=16
 Draft content - https://docs.google.com/spreadsheets/d/12f2SE_4sy2jeUGPB-1uua37YvqWdk2YWEvWMrDVpgyU/edit
 
-TO START run 'npm run build'
-
 Plugins
  - with customizations - for before-after functionality https://github.com/jotform/before-after.js
  - to sync maps state https://github.com/jieter/Leaflet.Sync
