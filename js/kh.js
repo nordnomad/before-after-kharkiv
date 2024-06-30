@@ -64,7 +64,7 @@
             L.control.bar(options).addTo(map);
             L.control.social(options).addTo(map);
 
-            var items = [
+            /*var items = [
               { label: "Харків", value: "kharkiv" },
               { label: "Київ", value: "kyiv" },
               { label: "Черкаси", value: "cherkasy" },
@@ -214,7 +214,7 @@
                                   // TODO extract to main.js
                                   showMapControls();
                 }
-              }).addTo(map);
+              }).addTo(map);*/
 
             L.tileLayer(layer, {detectRetina : true}).addTo(map);
             L.geoJson(geoJson, {
@@ -253,15 +253,14 @@
                     CLOSE_CLS: 'icon-cross',
                     transitionDuration: 0,
                   content: `<h1>Про сайт</h1>
-                            Я створив даний проєкт виключно для власного задоволення та поєднання моєї любові до карт, програмування та Харкова.
+                            Я створив даний проєкт виключно для власного задоволення та поєднання моєї любові до карт, програмування та Харкова. Проект мав бути завершений на початку 2022 року, але русня перекреслила ці плани. Тож, щоб дана робота не залишилася на кладовищі проектів, роблю її доступною як є.
                             <ul>
                             <style>
                               .modal a, .modal a:hover {display: inline;text-decoration: underline;line-height:normal}
                             </style>
                             <li>Стилі, користувацький досвід та натхнення отримав із сайту <a href="https://1928.tagesspiegel.de">Berlin 1928 und heute</a></li>
-                            <li>Німецькі карти були взяті з <a href="http://warfly.ru/?lat=50.005558&lon=36.228993&z=15">Аэрофотосъёмка Второй Мировой Войны</a></li>
                             <li>Фотографії та опис підготували <a href="https://www.instagram.com/nord.nomad/">@nord.nomad</a> та <a href="https://www.instagram.com/vitaly.ushakov/">@vitaly.ushakov</a></li>
-                            <li>Якщо ви побачили помилку в наповненні, функціональності сайту або бажаєте створити контент для інших доступних міст, будь ласка, напишіть указаним користувачам.</li>
+                            <li>Якщо ви побачили помилку в наповненні, функціональності сайту чи маєте інші пропозиції, будь ласка, напишіть указаним користувачам.</li>
                             <ul>`
                 });
               })
