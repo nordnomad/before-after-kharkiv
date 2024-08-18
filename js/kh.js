@@ -5,8 +5,8 @@
     	selectedCity: "kharkiv",
         _initializeBeforeMap: function () {
             // var beforeLayerUrl = 'http://localhost:4567/map/{z}/{y}/{x}';
-            // https://res.cloudinary.com/dpcafrjml/image/upload/v1719725049/map-1942/15/11101/19696.jpg
-            var beforeLayerUrl = 'https://res.cloudinary.com/dpcafrjml/image/upload/v1719725049/map-1942/{z}/{y}/{x}.jpg';
+            // https://res.cloudinary.com/dlb3f3gsm/image/upload/v1719725049/map-1942/15/11101/19696.jpg
+            var beforeLayerUrl = 'https://res.cloudinary.com/dlb3f3gsm/image/upload/v1719725049/map-1942/{z}/{y}/{x}.jpg';
             var markers = [];
             var before = this._buildMap('map-base', beforeLayerUrl, markers);
             before.markers = markers;

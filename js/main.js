@@ -33,7 +33,7 @@ function refreshContentPanel(properties) {
 }
 
 function loadImage(imageName, width, height) {
-    return 'https://res.cloudinary.com/dpcafrjml/image/upload/dpr_2.0,h_'+height +',w_' +width +',c_fill/' + imageName
+    return 'https://res.cloudinary.com/dlb3f3gsm/image/upload/dpr_2.0,h_'+height +',w_' +width +',c_fill/' + imageName
 }
 
 function initContentPanel() {
