@@ -6,7 +6,7 @@
         _initializeBeforeMap: function () {
             // var beforeLayerUrl = 'http://localhost:4567/map/{z}/{y}/{x}';
             // https://res.cloudinary.com/dlb3f3gsm/image/upload/v1719725049/map-1942/15/11101/19696.jpg
-            var beforeLayerUrl = 'https://8jb8eqag4xmklyf3.public.blob.vercel-storage.com/map/{z}/{y}/{x}.jpg';
+            var beforeLayerUrl = 'https://map-1942.vercel.app/map/{z}/{y}/{x}.jpg';
             var markers = [];
             var before = this._buildMap('map-base', beforeLayerUrl, markers);
             before.markers = markers;
