@@ -15,8 +15,8 @@
         },
 
         _initializeAfterMap: function() {
-            var afterLayerUrl = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=';
-            var accessKey = 'pk.eyJ1Ijoibm9yZG5vbWFkIiwiYSI6ImNrMjA3emg0cjEyc2YzY2w4MmltYWxqeGMifQ.jGJYfQpF8De6ZhhafArC1Q';
+            var afterLayerUrl = 'https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=';
+            var accessKey = 'x7LMuld92MrNQpMPLoSc';
             var markers = [];
             var after = this._buildMap('map-overlay', afterLayerUrl + accessKey, markers);
             after.markers = markers;
