@@ -15,8 +15,8 @@
         },
 
         _initializeAfterMap: function() {
-            var afterLayerUrl = 'https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=';
-            var accessKey = 'x7LMuld92MrNQpMPLoSc';
+            var afterLayerUrl = 'https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=';
+            var accessKey = 'pk.eyJ1IjoicGVsYWdpb3MiLCJhIjoiMWRlODMzM2NkZWU3YzkxOGJkMDFiMmFiYjk3NWZkMmUifQ.cyqpSZvhsvBGEBwRfniVrg';
             var markers = [];
             var after = this._buildMap('map-overlay', afterLayerUrl + accessKey, markers);
             after.markers = markers;
@@ -40,7 +40,7 @@
                 tileSize: 256,
                 zoomControl:false,
                 center: cityCenter,
-                maxBounds: cityBounds
+                // maxBounds: cityBounds
             };
             var map = L.map(id, mapOptions);
             new L.Control.Zoom({position: 'bottomright'}).addTo(map)
